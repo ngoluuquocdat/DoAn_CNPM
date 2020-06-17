@@ -45,7 +45,8 @@ namespace QuanLyCuaHangGear
 
         private void btn_Sort_Click(object sender, EventArgs e)
         {
-            
+            QLCH_Model DB = new QLCH_Model();
+            var li_method = DB.Accounts.Select(p => p);
         }
     }
 }
