@@ -151,6 +151,7 @@
             this.btn_Confirm.TabIndex = 13;
             this.btn_Confirm.Text = "XÁC NHẬN";
             this.btn_Confirm.UseVisualStyleBackColor = false;
+            this.btn_Confirm.Click += new System.EventHandler(this.btn_Confirm_Click);
             // 
             // panel_Head
             // 
@@ -221,7 +222,6 @@
             this.txt_displayName.Name = "txt_displayName";
             this.txt_displayName.Size = new System.Drawing.Size(250, 23);
             this.txt_displayName.TabIndex = 198;
-            this.txt_displayName.Text = "hvan";
             this.txt_displayName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_userName
@@ -232,9 +232,9 @@
             this.txt_userName.ForeColor = System.Drawing.Color.White;
             this.txt_userName.Location = new System.Drawing.Point(668, 251);
             this.txt_userName.Name = "txt_userName";
+            this.txt_userName.ReadOnly = true;
             this.txt_userName.Size = new System.Drawing.Size(250, 23);
             this.txt_userName.TabIndex = 197;
-            this.txt_userName.Text = "hvan";
             this.txt_userName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_QueNV
@@ -591,6 +591,7 @@
             this.btn_setPass.TabIndex = 200;
             this.btn_setPass.Text = "      ĐẶT MẬT KHẨU";
             this.btn_setPass.UseVisualStyleBackColor = false;
+            this.btn_setPass.Click += new System.EventHandler(this.btn_setPass_Click);
             // 
             // AE_Staff_Form
             // 

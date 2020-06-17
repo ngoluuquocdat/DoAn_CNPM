@@ -30,12 +30,12 @@
         {
             this.label24 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox_tenHienThi = new System.Windows.Forms.TextBox();
-            this.textBox_tenTaiKhoan = new System.Windows.Forms.TextBox();
-            this.textBox_QueQuan = new System.Windows.Forms.TextBox();
-            this.textBox_CMND = new System.Windows.Forms.TextBox();
-            this.textBox_DiaChi = new System.Windows.Forms.TextBox();
-            this.textBox_soDienThoai = new System.Windows.Forms.TextBox();
+            this.txt_TenHT = new System.Windows.Forms.TextBox();
+            this.txt_Username = new System.Windows.Forms.TextBox();
+            this.txt_DiaChi = new System.Windows.Forms.TextBox();
+            this.txt_QueQuan = new System.Windows.Forms.TextBox();
+            this.txt_SDT = new System.Windows.Forms.TextBox();
+            this.txt_Email = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -44,17 +44,17 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox_ngaySinh = new System.Windows.Forms.TextBox();
+            this.txt_CMND = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox_GioiTinh = new System.Windows.Forms.TextBox();
+            this.txt_NgaySinh = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox_tenNhanVien = new System.Windows.Forms.TextBox();
+            this.txt_GioiTinh = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox_idNhanVien = new System.Windows.Forms.TextBox();
+            this.txt_Name = new System.Windows.Forms.TextBox();
             this.Staff_dataGridView = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txt_Search = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_id = new System.Windows.Forms.TextBox();
             this.btn_Add = new System.Windows.Forms.Button();
             this.btn_Edit = new System.Windows.Forms.Button();
             this.btn_Search = new System.Windows.Forms.Button();
@@ -87,85 +87,83 @@
             this.label6.TabIndex = 76;
             this.label6.Text = "Thông tin chi tiết của nhân viên";
             // 
-            // textBox_tenHienThi
+            // txt_TenHT
             // 
-            this.textBox_tenHienThi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.textBox_tenHienThi.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_tenHienThi.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_tenHienThi.ForeColor = System.Drawing.Color.White;
-            this.textBox_tenHienThi.Location = new System.Drawing.Point(1033, 246);
-            this.textBox_tenHienThi.Name = "textBox_tenHienThi";
-            this.textBox_tenHienThi.ReadOnly = true;
-            this.textBox_tenHienThi.Size = new System.Drawing.Size(183, 23);
-            this.textBox_tenHienThi.TabIndex = 55;
-            this.textBox_tenHienThi.Text = "Hồ Văn An";
-            this.textBox_tenHienThi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_TenHT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.txt_TenHT.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_TenHT.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TenHT.ForeColor = System.Drawing.Color.White;
+            this.txt_TenHT.Location = new System.Drawing.Point(1033, 246);
+            this.txt_TenHT.Name = "txt_TenHT";
+            this.txt_TenHT.ReadOnly = true;
+            this.txt_TenHT.Size = new System.Drawing.Size(183, 23);
+            this.txt_TenHT.TabIndex = 55;
+            this.txt_TenHT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox_tenTaiKhoan
+            // txt_Username
             // 
-            this.textBox_tenTaiKhoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.textBox_tenTaiKhoan.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_tenTaiKhoan.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_tenTaiKhoan.ForeColor = System.Drawing.Color.White;
-            this.textBox_tenTaiKhoan.Location = new System.Drawing.Point(1033, 192);
-            this.textBox_tenTaiKhoan.Name = "textBox_tenTaiKhoan";
-            this.textBox_tenTaiKhoan.ReadOnly = true;
-            this.textBox_tenTaiKhoan.Size = new System.Drawing.Size(183, 23);
-            this.textBox_tenTaiKhoan.TabIndex = 56;
-            this.textBox_tenTaiKhoan.Text = "hovanan";
-            this.textBox_tenTaiKhoan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_Username.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.txt_Username.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Username.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Username.ForeColor = System.Drawing.Color.White;
+            this.txt_Username.Location = new System.Drawing.Point(1033, 192);
+            this.txt_Username.Name = "txt_Username";
+            this.txt_Username.ReadOnly = true;
+            this.txt_Username.Size = new System.Drawing.Size(183, 23);
+            this.txt_Username.TabIndex = 56;
+            this.txt_Username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox_QueQuan
+            // txt_DiaChi
             // 
-            this.textBox_QueQuan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.textBox_QueQuan.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_QueQuan.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_QueQuan.ForeColor = System.Drawing.Color.White;
-            this.textBox_QueQuan.Location = new System.Drawing.Point(609, 457);
-            this.textBox_QueQuan.Name = "textBox_QueQuan";
-            this.textBox_QueQuan.ReadOnly = true;
-            this.textBox_QueQuan.Size = new System.Drawing.Size(216, 23);
-            this.textBox_QueQuan.TabIndex = 57;
-            this.textBox_QueQuan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_DiaChi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.txt_DiaChi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_DiaChi.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_DiaChi.ForeColor = System.Drawing.Color.White;
+            this.txt_DiaChi.Location = new System.Drawing.Point(609, 457);
+            this.txt_DiaChi.Name = "txt_DiaChi";
+            this.txt_DiaChi.ReadOnly = true;
+            this.txt_DiaChi.Size = new System.Drawing.Size(216, 23);
+            this.txt_DiaChi.TabIndex = 57;
+            this.txt_DiaChi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox_CMND
+            // txt_QueQuan
             // 
-            this.textBox_CMND.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.textBox_CMND.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_CMND.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_CMND.ForeColor = System.Drawing.Color.White;
-            this.textBox_CMND.Location = new System.Drawing.Point(609, 412);
-            this.textBox_CMND.Name = "textBox_CMND";
-            this.textBox_CMND.ReadOnly = true;
-            this.textBox_CMND.Size = new System.Drawing.Size(216, 23);
-            this.textBox_CMND.TabIndex = 60;
-            this.textBox_CMND.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_QueQuan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.txt_QueQuan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_QueQuan.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_QueQuan.ForeColor = System.Drawing.Color.White;
+            this.txt_QueQuan.Location = new System.Drawing.Point(609, 412);
+            this.txt_QueQuan.Name = "txt_QueQuan";
+            this.txt_QueQuan.ReadOnly = true;
+            this.txt_QueQuan.Size = new System.Drawing.Size(216, 23);
+            this.txt_QueQuan.TabIndex = 60;
+            this.txt_QueQuan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox_DiaChi
+            // txt_SDT
             // 
-            this.textBox_DiaChi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.textBox_DiaChi.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_DiaChi.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_DiaChi.ForeColor = System.Drawing.Color.White;
-            this.textBox_DiaChi.Location = new System.Drawing.Point(609, 504);
-            this.textBox_DiaChi.Name = "textBox_DiaChi";
-            this.textBox_DiaChi.ReadOnly = true;
-            this.textBox_DiaChi.Size = new System.Drawing.Size(216, 23);
-            this.textBox_DiaChi.TabIndex = 59;
-            this.textBox_DiaChi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_SDT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.txt_SDT.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_SDT.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_SDT.ForeColor = System.Drawing.Color.White;
+            this.txt_SDT.Location = new System.Drawing.Point(609, 504);
+            this.txt_SDT.Name = "txt_SDT";
+            this.txt_SDT.ReadOnly = true;
+            this.txt_SDT.Size = new System.Drawing.Size(216, 23);
+            this.txt_SDT.TabIndex = 59;
+            this.txt_SDT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox_soDienThoai
+            // txt_Email
             // 
-            this.textBox_soDienThoai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.textBox_soDienThoai.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_soDienThoai.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_soDienThoai.ForeColor = System.Drawing.Color.White;
-            this.textBox_soDienThoai.Location = new System.Drawing.Point(609, 552);
-            this.textBox_soDienThoai.Name = "textBox_soDienThoai";
-            this.textBox_soDienThoai.ReadOnly = true;
-            this.textBox_soDienThoai.Size = new System.Drawing.Size(216, 23);
-            this.textBox_soDienThoai.TabIndex = 61;
-            this.textBox_soDienThoai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_Email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.txt_Email.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Email.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Email.ForeColor = System.Drawing.Color.White;
+            this.txt_Email.Location = new System.Drawing.Point(609, 552);
+            this.txt_Email.Name = "txt_Email";
+            this.txt_Email.ReadOnly = true;
+            this.txt_Email.Size = new System.Drawing.Size(216, 23);
+            this.txt_Email.TabIndex = 61;
+            this.txt_Email.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label16
             // 
@@ -263,18 +261,18 @@
             this.label18.TabIndex = 66;
             this.label18.Text = "Ngày sinh:";
             // 
-            // textBox_ngaySinh
+            // txt_CMND
             // 
-            this.textBox_ngaySinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.textBox_ngaySinh.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_ngaySinh.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_ngaySinh.ForeColor = System.Drawing.Color.White;
-            this.textBox_ngaySinh.Location = new System.Drawing.Point(609, 359);
-            this.textBox_ngaySinh.Name = "textBox_ngaySinh";
-            this.textBox_ngaySinh.ReadOnly = true;
-            this.textBox_ngaySinh.Size = new System.Drawing.Size(216, 23);
-            this.textBox_ngaySinh.TabIndex = 62;
-            this.textBox_ngaySinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_CMND.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.txt_CMND.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_CMND.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_CMND.ForeColor = System.Drawing.Color.White;
+            this.txt_CMND.Location = new System.Drawing.Point(609, 359);
+            this.txt_CMND.Name = "txt_CMND";
+            this.txt_CMND.ReadOnly = true;
+            this.txt_CMND.Size = new System.Drawing.Size(216, 23);
+            this.txt_CMND.TabIndex = 62;
+            this.txt_CMND.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label17
             // 
@@ -288,18 +286,18 @@
             this.label17.TabIndex = 75;
             this.label17.Text = "GIới tính:";
             // 
-            // textBox_GioiTinh
+            // txt_NgaySinh
             // 
-            this.textBox_GioiTinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.textBox_GioiTinh.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_GioiTinh.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_GioiTinh.ForeColor = System.Drawing.Color.White;
-            this.textBox_GioiTinh.Location = new System.Drawing.Point(609, 314);
-            this.textBox_GioiTinh.Name = "textBox_GioiTinh";
-            this.textBox_GioiTinh.ReadOnly = true;
-            this.textBox_GioiTinh.Size = new System.Drawing.Size(216, 23);
-            this.textBox_GioiTinh.TabIndex = 64;
-            this.textBox_GioiTinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_NgaySinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.txt_NgaySinh.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_NgaySinh.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_NgaySinh.ForeColor = System.Drawing.Color.White;
+            this.txt_NgaySinh.Location = new System.Drawing.Point(609, 314);
+            this.txt_NgaySinh.Name = "txt_NgaySinh";
+            this.txt_NgaySinh.ReadOnly = true;
+            this.txt_NgaySinh.Size = new System.Drawing.Size(216, 23);
+            this.txt_NgaySinh.TabIndex = 64;
+            this.txt_NgaySinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label10
             // 
@@ -313,18 +311,18 @@
             this.label10.TabIndex = 65;
             this.label10.Text = "Tên nhân viên:";
             // 
-            // textBox_tenNhanVien
+            // txt_GioiTinh
             // 
-            this.textBox_tenNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.textBox_tenNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_tenNhanVien.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_tenNhanVien.ForeColor = System.Drawing.Color.White;
-            this.textBox_tenNhanVien.Location = new System.Drawing.Point(609, 272);
-            this.textBox_tenNhanVien.Name = "textBox_tenNhanVien";
-            this.textBox_tenNhanVien.ReadOnly = true;
-            this.textBox_tenNhanVien.Size = new System.Drawing.Size(216, 23);
-            this.textBox_tenNhanVien.TabIndex = 63;
-            this.textBox_tenNhanVien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_GioiTinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.txt_GioiTinh.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_GioiTinh.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_GioiTinh.ForeColor = System.Drawing.Color.White;
+            this.txt_GioiTinh.Location = new System.Drawing.Point(609, 272);
+            this.txt_GioiTinh.Name = "txt_GioiTinh";
+            this.txt_GioiTinh.ReadOnly = true;
+            this.txt_GioiTinh.Size = new System.Drawing.Size(216, 23);
+            this.txt_GioiTinh.TabIndex = 63;
+            this.txt_GioiTinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label9
             // 
@@ -338,18 +336,18 @@
             this.label9.TabIndex = 53;
             this.label9.Text = "Mã nhân viên:";
             // 
-            // textBox_idNhanVien
+            // txt_Name
             // 
-            this.textBox_idNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.textBox_idNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_idNhanVien.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_idNhanVien.ForeColor = System.Drawing.Color.White;
-            this.textBox_idNhanVien.Location = new System.Drawing.Point(609, 225);
-            this.textBox_idNhanVien.Name = "textBox_idNhanVien";
-            this.textBox_idNhanVien.ReadOnly = true;
-            this.textBox_idNhanVien.Size = new System.Drawing.Size(216, 23);
-            this.textBox_idNhanVien.TabIndex = 52;
-            this.textBox_idNhanVien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_Name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.txt_Name.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Name.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Name.ForeColor = System.Drawing.Color.White;
+            this.txt_Name.Location = new System.Drawing.Point(609, 225);
+            this.txt_Name.Name = "txt_Name";
+            this.txt_Name.ReadOnly = true;
+            this.txt_Name.Size = new System.Drawing.Size(216, 23);
+            this.txt_Name.TabIndex = 52;
+            this.txt_Name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Staff_dataGridView
             // 
@@ -382,19 +380,20 @@
             this.txt_Search.Size = new System.Drawing.Size(321, 23);
             this.txt_Search.TabIndex = 148;
             this.txt_Search.Text = "Nhập tên nhân viên";
+            this.txt_Search.Click += new System.EventHandler(this.txt_Search_Click);
             // 
-            // textBox1
+            // txt_id
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(609, 192);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(216, 23);
-            this.textBox1.TabIndex = 52;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_id.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.txt_id.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_id.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_id.ForeColor = System.Drawing.Color.White;
+            this.txt_id.Location = new System.Drawing.Point(609, 192);
+            this.txt_id.Name = "txt_id";
+            this.txt_id.ReadOnly = true;
+            this.txt_id.Size = new System.Drawing.Size(216, 23);
+            this.txt_id.TabIndex = 52;
+            this.txt_id.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btn_Add
             // 
@@ -434,6 +433,7 @@
             this.btn_Edit.Text = "    SỬA";
             this.btn_Edit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Edit.UseVisualStyleBackColor = false;
+            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // btn_Search
             // 
@@ -453,6 +453,7 @@
             this.btn_Search.Text = "   TÌM KIẾM";
             this.btn_Search.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Search.UseVisualStyleBackColor = false;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
             // btn_View
             // 
@@ -472,7 +473,7 @@
             this.btn_View.Text = "    XEM";
             this.btn_View.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_View.UseVisualStyleBackColor = false;
-            this.btn_View.Click += new System.EventHandler(this.btn_View_Click_1);
+            this.btn_View.Click += new System.EventHandler(this.btn_View_Click);
             // 
             // btn_Delete
             // 
@@ -492,6 +493,7 @@
             this.btn_Delete.Text = "    XÓA";
             this.btn_Delete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Delete.UseVisualStyleBackColor = false;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Sort
             // 
@@ -526,12 +528,12 @@
             this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox_tenHienThi);
-            this.Controls.Add(this.textBox_tenTaiKhoan);
-            this.Controls.Add(this.textBox_QueQuan);
-            this.Controls.Add(this.textBox_CMND);
-            this.Controls.Add(this.textBox_DiaChi);
-            this.Controls.Add(this.textBox_soDienThoai);
+            this.Controls.Add(this.txt_TenHT);
+            this.Controls.Add(this.txt_Username);
+            this.Controls.Add(this.txt_DiaChi);
+            this.Controls.Add(this.txt_QueQuan);
+            this.Controls.Add(this.txt_SDT);
+            this.Controls.Add(this.txt_Email);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label23);
@@ -540,14 +542,14 @@
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.textBox_ngaySinh);
+            this.Controls.Add(this.txt_CMND);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.textBox_GioiTinh);
+            this.Controls.Add(this.txt_NgaySinh);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox_tenNhanVien);
+            this.Controls.Add(this.txt_GioiTinh);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox_idNhanVien);
+            this.Controls.Add(this.txt_id);
+            this.Controls.Add(this.txt_Name);
             this.Controls.Add(this.btn_Sort);
             this.Controls.Add(this.Staff_dataGridView);
             this.Name = "Staff_Control";
@@ -562,12 +564,12 @@
 
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox_tenHienThi;
-        private System.Windows.Forms.TextBox textBox_tenTaiKhoan;
-        private System.Windows.Forms.TextBox textBox_QueQuan;
-        private System.Windows.Forms.TextBox textBox_CMND;
-        private System.Windows.Forms.TextBox textBox_DiaChi;
-        private System.Windows.Forms.TextBox textBox_soDienThoai;
+        private System.Windows.Forms.TextBox txt_TenHT;
+        private System.Windows.Forms.TextBox txt_Username;
+        private System.Windows.Forms.TextBox txt_DiaChi;
+        private System.Windows.Forms.TextBox txt_QueQuan;
+        private System.Windows.Forms.TextBox txt_SDT;
+        private System.Windows.Forms.TextBox txt_Email;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label23;
@@ -576,13 +578,13 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox_ngaySinh;
+        private System.Windows.Forms.TextBox txt_CMND;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox_GioiTinh;
+        private System.Windows.Forms.TextBox txt_NgaySinh;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox_tenNhanVien;
+        private System.Windows.Forms.TextBox txt_GioiTinh;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox_idNhanVien;
+        private System.Windows.Forms.TextBox txt_Name;
         private System.Windows.Forms.Button btn_Sort;
         private System.Windows.Forms.DataGridView Staff_dataGridView;
         private System.Windows.Forms.Panel panel2;
@@ -592,6 +594,6 @@
         private System.Windows.Forms.Button btn_Search;
         private System.Windows.Forms.Button btn_View;
         private System.Windows.Forms.Button btn_Delete;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_id;
     }
 }
