@@ -69,17 +69,16 @@
             // 
             // cbb_Category
             // 
+            this.cbb_Category.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.cbb_Category.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbb_Category.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_Category.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
             this.cbb_Category.FormattingEnabled = true;
-            this.cbb_Category.Items.AddRange(new object[] {
-            "Tất cả",
-            "Chuột\t",
-            "Bàn phím",
-            "Tai nghe"});
             this.cbb_Category.Location = new System.Drawing.Point(531, 135);
             this.cbb_Category.Name = "cbb_Category";
             this.cbb_Category.Size = new System.Drawing.Size(183, 31);
             this.cbb_Category.TabIndex = 137;
+            this.cbb_Category.SelectedIndexChanged += new System.EventHandler(this.cbb_Category_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -275,6 +274,7 @@
             this.txt_Search.Size = new System.Drawing.Size(321, 23);
             this.txt_Search.TabIndex = 119;
             this.txt_Search.Text = "Nhập tên hàng";
+            this.txt_Search.Click += new System.EventHandler(this.txt_Search_Click);
             // 
             // Product_dataGridView
             // 
@@ -289,11 +289,11 @@
             // 
             // cbb_Sort
             // 
+            this.cbb_Sort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.cbb_Sort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbb_Sort.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_Sort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
             this.cbb_Sort.FormattingEnabled = true;
-            this.cbb_Sort.Items.AddRange(new object[] {
-            "Đơn giá nhập",
-            "Đơn giá bán"});
             this.cbb_Sort.Location = new System.Drawing.Point(273, 604);
             this.cbb_Sort.Name = "cbb_Sort";
             this.cbb_Sort.Size = new System.Drawing.Size(156, 31);
@@ -325,6 +325,7 @@
             this.btn_priceDown.TabIndex = 141;
             this.btn_priceDown.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_priceDown.UseVisualStyleBackColor = false;
+            this.btn_priceDown.Click += new System.EventHandler(this.btn_priceDown_Click);
             // 
             // btn_priceUp
             // 
@@ -341,6 +342,7 @@
             this.btn_priceUp.TabIndex = 139;
             this.btn_priceUp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_priceUp.UseVisualStyleBackColor = false;
+            this.btn_priceUp.Click += new System.EventHandler(this.btn_priceUp_Click);
             // 
             // btn_Add
             // 
@@ -380,6 +382,7 @@
             this.btn_Edit.Text = "    SỬA";
             this.btn_Edit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Edit.UseVisualStyleBackColor = false;
+            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // btn_Search
             // 
@@ -399,6 +402,7 @@
             this.btn_Search.Text = "   TÌM KIẾM";
             this.btn_Search.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Search.UseVisualStyleBackColor = false;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
             // btn_View
             // 
@@ -418,6 +422,7 @@
             this.btn_View.Text = "    XEM";
             this.btn_View.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_View.UseVisualStyleBackColor = false;
+            this.btn_View.Click += new System.EventHandler(this.btn_View_Click);
             // 
             // btn_Delete
             // 
@@ -437,6 +442,7 @@
             this.btn_Delete.Text = "    XÓA";
             this.btn_Delete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Delete.UseVisualStyleBackColor = false;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // Product_Control
             // 
@@ -470,7 +476,7 @@
             this.Controls.Add(this.btn_View);
             this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.Product_dataGridView);
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "Product_Control";
             this.Size = new System.Drawing.Size(1250, 700);
             ((System.ComponentModel.ISupportInitialize)(this.Product_dataGridView)).EndInit();

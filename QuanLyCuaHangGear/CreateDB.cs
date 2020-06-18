@@ -29,7 +29,22 @@ namespace QuanLyCuaHangGear
                 DiaChi = "K7/55 Phan Văn Định, Đà Nẵng",
                 Phone = "09051234",
                 Email = "hovanan1009@gmail.com",
-            }); ;
+            });
+            context.DanhMucs.Add(new DanhMuc
+            {
+                id = 1,
+                Name = "Chuột"
+            });
+            context.DanhMucs.Add(new DanhMuc
+            {
+                id = 2,
+                Name = "Bàn Phím"
+            });
+            context.DanhMucs.Add(new DanhMuc
+            {
+                id = 3,
+                Name = "Tai Nghe"
+            });
         }
     }
 }

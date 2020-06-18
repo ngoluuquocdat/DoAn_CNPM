@@ -132,6 +132,7 @@
     <Compile Include="View\Report_Control.Designer.cs">
       <DependentUpon>Report_Control.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\CBBItems.cs" />
     <Compile Include="View\Staff_Control.cs">
       <SubType>UserControl</SubType>
     </Compile>

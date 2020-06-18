@@ -92,8 +92,7 @@ namespace QuanLyCuaHangGear
         }
 
         private void btn_Delete_Click(object sender, EventArgs e)
-        {
-
+        {           
             DataGridViewSelectedRowCollection rows = Staff_dtgv.SelectedRows;
             List<int> list_id = new List<int>();
             if (rows.Count == 0)
@@ -143,5 +142,9 @@ namespace QuanLyCuaHangGear
             Staff_dtgv.DataSource = To_View(list_sort);
         }
 
+        private void btn_Sort_ZA_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

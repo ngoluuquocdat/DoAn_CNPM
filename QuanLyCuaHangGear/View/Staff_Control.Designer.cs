@@ -506,6 +506,7 @@
             this.btn_Sort_ZA.TabIndex = 150;
             this.btn_Sort_ZA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Sort_ZA.UseVisualStyleBackColor = false;
+            this.btn_Sort_ZA.Click += new System.EventHandler(this.btn_Sort_ZA_Click);
             // 
             // label3
             // 
