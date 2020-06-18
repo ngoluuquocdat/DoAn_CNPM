@@ -35,7 +35,7 @@ namespace QuanLyCuaHangGear.BLL
         {
             string Numrd_str;
             Random rd = new Random();
-            Numrd_str = rd.Next(100000, 999999).ToString();//Chuyển giá trị ramdon về kiểu string
+            Numrd_str = rd.Next(100000, 999999).ToString();  //Chuyển giá trị ramdon về kiểu string
             return Numrd_str;
         }
         // các hàm tương tác với đối tượng NhanVien

@@ -63,6 +63,7 @@
     <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\DanhMuc.cs" />
     <Compile Include="DTO\HangHoa.cs" />
+    <Compile Include="DTO\HangHoa_View.cs" />
     <Compile Include="DTO\HoaDon.cs" />
     <Compile Include="DTO\HoaDonInfo.cs" />
     <Compile Include="DTO\KhachHang.cs" />

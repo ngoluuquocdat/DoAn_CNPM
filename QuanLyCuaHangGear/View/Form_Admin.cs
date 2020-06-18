@@ -93,7 +93,7 @@ namespace QuanLyCuaHangGear
             panel_Slide.Visible = false;
             label_UpperLogo.Text = "";
             pic_UpperLogo.Image = Properties.Resources.Store_Logo;
-            //  welcome_Control1.BringToFront();
+            
             Welcome_Control.Instance.BringToFront();
         }
         private void btn_Staff_Click(object sender, EventArgs e)
@@ -101,7 +101,7 @@ namespace QuanLyCuaHangGear
             Active_Effect((Button)sender);
             btn_Staff.Image = Properties.Resources.Blue_Staff;
             pic_UpperLogo.Image = Properties.Resources.Blue_Staff;
-            //  staff_Control1.BringToFront();
+            
             if (!panel_Main.Controls.Contains(Staff_Control.Instance))
             {
                 panel_Main.Controls.Add(Staff_Control.Instance);
@@ -118,7 +118,7 @@ namespace QuanLyCuaHangGear
             Active_Effect((Button)sender);
             btn_Product.Image = Properties.Resources.Product_blue;
             pic_UpperLogo.Image = Properties.Resources.Product_blue;
-            //product_Control1.BringToFront();    
+            
             if (!panel_Main.Controls.Contains(Product_Control.Instance))
             {
                 panel_Main.Controls.Add(Product_Control.Instance);
@@ -134,7 +134,7 @@ namespace QuanLyCuaHangGear
             Active_Effect((Button)sender);
             btn_Report.Image = Properties.Resources.Blue_money;
             pic_UpperLogo.Image = Properties.Resources.Blue_money;
-            // report_Control1.BringToFront();
+            
             if (!panel_Main.Controls.Contains(Report_Control.Instance))
             {
                 panel_Main.Controls.Add(Report_Control.Instance);
@@ -150,7 +150,7 @@ namespace QuanLyCuaHangGear
             Active_Effect((Button)sender);
             btn_Bill.Image = Properties.Resources.blue_bill;
             pic_UpperLogo.Image = Properties.Resources.blue_bill;
-            //bill_Control1.BringToFront();
+            
             if (!panel_Main.Controls.Contains(Bill_Control.Instance))
             {
                 panel_Main.Controls.Add(Bill_Control.Instance);
@@ -166,7 +166,7 @@ namespace QuanLyCuaHangGear
             Active_Effect((Button)sender);
             btn_Import.Image = Properties.Resources.blue_import;
             pic_UpperLogo.Image = Properties.Resources.blue_import;
-            //import_Control1.BringToFront();
+            
             if (!panel_Main.Controls.Contains(Import_Control.Instance))
             {
                 panel_Main.Controls.Add(Import_Control.Instance);
@@ -182,7 +182,7 @@ namespace QuanLyCuaHangGear
             Active_Effect((Button)sender);
             btn_Account.Image = Properties.Resources.blue_user;
             pic_UpperLogo.Image = Properties.Resources.blue_user;
-            //account_Control1.BringToFront();
+            
             if (!panel_Main.Controls.Contains(Account_Control.Instance))
             {
                 panel_Main.Controls.Add(Account_Control.Instance);
@@ -204,8 +204,7 @@ namespace QuanLyCuaHangGear
 
         private void Form_Admin_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //Form_Login f_Log = new Form_Login();
-            //f_Log.Show();
+            
             this.DialogResult = DialogResult.OK;
             //this.Dispose();
         }
