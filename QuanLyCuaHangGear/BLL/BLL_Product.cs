@@ -28,7 +28,10 @@ namespace QuanLyCuaHangGear.BLL
             }
             set => _Instance = value;
         }
+        private BLL_Product()
+        {
 
+        }
 
 
         // methods
@@ -58,7 +61,7 @@ namespace QuanLyCuaHangGear.BLL
             var li_method = DB.HangHoas.Select(p => p);
             return li_method.ToList();
         }
-        public List<DanhMuc> Get_DanhMuc()
+        public List<DanhMuc> Get_DanhMucs()
         {
             QLCH_Model db = new QLCH_Model();
             return db.DanhMucs.Select(p => p).ToList();
@@ -138,7 +141,6 @@ namespace QuanLyCuaHangGear.BLL
             {
                 for (int j = list.Count - 1; j >= i; j--)
                 {
-                    //if (arr[j].MSSV < arr[j - 1].MSSV)
                     if (this.CompCond(list[j].DonGiaNhap, list[j - 1].DonGiaNhap))
                     {
                         HangHoa temp = list[j];
@@ -150,11 +152,11 @@ namespace QuanLyCuaHangGear.BLL
         }
         public bool Ascending(int left, int right)
         {
-            return left < right;
+            return left > right;
         }
         public bool Decrease(int left, int right)
         {
-            return left > right;
+            return left < right;
         }
     }
 }

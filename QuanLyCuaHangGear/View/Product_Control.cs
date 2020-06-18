@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using QuanLyCuaHangGear.View;
 using QuanLyCuaHangGear.DTO;
 using QuanLyCuaHangGear.BLL;
+using System.Threading;
 
 namespace QuanLyCuaHangGear
 {
@@ -28,18 +29,30 @@ namespace QuanLyCuaHangGear
         public Product_Control()
         {
             InitializeComponent();
-            Load_dtgv();
-            SetCBB_View(BLL_Product.Instance.Get_DanhMuc());
-            SetCBB_Sort();
+            
+            Control.CheckForIllegalCrossThreadCalls = false;
+            ThreadStart ts1 = new ThreadStart(Load_dtgv);
+            ThreadStart ts2 = new ThreadStart(SetCBB);
+            Thread thread1 = new Thread(ts1);
+            thread1.Start();
+            thread1 = new Thread(ts2);
+            thread1.Start();
+
+            //thread1 = new Thread(SetCBB);
+            //thread1.Start();
+            //Thread thread2 = new Thread(SetCBB);
+            //thread2.Start();
+            // Load_dtgv();
+
         }
-        public void SetCBB_View(List<DanhMuc> danhMucs)
+        public void SetCBB()
         {
             if (cbb_Category.Items != null)
             {
                 cbb_Category.Items.Clear();
             }
             cbb_Category.Items.Add(new CBBItems { Text = "All", Value = 0 });
-            foreach (DanhMuc i in danhMucs)
+            foreach (DanhMuc i in BLL_Product.Instance.Get_DanhMucs())
             {
                 cbb_Category.Items.Add(new CBBItems
                 {
@@ -48,21 +61,9 @@ namespace QuanLyCuaHangGear
                 });
             }
             cbb_Category.SelectedIndex = 0;
-        }
-        public void SetCBB_Sort()
-        {
-
-            if (cbb_Sort.Items != null)
-            {
-                cbb_Sort.Items.Clear();
-            }
-            cbb_Sort.Items.Add(new CBBItems { Value = 0, Text = "Đơn giá bán" });
-            cbb_Sort.Items.Add(new CBBItems { Value = 1, Text = "Đơn giá nhập" });
-            cbb_Sort.SelectedIndex = 0;
-        }
+        }       
         // methods
         // hàm này chép dữ liệu từ đối tượng HangHoa sang đối tượng HangHoa_view
-        // đối tượng HangHoa_view cho phép chỉ view lên thuộc tính ID, Ten, DanhMuc, SoLuong
         public List<HangHoa_View> To_View(List<HangHoa> list)
         {
             List<HangHoa_View> list_view = new List<HangHoa_View>();
@@ -158,7 +159,7 @@ namespace QuanLyCuaHangGear
         {
             List<int> current_id = new List<int>();
             List<HangHoa> list_sort = new List<HangHoa>();
-            int id_sort = ((CBBItems)cbb_Sort.SelectedItem).Value;
+            
 
             foreach (DataGridViewRow i in Product_dataGridView.Rows)
             {
@@ -169,11 +170,12 @@ namespace QuanLyCuaHangGear
                 list_sort.Add(BLL_Product.Instance.Get_HangHoa_by_ID(id));
             }
             BLL_Product.Instance.CompCond += new BLL_Product.Compare_Condition(BLL_Product.Instance.Ascending);
-            if (id_sort == 0)
+
+            if (cbb_Sort.SelectedIndex == 0)
             {
                 BLL_Product.Instance.Sort_GiaBan(list_sort);
             }
-            else
+            if(cbb_Sort.SelectedIndex == 1)
             {
                 BLL_Product.Instance.Sort_GiaNhap(list_sort);
             }
@@ -185,7 +187,7 @@ namespace QuanLyCuaHangGear
         {
             List<int> current_id = new List<int>();
             List<HangHoa> list_sort = new List<HangHoa>();
-            int id_sort = ((CBBItems)cbb_Sort.SelectedItem).Value;
+            //int id_sort = ((CBBItems)cbb_Sort.SelectedItem).Value;
 
             foreach (DataGridViewRow i in Product_dataGridView.Rows)
             {
@@ -196,7 +198,7 @@ namespace QuanLyCuaHangGear
                 list_sort.Add(BLL_Product.Instance.Get_HangHoa_by_ID(id));
             }
             BLL_Product.Instance.CompCond += new BLL_Product.Compare_Condition(BLL_Product.Instance.Decrease);
-            if (id_sort == 0)
+            if (cbb_Sort.SelectedIndex == 0)
             {
                 BLL_Product.Instance.Sort_GiaBan(list_sort);
             }

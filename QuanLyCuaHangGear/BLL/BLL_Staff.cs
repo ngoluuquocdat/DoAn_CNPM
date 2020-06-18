@@ -28,7 +28,11 @@ namespace QuanLyCuaHangGear.BLL
                 }
                 return _Instance;
             }
-            set => _Instance = value;
+            //set => _Instance = value;
+        }
+        private BLL_Staff()
+        {
+
         }
         // methods
         public string Random()

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyCuaHangGear.BLL;
 using QuanLyCuaHangGear.DTO;
+using System.Threading;
 
 namespace QuanLyCuaHangGear
 {
@@ -28,7 +29,10 @@ namespace QuanLyCuaHangGear
         public Staff_Control()
         {
             InitializeComponent();
-            Load_dtgv();
+            Control.CheckForIllegalCrossThreadCalls = false;
+            Thread thread = new Thread(Load_dtgv);
+            thread.Start();
+            //Load_dtgv();
         }
         //methods
         public List<NhanVien_View> To_View(List<NhanVien> list)

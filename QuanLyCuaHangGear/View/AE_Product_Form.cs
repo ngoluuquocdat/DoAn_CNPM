@@ -20,8 +20,8 @@ namespace QuanLyCuaHangGear.View
         {
             this.ID = id;
             InitializeComponent();
-            SetView();
-            SetCBB(BLL_Product.Instance.Get_DanhMuc());
+            SetCBB(BLL_Product.Instance.Get_DanhMucs());
+            SetView();          
         }
         //method
         public void SetCBB(List<DanhMuc> danhMucs)
@@ -52,16 +52,19 @@ namespace QuanLyCuaHangGear.View
                 txt_tenPr.Text = hh.Name;
                 txt_giaNhap.Text = hh.DonGiaNhap.ToString();
                 txt_giaBan.Text = hh.DonGiaBan.ToString();
-                int id_Dm = hh.idDanhMuc;
-                DanhMuc dm = BLL_Product.Instance.Get_DanhMuc_by_ID(id_Dm);
+                int id_dm = hh.idDanhMuc;
+                //DanhMuc dm = BLL_Product.Instance.Get_DanhMuc_by_ID(id_Dm);
+
                 CBBItems temp = new CBBItems();
+
                 foreach (CBBItems i in cbb_danhMuc.Items)
                 {
-                    if (i.Value == dm.id)
+                    if (i.Value == id_dm)
                     {
                         temp = i;
                     }
                 }
+
                 cbb_danhMuc.SelectedIndex = cbb_danhMuc.Items.IndexOf(temp);
             }
         }

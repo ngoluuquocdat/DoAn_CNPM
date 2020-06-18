@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,16 +14,21 @@ namespace QuanLyCuaHangGear
     public partial class Form_Admin : Form
     {
         // fields
-        
+
         // constuctor
+        
+        
         public Form_Admin()
         {
             InitializeComponent();
+
+            Control.CheckForIllegalCrossThreadCalls = false;
+            
+
             panel_Slide.Visible = false;
-            // welcome_Control1.BringToFront();
-                panel_Main.Controls.Add(Welcome_Control.Instance);
-                Welcome_Control.Instance.Dock = DockStyle.Fill;
-                Welcome_Control.Instance.BringToFront();
+            panel_Main.Controls.Add(Welcome_Control.Instance);
+            Welcome_Control.Instance.Dock = DockStyle.Fill;
+            Welcome_Control.Instance.BringToFront();
 
         }
 
@@ -79,8 +85,9 @@ namespace QuanLyCuaHangGear
             btn.ForeColor = Color.FromArgb(98, 225, 225);
             btn.TextImageRelation = TextImageRelation.TextBeforeImage;
             btn.ImageAlign = ContentAlignment.MiddleRight;
-            panel_Slide.Visible = true;
+            
             panel_Slide.Top = btn.Top;
+            panel_Slide.Visible = true;
             label_UpperLogo.Text = btn.Text;
         }
 
@@ -101,7 +108,7 @@ namespace QuanLyCuaHangGear
             Active_Effect((Button)sender);
             btn_Staff.Image = Properties.Resources.Blue_Staff;
             pic_UpperLogo.Image = Properties.Resources.Blue_Staff;
-            
+
             if (!panel_Main.Controls.Contains(Staff_Control.Instance))
             {
                 panel_Main.Controls.Add(Staff_Control.Instance);
@@ -111,14 +118,14 @@ namespace QuanLyCuaHangGear
             else
                 Staff_Control.Instance.BringToFront();
 
-        }
+        }        
 
         private void btn_Product_Click(object sender, EventArgs e)
         {
             Active_Effect((Button)sender);
             btn_Product.Image = Properties.Resources.Product_blue;
             pic_UpperLogo.Image = Properties.Resources.Product_blue;
-            
+
             if (!panel_Main.Controls.Contains(Product_Control.Instance))
             {
                 panel_Main.Controls.Add(Product_Control.Instance);
