@@ -487,7 +487,7 @@
             this.btn_Sort_AZ.TabIndex = 50;
             this.btn_Sort_AZ.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Sort_AZ.UseVisualStyleBackColor = false;
-            this.btn_Sort_AZ.Click += new System.EventHandler(this.btn_Sort_Click);
+            this.btn_Sort_AZ.Click += new System.EventHandler(this.btn_Sort_AZ_Click);
             // 
             // btn_Sort_ZA
             // 

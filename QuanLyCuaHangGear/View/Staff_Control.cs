@@ -76,10 +76,7 @@ namespace QuanLyCuaHangGear
             Load_dtgv();
         }
 
-        private void btn_Sort_Click(object sender, EventArgs e)
-        {
-           
-        }
+       
 
         private void btn_Edit_Click(object sender, EventArgs e)
         {
@@ -127,5 +124,24 @@ namespace QuanLyCuaHangGear
             string name = txt_Search.Text;
             Staff_dtgv.DataSource= To_View(BLL_Staff.Instance.Search_by_Name(name));
         }
+
+        private void btn_Sort_AZ_Click(object sender, EventArgs e)
+        {
+            List<int> current_id = new List<int>();
+            List<NhanVien> list_sort = new List<NhanVien>();
+
+            foreach (DataGridViewRow i in Staff_dtgv.Rows)
+            {
+                current_id.Add(Convert.ToInt32(i.Cells["ID"].Value.ToString()));
+            }
+            foreach (int id in current_id)
+            {
+                list_sort.Add(BLL_Staff.Instance.Get_NhanVien_by_ID(id));
+            }
+            BLL_Staff.Instance.CompCond += new BLL_Staff.Compare_Condition(BLL_Staff.Instance.A_to_Z);
+            BLL_Staff.Instance.Sort(list_sort);
+            Staff_dtgv.DataSource = To_View(list_sort);
+        }
+
     }
 }

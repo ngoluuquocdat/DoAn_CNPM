@@ -13,6 +13,9 @@ namespace QuanLyCuaHangGear.BLL
 {
     class BLL_Staff
     {
+        public delegate bool Compare_Condition(string left, string right);
+        private Compare_Condition _CompCond;
+        public Compare_Condition CompCond { get; set; }
         private static BLL_Staff _Instance;
 
         public static BLL_Staff Instance
@@ -139,8 +142,7 @@ namespace QuanLyCuaHangGear.BLL
         public void Delete_Account(int id)
         {
 
-            QLCH_Model db = new QLCH_Model();
-            // List<int> idl = new List<int>();
+            QLCH_Model db = new QLCH_Model();           
             id = Convert.ToInt32(db.Accounts.Where(p => p.idNhanVien == id).Select(p => p.idNhanVien).FirstOrDefault());
             foreach (Account i in db.Accounts)
             {
@@ -178,6 +180,52 @@ namespace QuanLyCuaHangGear.BLL
         public string Name_to_Username(string name)
         {
             return Remove_Space(Convert_to_UnSign(name.ToLower()));
+        }
+
+        // các hàm phục vụ sắp xếp
+        public bool A_to_Z(string left, string right)
+        {
+            return String.Compare(left, right) < 0;
+        }
+        public bool Z_to_A(string left, string right)
+        {
+            return String.Compare(left, right) > 0;
+        }
+
+        public bool name_compare(string name1, string name2, Compare_Condition CompCond)
+        {
+            string[] word1; string[] word2;
+            word1 = name1.Split();
+            word2 = name2.Split();
+            if (word1[word1.Length - 1].Equals(word2[word2.Length - 1]))
+            {
+                if (CompCond(word1[word1.Length - 2], word2[word2.Length - 2]))
+                {
+                    return true;
+                }
+            }
+            if (CompCond(word1[word1.Length - 1], word2[word2.Length - 1]))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public void Sort(List<NhanVien> list)
+        {
+            for (int i = 1; i < list.Count; i++)
+            {
+                for (int j = list.Count - 1; j >= i; j--)
+                {
+                    //if (arr[j].MSSV < arr[j - 1].MSSV)
+                    if (name_compare(list[j].Name, list[j - 1].Name, this.CompCond))
+                    {
+                        NhanVien temp = list[j];
+                        list[j] = list[j - 1];
+                        list[j - 1] = temp;
+                    }
+                }
+            }
         }
     }
 }
