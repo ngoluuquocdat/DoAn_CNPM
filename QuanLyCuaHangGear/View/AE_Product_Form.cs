@@ -49,15 +49,15 @@ namespace QuanLyCuaHangGear.View
             else
             {
                 HangHoa hh = BLL_Product.Instance.Get_HangHoa_by_ID(ID);
-                DanhMuc dm = BLL_Product.Instance.Get_DanhMuc_by_ID(ID);
                 txt_tenPr.Text = hh.Name;
                 txt_giaNhap.Text = hh.DonGiaNhap.ToString();
                 txt_giaBan.Text = hh.DonGiaBan.ToString();
-                int idPos = Convert.ToInt32(dm.id.ToString());
+                int id_Dm = hh.idDanhMuc;
+                DanhMuc dm = BLL_Product.Instance.Get_DanhMuc_by_ID(id_Dm);
                 CBBItems temp = new CBBItems();
                 foreach (CBBItems i in cbb_danhMuc.Items)
                 {
-                    if (i.Value == idPos)
+                    if (i.Value == dm.id)
                     {
                         temp = i;
                     }
