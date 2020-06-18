@@ -30,13 +30,11 @@
         {
             this.label24 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txt_TenHT = new System.Windows.Forms.TextBox();
             this.txt_Username = new System.Windows.Forms.TextBox();
             this.txt_DiaChi = new System.Windows.Forms.TextBox();
             this.txt_QueQuan = new System.Windows.Forms.TextBox();
             this.txt_SDT = new System.Windows.Forms.TextBox();
             this.txt_Email = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -51,7 +49,7 @@
             this.txt_GioiTinh = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txt_Name = new System.Windows.Forms.TextBox();
-            this.Staff_dataGridView = new System.Windows.Forms.DataGridView();
+            this.Staff_dtgv = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txt_Search = new System.Windows.Forms.TextBox();
             this.txt_id = new System.Windows.Forms.TextBox();
@@ -60,8 +58,10 @@
             this.btn_Search = new System.Windows.Forms.Button();
             this.btn_View = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
-            this.btn_Sort = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.Staff_dataGridView)).BeginInit();
+            this.btn_Sort_AZ = new System.Windows.Forms.Button();
+            this.btn_Sort_ZA = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.Staff_dtgv)).BeginInit();
             this.SuspendLayout();
             // 
             // label24
@@ -70,7 +70,7 @@
             this.label24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.label24.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label24.Location = new System.Drawing.Point(123, 138);
+            this.label24.Location = new System.Drawing.Point(26, 138);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(208, 24);
             this.label24.TabIndex = 77;
@@ -81,35 +81,22 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label6.Location = new System.Drawing.Point(614, 132);
+            this.label6.Location = new System.Drawing.Point(778, 132);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(438, 33);
             this.label6.TabIndex = 76;
             this.label6.Text = "Thông tin chi tiết của nhân viên";
             // 
-            // txt_TenHT
-            // 
-            this.txt_TenHT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.txt_TenHT.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_TenHT.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TenHT.ForeColor = System.Drawing.Color.White;
-            this.txt_TenHT.Location = new System.Drawing.Point(1033, 246);
-            this.txt_TenHT.Name = "txt_TenHT";
-            this.txt_TenHT.ReadOnly = true;
-            this.txt_TenHT.Size = new System.Drawing.Size(183, 23);
-            this.txt_TenHT.TabIndex = 55;
-            this.txt_TenHT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // txt_Username
             // 
             this.txt_Username.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.txt_Username.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_Username.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Username.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Username.ForeColor = System.Drawing.Color.White;
-            this.txt_Username.Location = new System.Drawing.Point(1033, 192);
+            this.txt_Username.Location = new System.Drawing.Point(847, 595);
             this.txt_Username.Name = "txt_Username";
             this.txt_Username.ReadOnly = true;
-            this.txt_Username.Size = new System.Drawing.Size(183, 23);
+            this.txt_Username.Size = new System.Drawing.Size(304, 27);
             this.txt_Username.TabIndex = 56;
             this.txt_Username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -117,12 +104,12 @@
             // 
             this.txt_DiaChi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.txt_DiaChi.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_DiaChi.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_DiaChi.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_DiaChi.ForeColor = System.Drawing.Color.White;
-            this.txt_DiaChi.Location = new System.Drawing.Point(609, 457);
+            this.txt_DiaChi.Location = new System.Drawing.Point(847, 462);
             this.txt_DiaChi.Name = "txt_DiaChi";
             this.txt_DiaChi.ReadOnly = true;
-            this.txt_DiaChi.Size = new System.Drawing.Size(216, 23);
+            this.txt_DiaChi.Size = new System.Drawing.Size(304, 27);
             this.txt_DiaChi.TabIndex = 57;
             this.txt_DiaChi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -130,12 +117,12 @@
             // 
             this.txt_QueQuan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.txt_QueQuan.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_QueQuan.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_QueQuan.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_QueQuan.ForeColor = System.Drawing.Color.White;
-            this.txt_QueQuan.Location = new System.Drawing.Point(609, 412);
+            this.txt_QueQuan.Location = new System.Drawing.Point(847, 415);
             this.txt_QueQuan.Name = "txt_QueQuan";
             this.txt_QueQuan.ReadOnly = true;
-            this.txt_QueQuan.Size = new System.Drawing.Size(216, 23);
+            this.txt_QueQuan.Size = new System.Drawing.Size(304, 27);
             this.txt_QueQuan.TabIndex = 60;
             this.txt_QueQuan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -143,12 +130,12 @@
             // 
             this.txt_SDT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.txt_SDT.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_SDT.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_SDT.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_SDT.ForeColor = System.Drawing.Color.White;
-            this.txt_SDT.Location = new System.Drawing.Point(609, 504);
+            this.txt_SDT.Location = new System.Drawing.Point(847, 510);
             this.txt_SDT.Name = "txt_SDT";
             this.txt_SDT.ReadOnly = true;
-            this.txt_SDT.Size = new System.Drawing.Size(216, 23);
+            this.txt_SDT.Size = new System.Drawing.Size(304, 27);
             this.txt_SDT.TabIndex = 59;
             this.txt_SDT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -156,26 +143,14 @@
             // 
             this.txt_Email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.txt_Email.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_Email.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Email.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Email.ForeColor = System.Drawing.Color.White;
-            this.txt_Email.Location = new System.Drawing.Point(609, 552);
+            this.txt_Email.Location = new System.Drawing.Point(847, 557);
             this.txt_Email.Name = "txt_Email";
             this.txt_Email.ReadOnly = true;
-            this.txt_Email.Size = new System.Drawing.Size(216, 23);
+            this.txt_Email.Size = new System.Drawing.Size(304, 27);
             this.txt_Email.TabIndex = 61;
             this.txt_Email.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label16.Location = new System.Drawing.Point(864, 246);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(129, 24);
-            this.label16.TabIndex = 73;
-            this.label16.Text = "Tên hiển thị:";
             // 
             // label15
             // 
@@ -183,7 +158,7 @@
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label15.Location = new System.Drawing.Point(864, 195);
+            this.label15.Location = new System.Drawing.Point(671, 595);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(146, 24);
             this.label15.TabIndex = 72;
@@ -195,7 +170,7 @@
             this.label23.BackColor = System.Drawing.Color.Transparent;
             this.label23.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label23.Location = new System.Drawing.Point(449, 462);
+            this.label23.Location = new System.Drawing.Point(676, 462);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(81, 24);
             this.label23.TabIndex = 71;
@@ -207,7 +182,7 @@
             this.label22.BackColor = System.Drawing.Color.Transparent;
             this.label22.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label22.Location = new System.Drawing.Point(447, 415);
+            this.label22.Location = new System.Drawing.Point(675, 415);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(109, 24);
             this.label22.TabIndex = 69;
@@ -219,7 +194,7 @@
             this.label21.BackColor = System.Drawing.Color.Transparent;
             this.label21.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label21.Location = new System.Drawing.Point(447, 552);
+            this.label21.Location = new System.Drawing.Point(677, 557);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(68, 24);
             this.label21.TabIndex = 70;
@@ -231,7 +206,7 @@
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label20.Location = new System.Drawing.Point(447, 370);
+            this.label20.Location = new System.Drawing.Point(675, 370);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(76, 24);
             this.label20.TabIndex = 67;
@@ -243,7 +218,7 @@
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label19.Location = new System.Drawing.Point(447, 510);
+            this.label19.Location = new System.Drawing.Point(675, 510);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(141, 24);
             this.label19.TabIndex = 68;
@@ -255,7 +230,7 @@
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label18.Location = new System.Drawing.Point(447, 320);
+            this.label18.Location = new System.Drawing.Point(675, 320);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(111, 24);
             this.label18.TabIndex = 66;
@@ -265,12 +240,12 @@
             // 
             this.txt_CMND.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.txt_CMND.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_CMND.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_CMND.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_CMND.ForeColor = System.Drawing.Color.White;
-            this.txt_CMND.Location = new System.Drawing.Point(609, 359);
+            this.txt_CMND.Location = new System.Drawing.Point(847, 370);
             this.txt_CMND.Name = "txt_CMND";
             this.txt_CMND.ReadOnly = true;
-            this.txt_CMND.Size = new System.Drawing.Size(216, 23);
+            this.txt_CMND.Size = new System.Drawing.Size(304, 27);
             this.txt_CMND.TabIndex = 62;
             this.txt_CMND.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -280,7 +255,7 @@
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label17.Location = new System.Drawing.Point(447, 275);
+            this.label17.Location = new System.Drawing.Point(675, 275);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(100, 24);
             this.label17.TabIndex = 75;
@@ -290,12 +265,12 @@
             // 
             this.txt_NgaySinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.txt_NgaySinh.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_NgaySinh.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_NgaySinh.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_NgaySinh.ForeColor = System.Drawing.Color.White;
-            this.txt_NgaySinh.Location = new System.Drawing.Point(609, 314);
+            this.txt_NgaySinh.Location = new System.Drawing.Point(847, 320);
             this.txt_NgaySinh.Name = "txt_NgaySinh";
             this.txt_NgaySinh.ReadOnly = true;
-            this.txt_NgaySinh.Size = new System.Drawing.Size(216, 23);
+            this.txt_NgaySinh.Size = new System.Drawing.Size(304, 27);
             this.txt_NgaySinh.TabIndex = 64;
             this.txt_NgaySinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -305,7 +280,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label10.Location = new System.Drawing.Point(447, 229);
+            this.label10.Location = new System.Drawing.Point(675, 231);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(151, 24);
             this.label10.TabIndex = 65;
@@ -315,12 +290,12 @@
             // 
             this.txt_GioiTinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.txt_GioiTinh.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_GioiTinh.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_GioiTinh.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_GioiTinh.ForeColor = System.Drawing.Color.White;
-            this.txt_GioiTinh.Location = new System.Drawing.Point(609, 272);
+            this.txt_GioiTinh.Location = new System.Drawing.Point(847, 276);
             this.txt_GioiTinh.Name = "txt_GioiTinh";
             this.txt_GioiTinh.ReadOnly = true;
-            this.txt_GioiTinh.Size = new System.Drawing.Size(216, 23);
+            this.txt_GioiTinh.Size = new System.Drawing.Size(304, 27);
             this.txt_GioiTinh.TabIndex = 63;
             this.txt_GioiTinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -330,7 +305,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label9.Location = new System.Drawing.Point(449, 189);
+            this.label9.Location = new System.Drawing.Point(677, 189);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(143, 24);
             this.label9.TabIndex = 53;
@@ -340,26 +315,26 @@
             // 
             this.txt_Name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.txt_Name.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_Name.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Name.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Name.ForeColor = System.Drawing.Color.White;
-            this.txt_Name.Location = new System.Drawing.Point(609, 225);
+            this.txt_Name.Location = new System.Drawing.Point(847, 231);
             this.txt_Name.Name = "txt_Name";
             this.txt_Name.ReadOnly = true;
-            this.txt_Name.Size = new System.Drawing.Size(216, 23);
+            this.txt_Name.Size = new System.Drawing.Size(304, 27);
             this.txt_Name.TabIndex = 52;
             this.txt_Name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Staff_dataGridView
+            // Staff_dtgv
             // 
-            this.Staff_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Staff_dataGridView.Location = new System.Drawing.Point(43, 189);
-            this.Staff_dataGridView.Name = "Staff_dataGridView";
-            this.Staff_dataGridView.ReadOnly = true;
-            this.Staff_dataGridView.RowHeadersWidth = 51;
-            this.Staff_dataGridView.RowTemplate.Height = 24;
-            this.Staff_dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Staff_dataGridView.Size = new System.Drawing.Size(363, 401);
-            this.Staff_dataGridView.TabIndex = 49;
+            this.Staff_dtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Staff_dtgv.Location = new System.Drawing.Point(30, 189);
+            this.Staff_dtgv.Name = "Staff_dtgv";
+            this.Staff_dtgv.ReadOnly = true;
+            this.Staff_dtgv.RowHeadersWidth = 51;
+            this.Staff_dtgv.RowTemplate.Height = 24;
+            this.Staff_dtgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Staff_dtgv.Size = new System.Drawing.Size(553, 380);
+            this.Staff_dtgv.TabIndex = 49;
             // 
             // panel2
             // 
@@ -386,12 +361,12 @@
             // 
             this.txt_id.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.txt_id.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_id.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_id.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_id.ForeColor = System.Drawing.Color.White;
-            this.txt_id.Location = new System.Drawing.Point(609, 192);
+            this.txt_id.Location = new System.Drawing.Point(847, 190);
             this.txt_id.Name = "txt_id";
             this.txt_id.ReadOnly = true;
-            this.txt_id.Size = new System.Drawing.Size(216, 23);
+            this.txt_id.Size = new System.Drawing.Size(304, 27);
             this.txt_id.TabIndex = 52;
             this.txt_id.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -495,30 +470,60 @@
             this.btn_Delete.UseVisualStyleBackColor = false;
             this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
-            // btn_Sort
+            // btn_Sort_AZ
             // 
-            this.btn_Sort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.btn_Sort.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btn_Sort.FlatAppearance.BorderSize = 0;
-            this.btn_Sort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Sort.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Sort.ForeColor = System.Drawing.Color.White;
-            this.btn_Sort.Image = global::QuanLyCuaHangGear.Properties.Resources.Sort;
-            this.btn_Sort.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Sort.Location = new System.Drawing.Point(154, 611);
-            this.btn_Sort.Name = "btn_Sort";
-            this.btn_Sort.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btn_Sort.Size = new System.Drawing.Size(141, 57);
-            this.btn_Sort.TabIndex = 50;
-            this.btn_Sort.Text = "  SẮP XẾP";
-            this.btn_Sort.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Sort.UseVisualStyleBackColor = false;
-            this.btn_Sort.Click += new System.EventHandler(this.btn_Sort_Click);
+            this.btn_Sort_AZ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.btn_Sort_AZ.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btn_Sort_AZ.FlatAppearance.BorderSize = 0;
+            this.btn_Sort_AZ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Sort_AZ.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Sort_AZ.ForeColor = System.Drawing.Color.White;
+            this.btn_Sort_AZ.Image = global::QuanLyCuaHangGear.Properties.Resources.Sort;
+            this.btn_Sort_AZ.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Sort_AZ.Location = new System.Drawing.Point(246, 592);
+            this.btn_Sort_AZ.Name = "btn_Sort_AZ";
+            this.btn_Sort_AZ.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_Sort_AZ.Size = new System.Drawing.Size(62, 57);
+            this.btn_Sort_AZ.TabIndex = 50;
+            this.btn_Sort_AZ.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Sort_AZ.UseVisualStyleBackColor = false;
+            this.btn_Sort_AZ.Click += new System.EventHandler(this.btn_Sort_Click);
+            // 
+            // btn_Sort_ZA
+            // 
+            this.btn_Sort_ZA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.btn_Sort_ZA.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btn_Sort_ZA.FlatAppearance.BorderSize = 0;
+            this.btn_Sort_ZA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Sort_ZA.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Sort_ZA.ForeColor = System.Drawing.Color.White;
+            this.btn_Sort_ZA.Image = global::QuanLyCuaHangGear.Properties.Resources.Sort;
+            this.btn_Sort_ZA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Sort_ZA.Location = new System.Drawing.Point(361, 592);
+            this.btn_Sort_ZA.Name = "btn_Sort_ZA";
+            this.btn_Sort_ZA.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_Sort_ZA.Size = new System.Drawing.Size(62, 57);
+            this.btn_Sort_ZA.TabIndex = 150;
+            this.btn_Sort_ZA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Sort_ZA.UseVisualStyleBackColor = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
+            this.label3.Location = new System.Drawing.Point(26, 607);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(177, 24);
+            this.label3.TabIndex = 151;
+            this.label3.Text = "Sắp xếp theo tên:";
             // 
             // Staff_Control
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btn_Sort_ZA);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.txt_Search);
             this.Controls.Add(this.btn_Add);
@@ -528,13 +533,11 @@
             this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txt_TenHT);
             this.Controls.Add(this.txt_Username);
             this.Controls.Add(this.txt_DiaChi);
             this.Controls.Add(this.txt_QueQuan);
             this.Controls.Add(this.txt_SDT);
             this.Controls.Add(this.txt_Email);
-            this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.label22);
@@ -550,11 +553,11 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txt_id);
             this.Controls.Add(this.txt_Name);
-            this.Controls.Add(this.btn_Sort);
-            this.Controls.Add(this.Staff_dataGridView);
+            this.Controls.Add(this.btn_Sort_AZ);
+            this.Controls.Add(this.Staff_dtgv);
             this.Name = "Staff_Control";
             this.Size = new System.Drawing.Size(1250, 700);
-            ((System.ComponentModel.ISupportInitialize)(this.Staff_dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Staff_dtgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -564,13 +567,11 @@
 
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txt_TenHT;
         private System.Windows.Forms.TextBox txt_Username;
         private System.Windows.Forms.TextBox txt_DiaChi;
         private System.Windows.Forms.TextBox txt_QueQuan;
         private System.Windows.Forms.TextBox txt_SDT;
         private System.Windows.Forms.TextBox txt_Email;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
@@ -585,8 +586,8 @@
         private System.Windows.Forms.TextBox txt_GioiTinh;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txt_Name;
-        private System.Windows.Forms.Button btn_Sort;
-        private System.Windows.Forms.DataGridView Staff_dataGridView;
+        private System.Windows.Forms.Button btn_Sort_AZ;
+        private System.Windows.Forms.DataGridView Staff_dtgv;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txt_Search;
         private System.Windows.Forms.Button btn_Add;
@@ -595,5 +596,7 @@
         private System.Windows.Forms.Button btn_View;
         private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.TextBox txt_id;
+        private System.Windows.Forms.Button btn_Sort_ZA;
+        private System.Windows.Forms.Label label3;
     }
 }

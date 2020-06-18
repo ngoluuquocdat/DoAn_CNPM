@@ -51,6 +51,13 @@ namespace QuanLyCuaHangGear
             }
         }
 
+        //events
+        private void txt_TenNV_TextChanged(object sender, EventArgs e)
+        {
+            txt_userName.Text = BLL_Staff.Instance.Name_to_Username(txt_TenNV.Text)
+                                    + (BLL_Staff.Instance.Get_Lastest_ID() + 1).ToString();
+            txt_displayName.Text = txt_TenNV.Text;
+        }
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -81,10 +88,13 @@ namespace QuanLyCuaHangGear
                 string diachi = txt_DiaChi.Text;
                 string email = txt_Email.Text;
                 string phone = txt_Phone.Text;
-                string username = txt_TenNV.Text;
+                BLL_Staff.Instance.Add_Staff(name, gender, dob, cmnd, quequan, diachi, email, phone);
+
+                string username = txt_userName.Text;
                 string pass = txt_password.Text;
-                string dname = txt_displayName.Text;
-                BLL_Staff.Instance.AddStaff(name, gender, dob, cmnd, quequan, diachi, email, phone, username, dname, pass);
+                string displayname = txt_displayName.Text;
+                int id_nv = BLL.BLL_Staff.Instance.Get_Lastest_ID();
+                BLL_Staff.Instance.Add_Account(username,id_nv, displayname, pass);
 
             }
             else
@@ -106,11 +116,12 @@ namespace QuanLyCuaHangGear
                 string email = txt_Email.Text;
                 string phone = txt_Phone.Text;
                 string pass = txt_password.Text;
-                string dname = txt_displayName.Text;
-                BLL_Staff.Instance.EditStaff(ID, name, gender, dob, cmnd, quequan, diachi, email, phone, dname,pass);
-
+                BLL_Staff.Instance.Edit_Staff(ID, name, gender, dob, cmnd, quequan, diachi, email, phone, pass);
             }
+
             this.Close();
         }
+
+       
     }
 }

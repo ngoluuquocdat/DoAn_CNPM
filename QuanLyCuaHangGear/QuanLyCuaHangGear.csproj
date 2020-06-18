@@ -67,6 +67,7 @@
     <Compile Include="DTO\HoaDonInfo.cs" />
     <Compile Include="DTO\KhachHang.cs" />
     <Compile Include="DTO\NhanVien.cs" />
+    <Compile Include="DTO\NhanVien_View.cs" />
     <Compile Include="QLCH_Model.cs" />
     <Compile Include="View\Account_Control.cs">
       <SubType>UserControl</SubType>

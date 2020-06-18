@@ -220,6 +220,7 @@
             this.txt_displayName.ForeColor = System.Drawing.Color.White;
             this.txt_displayName.Location = new System.Drawing.Point(668, 297);
             this.txt_displayName.Name = "txt_displayName";
+            this.txt_displayName.ReadOnly = true;
             this.txt_displayName.Size = new System.Drawing.Size(250, 23);
             this.txt_displayName.TabIndex = 198;
             this.txt_displayName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -324,6 +325,7 @@
             this.txt_TenNV.Size = new System.Drawing.Size(250, 23);
             this.txt_TenNV.TabIndex = 189;
             this.txt_TenNV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_TenNV.TextChanged += new System.EventHandler(this.txt_TenNV_TextChanged);
             // 
             // radioBtn_Female
             // 
@@ -473,6 +475,7 @@
             this.dateTimePicker_DOB.Name = "dateTimePicker_DOB";
             this.dateTimePicker_DOB.Size = new System.Drawing.Size(250, 27);
             this.dateTimePicker_DOB.TabIndex = 190;
+            this.dateTimePicker_DOB.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // groupBox_Gender
             // 

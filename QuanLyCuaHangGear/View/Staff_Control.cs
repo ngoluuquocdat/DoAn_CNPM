@@ -24,17 +24,39 @@ namespace QuanLyCuaHangGear
                 return _instance;
             }
         }
+        // constructor
         public Staff_Control()
         {
             InitializeComponent();
-            Staff_dataGridView.DataSource = BLL_Staff.Instance.Get_List();
+            Load_dtgv();
         }
+        //methods
+        public List<NhanVien_View> To_View(List<NhanVien> list)
+        {
+            List<NhanVien_View> list_view = new List<NhanVien_View>();        
+            foreach (NhanVien nv in list)
+            {
+                list_view.Add(new NhanVien_View
+                {
+                    ID = nv.id,
+                    Name = nv.Name,
+                    Gender = nv.Gender,
+                    Phone = nv.Phone,
+                    Email = nv.Email
+                });
+            }
 
+            return list_view;
+        }
+        public void Load_dtgv()
+        {
+            Staff_dtgv.DataSource = To_View(BLL_Staff.Instance.Get_NhanViens());
+        }
+        // events
         private void btn_View_Click(object sender, EventArgs e)
         {
-            string id = Staff_dataGridView.SelectedRows[0].Cells["id"].Value.ToString();
-            NhanVien nv = BLL_Staff.Instance.Get_Inf_Nv(id);
-            Account ac = BLL_Staff.Instance.Get_Account_NV(id);
+            int id_nv = Convert.ToInt32(Staff_dtgv.SelectedRows[0].Cells["id"].Value.ToString());
+            NhanVien nv = BLL_Staff.Instance.Get_NhanVien_by_ID(id_nv);
             txt_id.Text = nv.id.ToString();
             txt_Name.Text = nv.Name;
             txt_GioiTinh.Text = nv.Gender;
@@ -44,15 +66,14 @@ namespace QuanLyCuaHangGear
             txt_DiaChi.Text = nv.DiaChi;
             txt_SDT.Text = nv.Phone;
             txt_Email.Text = nv.Email;
-            txt_Username.Text = ac.UserName;
-            txt_TenHT.Text = ac.DisplayName;
+            txt_Username.Text = BLL_Staff.Instance.Get_Account_by_ID(id_nv).UserName;
         }
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
             AE_Staff_Form ae_f = new AE_Staff_Form(0);
             ae_f.ShowDialog();
-            Staff_dataGridView.DataSource = BLL_Staff.Instance.Get_List();
+            Load_dtgv();
         }
 
         private void btn_Sort_Click(object sender, EventArgs e)
@@ -62,22 +83,38 @@ namespace QuanLyCuaHangGear
 
         private void btn_Edit_Click(object sender, EventArgs e)
         {
-            DataGridViewSelectedRowCollection r = Staff_dataGridView.SelectedRows;
+            DataGridViewSelectedRowCollection r = Staff_dtgv.SelectedRows;
             if (r.Count == 1)
             {
-                int id = Convert.ToInt32(Staff_dataGridView.SelectedRows[0].Cells["id"].Value);
+                int id = Convert.ToInt32(Staff_dtgv.SelectedRows[0].Cells["id"].Value);
                 AE_Staff_Form f = new AE_Staff_Form(id);
                 f.ShowDialog();
-                Staff_dataGridView.DataSource = BLL_Staff.Instance.Get_List();
+                
             }
+            Load_dtgv();
         }
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(Staff_dataGridView.SelectedRows[0].Cells["id"].Value);
-            BLL_Staff.Instance.DelAccount(id);
-            BLL_Staff.Instance.DelStaff(id);
-            Staff_dataGridView.DataSource = BLL_Staff.Instance.Get_List();
+
+            DataGridViewSelectedRowCollection rows = Staff_dtgv.SelectedRows;
+            List<int> list_id = new List<int>();
+            if (rows.Count == 0)
+            {
+                MessageBox.Show("Chưa có hàng nào được chọn.");
+                return;
+            }
+            foreach (DataGridViewRow i in rows)
+            {
+                list_id.Add(Convert.ToInt32(i.Cells["ID"].Value.ToString()));
+            }
+            foreach (int id_nv in list_id)
+            {
+                BLL_Staff.Instance.Delete_Account(id_nv);
+                BLL_Staff.Instance.Delete_Staff(id_nv);
+            }
+
+            Load_dtgv();
         }
 
         private void txt_Search_Click(object sender, EventArgs e)
@@ -87,8 +124,8 @@ namespace QuanLyCuaHangGear
 
         private void btn_Search_Click(object sender, EventArgs e)
         {
-            string StringSearch = txt_Search.Text;
-            Staff_dataGridView.DataSource= BLL_Staff.Instance.Search(StringSearch);
+            string name = txt_Search.Text;
+            Staff_dtgv.DataSource= To_View(BLL_Staff.Instance.Search_by_Name(name));
         }
     }
 }

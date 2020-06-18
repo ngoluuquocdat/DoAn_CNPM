@@ -76,7 +76,7 @@
             "Chuột\t",
             "Bàn phím",
             "Tai nghe"});
-            this.cbb_Category.Location = new System.Drawing.Point(514, 135);
+            this.cbb_Category.Location = new System.Drawing.Point(531, 135);
             this.cbb_Category.Name = "cbb_Category";
             this.cbb_Category.Size = new System.Drawing.Size(183, 31);
             this.cbb_Category.TabIndex = 137;
@@ -86,7 +86,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label5.Location = new System.Drawing.Point(404, 138);
+            this.label5.Location = new System.Drawing.Point(421, 138);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(104, 24);
             this.label5.TabIndex = 136;
@@ -284,7 +284,7 @@
             this.Product_dataGridView.RowHeadersWidth = 51;
             this.Product_dataGridView.RowTemplate.Height = 24;
             this.Product_dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Product_dataGridView.Size = new System.Drawing.Size(667, 329);
+            this.Product_dataGridView.Size = new System.Drawing.Size(683, 380);
             this.Product_dataGridView.TabIndex = 113;
             // 
             // cbb_Sort
@@ -294,7 +294,7 @@
             this.cbb_Sort.Items.AddRange(new object[] {
             "Đơn giá nhập",
             "Đơn giá bán"});
-            this.cbb_Sort.Location = new System.Drawing.Point(273, 557);
+            this.cbb_Sort.Location = new System.Drawing.Point(273, 604);
             this.cbb_Sort.Name = "cbb_Sort";
             this.cbb_Sort.Size = new System.Drawing.Size(156, 31);
             this.cbb_Sort.TabIndex = 143;
@@ -304,7 +304,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label3.Location = new System.Drawing.Point(26, 560);
+            this.label3.Location = new System.Drawing.Point(26, 607);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(235, 24);
             this.label3.TabIndex = 144;
@@ -319,7 +319,7 @@
             this.btn_priceDown.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_priceDown.ForeColor = System.Drawing.Color.White;
             this.btn_priceDown.Image = global::QuanLyCuaHangGear.Properties.Resources.Price_Down;
-            this.btn_priceDown.Location = new System.Drawing.Point(611, 545);
+            this.btn_priceDown.Location = new System.Drawing.Point(611, 592);
             this.btn_priceDown.Name = "btn_priceDown";
             this.btn_priceDown.Size = new System.Drawing.Size(86, 57);
             this.btn_priceDown.TabIndex = 141;
@@ -335,7 +335,7 @@
             this.btn_priceUp.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_priceUp.ForeColor = System.Drawing.Color.White;
             this.btn_priceUp.Image = global::QuanLyCuaHangGear.Properties.Resources.PriceUp;
-            this.btn_priceUp.Location = new System.Drawing.Point(478, 545);
+            this.btn_priceUp.Location = new System.Drawing.Point(478, 592);
             this.btn_priceUp.Name = "btn_priceUp";
             this.btn_priceUp.Size = new System.Drawing.Size(86, 57);
             this.btn_priceUp.TabIndex = 139;

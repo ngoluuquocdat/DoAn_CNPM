@@ -27,6 +27,7 @@ namespace QuanLyCuaHangGear.BLL
             }
             set => _Instance = value;
         }
+        // methods
         public string Random()
         {
             string Numrd_str;
@@ -34,31 +35,31 @@ namespace QuanLyCuaHangGear.BLL
             Numrd_str = rd.Next(100000, 999999).ToString();//Chuyển giá trị ramdon về kiểu string
             return Numrd_str;
         }
-        public IList Get_List()
+        // các hàm tương tác với đối tượng NhanVien
+        public List<NhanVien> Get_NhanViens()
         {
-            QLCH_Model db = new QLCH_Model();
-            var query = db.NhanViens.Select(p => new { p.id, p.Name, p.Gender, p.CMND, p.Phone, p.Email });
-            return query.ToList();
+            QLCH_Model DB = new QLCH_Model();
+            var li_method = DB.NhanViens.Select(p => p);
+            return li_method.ToList();
         }
-        public NhanVien Get_Inf_Nv(string id)
+        public NhanVien Get_NhanVien_by_ID(int id)
         {
-            QLCH_Model db = new QLCH_Model();
-            NhanVien nv = new NhanVien();
-            id = db.NhanViens.Where(p => p.id.ToString() == id).Select(p => p.id).FirstOrDefault().ToString();
-            nv = db.NhanViens.Where(p => p.id.ToString() == id).Select(p => p).FirstOrDefault();
+            QLCH_Model DB = new QLCH_Model();
+            var li_method = DB.NhanViens.Where(p => p.id == id).FirstOrDefault(); ;
 
-            return nv;
+            return li_method;
         }
-        public Account Get_Account_NV(string id)
+
+        public Account Get_Account_by_ID(int id)
         {
-            QLCH_Model db = new QLCH_Model();
-            Account ac = new Account();
-            ac = db.Accounts.Where(p => p.idNhanVien.ToString() == id).Select(p => p).FirstOrDefault();
-            return ac;
+            QLCH_Model DB = new QLCH_Model();
+            var li_method = DB.Accounts.Where(p => p.idNhanVien == id).Select(p => p).FirstOrDefault();
+            return li_method;
         }
-        public void AddStaff(string name, string gender, DateTime dob, string cmnd, string quequan, string diachi, string email, string phone, string username, string dname, string pass)
+
+        public void Add_Staff(string name, string gender, DateTime dob, string cmnd, string quequan, string diachi, string email, string phone)
         {
-            QLCH_Model db = new QLCH_Model();
+            QLCH_Model DB = new QLCH_Model();
             NhanVien n = new NhanVien
             {
                 Name = name,
@@ -70,26 +71,14 @@ namespace QuanLyCuaHangGear.BLL
                 Email = email,
                 Phone = phone
             };
-            db.NhanViens.Add(n);
-            db.SaveChanges();
-            NhanVien nv = db.NhanViens.OrderByDescending(p => p.id).First();
-            Account account = new Account
-            {
-                UserName = xoakhoangtrang(convertToUnSign(username.ToLower())) + nv.id,
-                DisplayName = dname,
-                idNhanVien = nv.id,
-                Type = 0,
-                PassWord = pass
-            };
-
-            db.Accounts.Add(account);
-            db.SaveChanges();
+            DB.NhanViens.Add(n);
+            DB.SaveChanges();
+         
         }
-        public void DelStaff(int id)
+        
+        public void Delete_Staff(int id)
         {
-
             QLCH_Model db = new QLCH_Model();
-           // List<int> idl = new List<int>();
             id = db.NhanViens.Where(p => p.id == id).Select(p => p.id).FirstOrDefault();
             foreach (NhanVien i in db.NhanViens)
             {
@@ -100,7 +89,54 @@ namespace QuanLyCuaHangGear.BLL
             }
             db.SaveChanges();
         }
-        public void DelAccount(int id)
+        
+        public void Edit_Staff(int id, string name, string gender, DateTime dob, string cmnd, string quequan, string diachi, string email, string phone, string pass)
+        {
+            QLCH_Model db = new QLCH_Model();
+            NhanVien nv = db.NhanViens.Where(p => p.id == id).FirstOrDefault();
+            nv.Name = name;
+            nv.Gender = gender;
+            nv.DOB = dob;
+            nv.CMND = cmnd;
+            nv.QueQuan = quequan;
+            nv.DiaChi = diachi;
+            nv.Email = email;
+            nv.Phone = phone;
+            Account ac = db.Accounts.Where(p => p.idNhanVien == id).FirstOrDefault();
+            //ac.DisplayName = dname;
+            ac.PassWord = pass;
+            db.SaveChanges();
+        }
+        public List<NhanVien> Search_by_Name(string name)
+        { 
+            QLCH_Model DB = new QLCH_Model();
+            var li_method = DB.NhanViens.Where(p => p.Name.Contains(name));
+            
+            return li_method.ToList();           
+        }
+
+        public int Get_Lastest_ID()
+        {
+            QLCH_Model DB = new QLCH_Model();
+            return DB.NhanViens.OrderByDescending(p => p.id).First().id;
+        }
+        // các hàm tương tác với đối tượng Account
+        public void Add_Account(string username, int id_nv, string displayname, string pass)
+        {
+            QLCH_Model DB = new QLCH_Model();
+            Account acc = new Account
+            {
+                UserName = username,
+                DisplayName = displayname,
+                idNhanVien = id_nv,
+                Type = 1,
+                PassWord = pass
+            };
+
+            DB.Accounts.Add(acc);
+            DB.SaveChanges();
+        }
+        public void Delete_Account(int id)
         {
 
             QLCH_Model db = new QLCH_Model();
@@ -115,52 +151,33 @@ namespace QuanLyCuaHangGear.BLL
             }
             db.SaveChanges();
         }
-        public void EditStaff(int id, string name, string gender, DateTime dob, string cmnd, string quequan, string diachi, string email, string phone, string dname,string pass)
-        {
-            QLCH_Model db = new QLCH_Model();
-            NhanVien nv = db.NhanViens.Where(p => p.id == id).FirstOrDefault();
-            nv.Name = name;
-            nv.Gender = gender;
-            nv.DOB = dob;
-            nv.CMND = cmnd;
-            nv.QueQuan = quequan;
-            nv.DiaChi = diachi;
-            nv.Email = email;
-            nv.Phone = phone;
-            Account ac = db.Accounts.Where(p => p.idNhanVien == id).FirstOrDefault();
-            ac.DisplayName = dname;
-            ac.PassWord = pass;
-            db.SaveChanges();
-        }
-        public IList Search(string StringSearch)
-        { 
-            QLCH_Model db = new QLCH_Model();
-            var query = db.NhanViens.Where(p => p.Name.Contains(StringSearch))
-                           .Select(p => new { p.id, p.Name, p.Gender, p.QueQuan,p.DiaChi, p.Phone, p.Email });
-             return query.ToList();
-            
-        }
-        public string convertToUnSign(string s)
+
+        // các hàm xử lý chuỗi
+        public string Convert_to_UnSign(string s)
         {
             Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
             string temp = s.Normalize(NormalizationForm.FormD);
             return regex.Replace(temp, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D');
         }
-        public string xoakhoangtrang(string s)
+        public string Remove_Space(string s)
         {
             s = Regex.Replace(s, @"\s", "");   //sau do thay the bang 1 khoang trong            
 
             return s;
         }
-        public NhanVien Get_NhanVien_ById(int Id)
+        public NhanVien Get_NhanVien_ById(int Id)   // lap
         {
             QLCH_Model db = new QLCH_Model();
             return db.NhanViens.Where(p => p.id == Id).FirstOrDefault();
         }
-        public Account Get_Account_ById(int Id)
+        public Account Get_Account_ById(int Id) // lap
         {
             QLCH_Model db = new QLCH_Model();
             return db.Accounts.Where(p => p.idNhanVien == Id).FirstOrDefault();
+        }
+        public string Name_to_Username(string name)
+        {
+            return Remove_Space(Convert_to_UnSign(name.ToLower()));
         }
     }
 }
