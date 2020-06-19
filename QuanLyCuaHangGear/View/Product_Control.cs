@@ -29,7 +29,7 @@ namespace QuanLyCuaHangGear
         public Product_Control()
         {
             InitializeComponent();
-            
+
             Control.CheckForIllegalCrossThreadCalls = false;
             ThreadStart ts1 = new ThreadStart(Load_dtgv);
             ThreadStart ts2 = new ThreadStart(SetCBB);
@@ -42,7 +42,7 @@ namespace QuanLyCuaHangGear
             //thread1.Start();
             //Thread thread2 = new Thread(SetCBB);
             //thread2.Start();
-            // Load_dtgv();
+            //Load_dtgv();
 
         }
         public void SetCBB()
@@ -74,7 +74,6 @@ namespace QuanLyCuaHangGear
                     ID = h.id,
                     Ten = h.Name,
                     DanhMuc = BLL_Product.Instance.Get_DanhMuc_by_ID(h.idDanhMuc).Name,
-                    SoLuong = h.SoLuong,
                     DonGiaNhap=h.DonGiaNhap,
                     DonGiaBan=h.DonGiaBan
                 }) ;
@@ -85,6 +84,7 @@ namespace QuanLyCuaHangGear
         public void Load_dtgv()
         {
             Product_dataGridView.DataSource = To_View(BLL_Product.Instance.Get_HangHoas());
+           // Product_dataGridView.DataSource = BLL_Product.Instance.Get_HangHoas();
         }
         //events
         private void btn_Add_Click(object sender, EventArgs e)
@@ -173,11 +173,11 @@ namespace QuanLyCuaHangGear
 
             if (cbb_Sort.SelectedIndex == 0)
             {
-                BLL_Product.Instance.Sort_GiaBan(list_sort);
+                BLL_Product.Instance.Sort_GiaNhap(list_sort);
             }
             if(cbb_Sort.SelectedIndex == 1)
             {
-                BLL_Product.Instance.Sort_GiaNhap(list_sort);
+                BLL_Product.Instance.Sort_GiaBan(list_sort);
             }
             
             Product_dataGridView.DataSource = To_View(list_sort);
@@ -187,7 +187,6 @@ namespace QuanLyCuaHangGear
         {
             List<int> current_id = new List<int>();
             List<HangHoa> list_sort = new List<HangHoa>();
-            //int id_sort = ((CBBItems)cbb_Sort.SelectedItem).Value;
 
             foreach (DataGridViewRow i in Product_dataGridView.Rows)
             {
@@ -197,14 +196,16 @@ namespace QuanLyCuaHangGear
             {
                 list_sort.Add(BLL_Product.Instance.Get_HangHoa_by_ID(id));
             }
+
             BLL_Product.Instance.CompCond += new BLL_Product.Compare_Condition(BLL_Product.Instance.Decrease);
+
             if (cbb_Sort.SelectedIndex == 0)
             {
-                BLL_Product.Instance.Sort_GiaBan(list_sort);
-            }
-            else
-            {
                 BLL_Product.Instance.Sort_GiaNhap(list_sort);
+            }
+            if (cbb_Sort.SelectedIndex == 1)
+            {
+                BLL_Product.Instance.Sort_GiaBan(list_sort);
             }
 
             Product_dataGridView.DataSource = To_View(list_sort);

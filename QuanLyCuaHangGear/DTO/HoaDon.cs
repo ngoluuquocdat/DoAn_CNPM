@@ -16,7 +16,7 @@ namespace QuanLyCuaHangGear.DTO
         public string Phone { get; set; }
         public string TenNhanVien { get; set; }
         public string CMND { get; set; }
-        public int Type { get; set; }
+        public int Type { get; set; }              //   0: nhap hang; 1: ban hang
         public int TongTien { get; set; }
         public HoaDon()
         {

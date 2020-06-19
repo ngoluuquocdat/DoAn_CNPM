@@ -19,7 +19,7 @@ namespace QuanLyCuaHangGear.DTO
         public Nullable<int> idNhanVien { get; set; }
         public string DisplayName { get; set; }
         public string PassWord { get; set; }
-        public int Type { get; set; }
+        public int Type { get; set; }       // 0: quan ly; 1: nhan vien
 
         [ForeignKey("idNhanVien")]
         public virtual NhanVien NhanVien { get; set; }

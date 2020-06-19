@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel_Logo = new System.Windows.Forms.Panel();
             this.label_StoreName = new System.Windows.Forms.Label();
             this.pic_StoreLogo = new System.Windows.Forms.PictureBox();
@@ -46,6 +47,8 @@
             this.pic_UpperLogo = new System.Windows.Forms.PictureBox();
             this.label_UpperLogo = new System.Windows.Forms.Label();
             this.panel_Main = new System.Windows.Forms.Panel();
+            this.txt_id = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel_Logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_StoreLogo)).BeginInit();
             this.panel_Left.SuspendLayout();
@@ -241,6 +244,7 @@
             // panel_Head
             // 
             this.panel_Head.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(30)))), ((int)(((byte)(43)))));
+            this.panel_Head.Controls.Add(this.txt_id);
             this.panel_Head.Controls.Add(this.label_Name);
             this.panel_Head.Controls.Add(this.label_UserType);
             this.panel_Head.Controls.Add(this.pic_UpperLogo);
@@ -303,6 +307,19 @@
             this.panel_Main.Size = new System.Drawing.Size(1250, 700);
             this.panel_Main.TabIndex = 3;
             // 
+            // txt_id
+            // 
+            this.txt_id.Location = new System.Drawing.Point(509, 42);
+            this.txt_id.Name = "txt_id";
+            this.txt_id.Size = new System.Drawing.Size(238, 22);
+            this.txt_id.TabIndex = 6;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // Form_Admin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -347,5 +364,7 @@
         private System.Windows.Forms.Button btn_Import;
         private System.Windows.Forms.Button btn_Bill;
         private System.Windows.Forms.Panel panel_Main;
+        private System.Windows.Forms.TextBox txt_id;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

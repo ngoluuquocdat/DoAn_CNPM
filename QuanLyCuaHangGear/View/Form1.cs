@@ -106,7 +106,7 @@ namespace QuanLyCuaHangGear
             {
                 Form_Admin f_admin = new Form_Admin();
                 this.Hide();
-                f_admin.ShowDialog();
+                _ = f_admin.ShowDialog();
 
                 this.Show();
                 Reset_TextBoxes();                                    

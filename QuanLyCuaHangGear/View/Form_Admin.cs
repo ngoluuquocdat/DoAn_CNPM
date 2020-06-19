@@ -159,10 +159,12 @@ namespace QuanLyCuaHangGear
             pic_UpperLogo.Image = Properties.Resources.blue_bill;
             
             if (!panel_Main.Controls.Contains(Bill_Control.Instance))
-            {
+            {               
                 panel_Main.Controls.Add(Bill_Control.Instance);
                 Bill_Control.Instance.Dock = DockStyle.Fill;
                 Bill_Control.Instance.BringToFront();
+
+                Bill_Control.Instance.Id_NV = Convert.ToInt32(txt_id.Text);
             }
             else
                 Bill_Control.Instance.BringToFront();

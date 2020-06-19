@@ -110,7 +110,6 @@ namespace QuanLyCuaHangGear.BLL
             nv.Email = email;
             nv.Phone = phone;
             Account ac = db.Accounts.Where(p => p.idNhanVien == id).FirstOrDefault();
-            //ac.DisplayName = dname;
             ac.PassWord = pass;
             db.SaveChanges();
         }

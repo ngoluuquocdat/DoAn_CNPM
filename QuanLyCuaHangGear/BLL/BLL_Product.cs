@@ -152,11 +152,11 @@ namespace QuanLyCuaHangGear.BLL
         }
         public bool Ascending(int left, int right)
         {
-            return left > right;
+            return left < right;
         }
         public bool Decrease(int left, int right)
         {
-            return left < right;
+            return left > right;
         }
     }
 }

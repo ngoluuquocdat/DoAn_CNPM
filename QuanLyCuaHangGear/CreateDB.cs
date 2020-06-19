@@ -32,18 +32,40 @@ namespace QuanLyCuaHangGear
             });
             context.DanhMucs.Add(new DanhMuc
             {
-                id = 1,
                 Name = "Chuột"
             });
             context.DanhMucs.Add(new DanhMuc
             {
-                id = 2,
-                Name = "Bàn Phím"
+                Name = "Bàn phím"
             });
             context.DanhMucs.Add(new DanhMuc
             {
-                id = 3,
-                Name = "Tai Nghe"
+                Name = "Tai nghe"
+            });
+            context.DanhMucs.Add(new DanhMuc
+            {
+                Name = "Loa"
+            });
+            context.DanhMucs.Add(new DanhMuc
+            {
+                Name = "Màn hình"
+            });
+
+            // hang hoa
+
+            // khach hang
+            context.KhachHangs.Add(new KhachHang
+            {
+                Name = "Nguyễn Văn Nguyên",
+                Phone = "0935813841",
+                Email = "Oc0204@gmail.com"
+            });
+            // nha cung cap
+            context.KhachHangs.Add(new KhachHang
+            {
+                Name = "Công ty ABC",
+                Phone = "0907070707",
+                Email = "ABCCompany@gmail.com"
             });
         }
     }

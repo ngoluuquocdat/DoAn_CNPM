@@ -30,20 +30,18 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btn_confirm = new System.Windows.Forms.Button();
+            this.dtgv_buy = new System.Windows.Forms.DataGridView();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txt_soluong = new System.Windows.Forms.TextBox();
+            this.txt_email = new System.Windows.Forms.TextBox();
+            this.txt_name_customer = new System.Windows.Forms.TextBox();
+            this.txt_id_hang = new System.Windows.Forms.TextBox();
+            this.txt_phone = new System.Windows.Forms.TextBox();
+            this.txt_tenhang = new System.Windows.Forms.TextBox();
+            this.txt_danhmuc = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -52,14 +50,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel_CustomerInfo = new System.Windows.Forms.Panel();
+            this.btn_SearchPhone = new System.Windows.Forms.Button();
+            this.btn_Add_Customer = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.txt_Total = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.btn_SearchPhone = new System.Windows.Forms.Button();
-            this.btn_Add_Customer = new System.Windows.Forms.Button();
-            this.btn_Add_Bill = new System.Windows.Forms.Button();
+            this.btn_add_to_bill = new System.Windows.Forms.Button();
             this.btn_SearchID = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btn_del_from_bill = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_buy)).BeginInit();
             this.panel_CustomerInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,31 +86,35 @@
             this.button6.Text = "HỦY BỎ";
             this.button6.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btn_confirm
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(457, 616);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(111, 44);
-            this.button2.TabIndex = 31;
-            this.button2.Text = "XÁC NHẬN";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btn_confirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.btn_confirm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_confirm.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btn_confirm.FlatAppearance.BorderSize = 0;
+            this.btn_confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_confirm.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_confirm.ForeColor = System.Drawing.Color.White;
+            this.btn_confirm.Location = new System.Drawing.Point(452, 616);
+            this.btn_confirm.Name = "btn_confirm";
+            this.btn_confirm.Size = new System.Drawing.Size(111, 44);
+            this.btn_confirm.TabIndex = 31;
+            this.btn_confirm.Text = "XÁC NHẬN";
+            this.btn_confirm.UseVisualStyleBackColor = false;
+            this.btn_confirm.Click += new System.EventHandler(this.btn_confirm_Click);
             // 
-            // dataGridView1
+            // dtgv_buy
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(684, 356);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(501, 155);
-            this.dataGridView1.TabIndex = 43;
+            this.dtgv_buy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_buy.Location = new System.Drawing.Point(684, 332);
+            this.dtgv_buy.MultiSelect = false;
+            this.dtgv_buy.Name = "dtgv_buy";
+            this.dtgv_buy.ReadOnly = true;
+            this.dtgv_buy.RowHeadersWidth = 51;
+            this.dtgv_buy.RowTemplate.Height = 24;
+            this.dtgv_buy.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgv_buy.Size = new System.Drawing.Size(501, 192);
+            this.dtgv_buy.TabIndex = 43;
             // 
             // dateTimePicker1
             // 
@@ -119,127 +122,110 @@
             this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.Yellow;
             this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(217, 154);
+            this.dateTimePicker1.Location = new System.Drawing.Point(209, 25);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(273, 27);
             this.dateTimePicker1.TabIndex = 42;
             this.dateTimePicker1.TabStop = false;
             // 
-            // textBox3
+            // txt_soluong
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.textBox3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(217, 449);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(101, 30);
-            this.textBox3.TabIndex = 24;
-            this.textBox3.Text = "13";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_soluong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.txt_soluong.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_soluong.ForeColor = System.Drawing.Color.White;
+            this.txt_soluong.Location = new System.Drawing.Point(214, 313);
+            this.txt_soluong.Name = "txt_soluong";
+            this.txt_soluong.Size = new System.Drawing.Size(101, 30);
+            this.txt_soluong.TabIndex = 24;
+            this.txt_soluong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox2
+            // txt_email
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(217, 73);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(272, 23);
-            this.textBox2.TabIndex = 40;
-            this.textBox2.TabStop = false;
-            this.textBox2.Text = "123456";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.txt_email.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_email.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_email.ForeColor = System.Drawing.Color.White;
+            this.txt_email.Location = new System.Drawing.Point(165, 131);
+            this.txt_email.Multiline = true;
+            this.txt_email.Name = "txt_email";
+            this.txt_email.Size = new System.Drawing.Size(254, 33);
+            this.txt_email.TabIndex = 21;
+            this.txt_email.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox7
+            // txt_name_customer
             // 
-            this.textBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.ForeColor = System.Drawing.Color.White;
-            this.textBox7.Location = new System.Drawing.Point(151, 155);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(268, 33);
-            this.textBox7.TabIndex = 21;
-            this.textBox7.Text = "hovanan@gmail.com";
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_name_customer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.txt_name_customer.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_name_customer.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_name_customer.ForeColor = System.Drawing.Color.White;
+            this.txt_name_customer.Location = new System.Drawing.Point(165, 72);
+            this.txt_name_customer.Multiline = true;
+            this.txt_name_customer.Name = "txt_name_customer";
+            this.txt_name_customer.Size = new System.Drawing.Size(254, 33);
+            this.txt_name_customer.TabIndex = 16;
+            this.txt_name_customer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox6
+            // txt_id_hang
             // 
-            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.ForeColor = System.Drawing.Color.White;
-            this.textBox6.Location = new System.Drawing.Point(165, 81);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(254, 33);
-            this.textBox6.TabIndex = 16;
-            this.textBox6.Text = "Hồ Văn An";
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_id_hang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.txt_id_hang.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_id_hang.ForeColor = System.Drawing.Color.White;
+            this.txt_id_hang.Location = new System.Drawing.Point(209, 92);
+            this.txt_id_hang.Multiline = true;
+            this.txt_id_hang.Name = "txt_id_hang";
+            this.txt_id_hang.Size = new System.Drawing.Size(273, 33);
+            this.txt_id_hang.TabIndex = 20;
+            this.txt_id_hang.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_id_hang.Click += new System.EventHandler(this.txt_id_hang_Click);
             // 
-            // textBox9
+            // txt_phone
             // 
-            this.textBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.textBox9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.ForeColor = System.Drawing.Color.White;
-            this.textBox9.Location = new System.Drawing.Point(217, 224);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(273, 33);
-            this.textBox9.TabIndex = 20;
-            this.textBox9.Text = "1";
-            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_phone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.txt_phone.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_phone.ForeColor = System.Drawing.Color.White;
+            this.txt_phone.Location = new System.Drawing.Point(165, 11);
+            this.txt_phone.Multiline = true;
+            this.txt_phone.Name = "txt_phone";
+            this.txt_phone.Size = new System.Drawing.Size(254, 33);
+            this.txt_phone.TabIndex = 19;
+            this.txt_phone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_phone.Click += new System.EventHandler(this.txt_phone_Click);
+            
             // 
-            // textBox5
+            // txt_tenhang
             // 
-            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.textBox5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.Color.White;
-            this.textBox5.Location = new System.Drawing.Point(165, 11);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(254, 33);
-            this.textBox5.TabIndex = 19;
-            this.textBox5.Text = "0905212452";
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_tenhang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.txt_tenhang.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_tenhang.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tenhang.ForeColor = System.Drawing.Color.White;
+            this.txt_tenhang.Location = new System.Drawing.Point(209, 242);
+            this.txt_tenhang.Multiline = true;
+            this.txt_tenhang.Name = "txt_tenhang";
+            this.txt_tenhang.ReadOnly = true;
+            this.txt_tenhang.Size = new System.Drawing.Size(268, 33);
+            this.txt_tenhang.TabIndex = 18;
+            this.txt_tenhang.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox8
+            // txt_danhmuc
             // 
-            this.textBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.ForeColor = System.Drawing.Color.White;
-            this.textBox8.Location = new System.Drawing.Point(217, 376);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(268, 33);
-            this.textBox8.TabIndex = 18;
-            this.textBox8.Text = "Chuột Logitech G104";
-            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.Color.White;
-            this.textBox4.Location = new System.Drawing.Point(217, 302);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(268, 33);
-            this.textBox4.TabIndex = 17;
-            this.textBox4.Text = "Chuột";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_danhmuc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.txt_danhmuc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_danhmuc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_danhmuc.ForeColor = System.Drawing.Color.White;
+            this.txt_danhmuc.Location = new System.Drawing.Point(209, 167);
+            this.txt_danhmuc.Multiline = true;
+            this.txt_danhmuc.Name = "txt_danhmuc";
+            this.txt_danhmuc.ReadOnly = true;
+            this.txt_danhmuc.Size = new System.Drawing.Size(268, 33);
+            this.txt_danhmuc.TabIndex = 17;
+            this.txt_danhmuc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label1.Location = new System.Drawing.Point(680, 325);
+            this.label1.Location = new System.Drawing.Point(680, 301);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(183, 19);
             this.label1.TabIndex = 26;
@@ -250,29 +236,18 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label6.Location = new System.Drawing.Point(74, 154);
+            this.label6.Location = new System.Drawing.Point(71, 32);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(85, 19);
             this.label6.TabIndex = 25;
             this.label6.Text = "Ngày tạo:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label4.Location = new System.Drawing.Point(74, 80);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 19);
-            this.label4.TabIndex = 28;
-            this.label4.Text = "Nhân viên lập:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label2.Location = new System.Drawing.Point(70, 456);
+            this.label2.Location = new System.Drawing.Point(71, 320);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 19);
             this.label2.TabIndex = 30;
@@ -283,7 +258,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label11.Location = new System.Drawing.Point(16, 162);
+            this.label11.Location = new System.Drawing.Point(17, 135);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(57, 19);
             this.label11.TabIndex = 37;
@@ -294,7 +269,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label8.Location = new System.Drawing.Point(69, 231);
+            this.label8.Location = new System.Drawing.Point(71, 101);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(81, 19);
             this.label8.TabIndex = 33;
@@ -305,7 +280,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label10.Location = new System.Drawing.Point(16, 85);
+            this.label10.Location = new System.Drawing.Point(16, 76);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(140, 19);
             this.label10.TabIndex = 34;
@@ -327,7 +302,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label5.Location = new System.Drawing.Point(69, 383);
+            this.label5.Location = new System.Drawing.Point(71, 246);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 19);
             this.label5.TabIndex = 36;
@@ -338,7 +313,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label7.Location = new System.Drawing.Point(69, 309);
+            this.label7.Location = new System.Drawing.Point(71, 171);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(99, 19);
             this.label7.TabIndex = 32;
@@ -347,52 +322,18 @@
             // panel_CustomerInfo
             // 
             this.panel_CustomerInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.panel_CustomerInfo.Controls.Add(this.textBox5);
+            this.panel_CustomerInfo.Controls.Add(this.txt_phone);
             this.panel_CustomerInfo.Controls.Add(this.label9);
             this.panel_CustomerInfo.Controls.Add(this.label10);
             this.panel_CustomerInfo.Controls.Add(this.label11);
             this.panel_CustomerInfo.Controls.Add(this.btn_SearchPhone);
-            this.panel_CustomerInfo.Controls.Add(this.textBox6);
+            this.panel_CustomerInfo.Controls.Add(this.txt_name_customer);
             this.panel_CustomerInfo.Controls.Add(this.btn_Add_Customer);
-            this.panel_CustomerInfo.Controls.Add(this.textBox7);
+            this.panel_CustomerInfo.Controls.Add(this.txt_email);
             this.panel_CustomerInfo.Location = new System.Drawing.Point(684, 15);
             this.panel_CustomerInfo.Name = "panel_CustomerInfo";
-            this.panel_CustomerInfo.Size = new System.Drawing.Size(501, 287);
+            this.panel_CustomerInfo.Size = new System.Drawing.Size(501, 260);
             this.panel_CustomerInfo.TabIndex = 47;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label12.Location = new System.Drawing.Point(743, 541);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(107, 24);
-            this.label12.TabIndex = 30;
-            this.label12.Text = "Tổng tiền:";
-            // 
-            // txt_Total
-            // 
-            this.txt_Total.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.txt_Total.Font = new System.Drawing.Font("Arial", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Total.ForeColor = System.Drawing.Color.White;
-            this.txt_Total.Location = new System.Drawing.Point(870, 536);
-            this.txt_Total.Name = "txt_Total";
-            this.txt_Total.Size = new System.Drawing.Size(180, 33);
-            this.txt_Total.TabIndex = 24;
-            this.txt_Total.Text = "5000000";
-            this.txt_Total.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label13.Location = new System.Drawing.Point(1056, 541);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(51, 24);
-            this.label13.TabIndex = 30;
-            this.label13.Text = "VND";
             // 
             // btn_SearchPhone
             // 
@@ -409,6 +350,7 @@
             this.btn_SearchPhone.Size = new System.Drawing.Size(58, 47);
             this.btn_SearchPhone.TabIndex = 23;
             this.btn_SearchPhone.UseVisualStyleBackColor = false;
+            this.btn_SearchPhone.Click += new System.EventHandler(this.btn_SearchPhone_Click);
             // 
             // btn_Add_Customer
             // 
@@ -421,7 +363,7 @@
             this.btn_Add_Customer.ForeColor = System.Drawing.Color.White;
             this.btn_Add_Customer.Image = global::QuanLyCuaHangGear.Properties.Resources.add;
             this.btn_Add_Customer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Add_Customer.Location = new System.Drawing.Point(116, 215);
+            this.btn_Add_Customer.Location = new System.Drawing.Point(130, 182);
             this.btn_Add_Customer.Name = "btn_Add_Customer";
             this.btn_Add_Customer.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btn_Add_Customer.Size = new System.Drawing.Size(250, 53);
@@ -429,26 +371,62 @@
             this.btn_Add_Customer.Text = "   THÊM KHÁCH HÀNG";
             this.btn_Add_Customer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Add_Customer.UseVisualStyleBackColor = false;
+            this.btn_Add_Customer.Visible = false;
+            this.btn_Add_Customer.Click += new System.EventHandler(this.btn_Add_Customer_Click);
             // 
-            // btn_Add_Bill
+            // label12
             // 
-            this.btn_Add_Bill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.btn_Add_Bill.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Add_Bill.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btn_Add_Bill.FlatAppearance.BorderSize = 0;
-            this.btn_Add_Bill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Add_Bill.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Add_Bill.ForeColor = System.Drawing.Color.White;
-            this.btn_Add_Bill.Image = global::QuanLyCuaHangGear.Properties.Resources.add;
-            this.btn_Add_Bill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Add_Bill.Location = new System.Drawing.Point(138, 527);
-            this.btn_Add_Bill.Name = "btn_Add_Bill";
-            this.btn_Add_Bill.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btn_Add_Bill.Size = new System.Drawing.Size(275, 53);
-            this.btn_Add_Bill.TabIndex = 29;
-            this.btn_Add_Bill.Text = "   THÊM VÀO HÓA ĐƠN";
-            this.btn_Add_Bill.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Add_Bill.UseVisualStyleBackColor = false;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
+            this.label12.Location = new System.Drawing.Point(739, 545);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(107, 24);
+            this.label12.TabIndex = 30;
+            this.label12.Text = "Tổng tiền:";
+            // 
+            // txt_Total
+            // 
+            this.txt_Total.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.txt_Total.Font = new System.Drawing.Font("Arial", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Total.ForeColor = System.Drawing.Color.White;
+            this.txt_Total.Location = new System.Drawing.Point(866, 540);
+            this.txt_Total.Name = "txt_Total";
+            this.txt_Total.Size = new System.Drawing.Size(180, 33);
+            this.txt_Total.TabIndex = 24;
+            this.txt_Total.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
+            this.label13.Location = new System.Drawing.Point(1052, 545);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(51, 24);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "VND";
+            // 
+            // btn_add_to_bill
+            // 
+            this.btn_add_to_bill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.btn_add_to_bill.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_add_to_bill.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btn_add_to_bill.FlatAppearance.BorderSize = 0;
+            this.btn_add_to_bill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_add_to_bill.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_add_to_bill.ForeColor = System.Drawing.Color.White;
+            this.btn_add_to_bill.Image = global::QuanLyCuaHangGear.Properties.Resources.add;
+            this.btn_add_to_bill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_add_to_bill.Location = new System.Drawing.Point(147, 403);
+            this.btn_add_to_bill.Name = "btn_add_to_bill";
+            this.btn_add_to_bill.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_add_to_bill.Size = new System.Drawing.Size(275, 53);
+            this.btn_add_to_bill.TabIndex = 29;
+            this.btn_add_to_bill.Text = "   THÊM VÀO HÓA ĐƠN";
+            this.btn_add_to_bill.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_add_to_bill.UseVisualStyleBackColor = false;
+            this.btn_add_to_bill.Click += new System.EventHandler(this.btn_add_to_bill_Click);
             // 
             // btn_SearchID
             // 
@@ -460,42 +438,62 @@
             this.btn_SearchID.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SearchID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btn_SearchID.Image = global::QuanLyCuaHangGear.Properties.Resources.Search;
-            this.btn_SearchID.Location = new System.Drawing.Point(495, 217);
+            this.btn_SearchID.Location = new System.Drawing.Point(487, 85);
             this.btn_SearchID.Name = "btn_SearchID";
             this.btn_SearchID.Size = new System.Drawing.Size(58, 47);
             this.btn_SearchID.TabIndex = 23;
             this.btn_SearchID.UseVisualStyleBackColor = false;
+            this.btn_SearchID.Click += new System.EventHandler(this.btn_SearchID_Click);
+            // 
+            // btn_del_from_bill
+            // 
+            this.btn_del_from_bill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.btn_del_from_bill.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_del_from_bill.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btn_del_from_bill.FlatAppearance.BorderSize = 0;
+            this.btn_del_from_bill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_del_from_bill.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_del_from_bill.ForeColor = System.Drawing.Color.White;
+            this.btn_del_from_bill.Image = global::QuanLyCuaHangGear.Properties.Resources.Delete;
+            this.btn_del_from_bill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_del_from_bill.Location = new System.Drawing.Point(147, 491);
+            this.btn_del_from_bill.Name = "btn_del_from_bill";
+            this.btn_del_from_bill.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_del_from_bill.Size = new System.Drawing.Size(275, 53);
+            this.btn_del_from_bill.TabIndex = 48;
+            this.btn_del_from_bill.Text = "   XÓA KHỎI HÓA ĐƠN";
+            this.btn_del_from_bill.UseVisualStyleBackColor = false;
+            this.btn_del_from_bill.Click += new System.EventHandler(this.btn_del_from_bill_Click);
             // 
             // Bill_Control
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.Controls.Add(this.btn_del_from_bill);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_confirm);
             this.Controls.Add(this.panel_CustomerInfo);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.btn_Add_Bill);
+            this.Controls.Add(this.btn_add_to_bill);
             this.Controls.Add(this.btn_SearchID);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtgv_buy);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.txt_Total);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txt_soluong);
+            this.Controls.Add(this.txt_id_hang);
+            this.Controls.Add(this.txt_tenhang);
+            this.Controls.Add(this.txt_danhmuc);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label7);
             this.Name = "Bill_Control";
             this.Size = new System.Drawing.Size(1250, 700);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_buy)).EndInit();
             this.panel_CustomerInfo.ResumeLayout(false);
             this.panel_CustomerInfo.PerformLayout();
             this.ResumeLayout(false);
@@ -507,23 +505,21 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_confirm;
         private System.Windows.Forms.Button btn_SearchPhone;
         private System.Windows.Forms.Button btn_Add_Customer;
-        private System.Windows.Forms.Button btn_Add_Bill;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btn_add_to_bill;
+        private System.Windows.Forms.DataGridView dtgv_buy;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txt_soluong;
+        private System.Windows.Forms.TextBox txt_email;
+        private System.Windows.Forms.TextBox txt_name_customer;
+        private System.Windows.Forms.TextBox txt_id_hang;
+        private System.Windows.Forms.TextBox txt_phone;
+        private System.Windows.Forms.TextBox txt_tenhang;
+        private System.Windows.Forms.TextBox txt_danhmuc;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label8;
@@ -536,5 +532,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txt_Total;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btn_del_from_bill;
     }
 }
