@@ -181,6 +181,8 @@ namespace QuanLyCuaHangGear
                 panel_Main.Controls.Add(Import_Control.Instance);
                 Import_Control.Instance.Dock = DockStyle.Fill;
                 Import_Control.Instance.BringToFront();
+
+                Import_Control.Instance.Id_NV = Convert.ToInt32(txt_id.Text);
             }
             else
                 Import_Control.Instance.BringToFront();

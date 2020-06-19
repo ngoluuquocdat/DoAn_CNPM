@@ -153,6 +153,7 @@ namespace QuanLyCuaHangGear
                 string danhmuc = BLL_Product.Instance.Get_DanhMuc_by_ID(h.idDanhMuc).Name;
                 int soluong = Convert.ToInt32(row["Số lượng"]);
                 BLL_Bill.Instance.Add_Bill_Info(id_bill, h.Name, danhmuc,h.DonGiaBan,soluong);
+                BLL_Product.Instance.Update_SoLuong(id_hanghoa, -soluong);
             }
 
         }

@@ -118,6 +118,14 @@ namespace QuanLyCuaHangGear.BLL
                 return query.ToList();
             }
         }
+        // hàm update số lượng khi nhập hoặc bán
+        public void Update_SoLuong(int id_hang, int soluong)
+        {
+            QLCH_Model DB = new QLCH_Model();
+            HangHoa pr = DB.HangHoas.Where(p => p.id == id_hang).FirstOrDefault();
+            pr.SoLuong += soluong;
+            DB.SaveChanges();
+        }
         //Hàm sort và các hàm phục vụ sort
         public void Sort_GiaBan(List<HangHoa> list)
         {
