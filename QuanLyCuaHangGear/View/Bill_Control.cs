@@ -99,7 +99,7 @@ namespace QuanLyCuaHangGear
 
             dr["Mã hàng"] = id;
             dr["Tên hàng"] = h.Name;
-            dr["Số lượng"] = txt_soluong.Text;
+            dr["Số lượng"] = numUpDown_count.Value;
             dr["Đơn giá"] = h.DonGiaBan;
 
             dt.Rows.Add(dr);
@@ -130,7 +130,7 @@ namespace QuanLyCuaHangGear
             txt_id_hang.Clear();
             txt_danhmuc.Clear();
             txt_tenhang.Clear();
-            txt_soluong.Clear();
+            numUpDown_count.Value=0;
         }
 
         private void btn_confirm_Click(object sender, EventArgs e)
@@ -164,6 +164,22 @@ namespace QuanLyCuaHangGear
             txt_name_customer.Clear();
             txt_email.Clear();
             btn_Add_Customer.Visible = false;
+        }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            txt_id_hang.Clear();
+            txt_danhmuc.Clear();
+            txt_tenhang.Clear();
+            numUpDown_count.Value = 0;
+
+            txt_name_customer.Clear();
+            txt_phone.Clear();
+            txt_email.Clear();
+
+            txt_Total.Clear();
+            dt = null;
+            dtgv_buy.DataSource = dt;
         }
     }
 }

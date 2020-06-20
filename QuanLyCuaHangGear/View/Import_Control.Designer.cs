@@ -41,7 +41,6 @@
             this.btn_SearchName = new System.Windows.Forms.Button();
             this.dtgv_import = new System.Windows.Forms.DataGridView();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.txt_soluong = new System.Windows.Forms.TextBox();
             this.txt_id_hang = new System.Windows.Forms.TextBox();
             this.txt_tenhang = new System.Windows.Forms.TextBox();
             this.txt_danhmuc = new System.Windows.Forms.TextBox();
@@ -57,8 +56,10 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.btn_del_from_imp = new System.Windows.Forms.Button();
+            this.numUpDown_count = new System.Windows.Forms.NumericUpDown();
             this.panel_CustomerInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_import)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDown_count)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_cancel
@@ -243,17 +244,6 @@
             this.dateTimePicker1.TabIndex = 87;
             this.dateTimePicker1.TabStop = false;
             // 
-            // txt_soluong
-            // 
-            this.txt_soluong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.txt_soluong.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_soluong.ForeColor = System.Drawing.Color.White;
-            this.txt_soluong.Location = new System.Drawing.Point(214, 313);
-            this.txt_soluong.Name = "txt_soluong";
-            this.txt_soluong.Size = new System.Drawing.Size(101, 30);
-            this.txt_soluong.TabIndex = 73;
-            this.txt_soluong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // txt_id_hang
             // 
             this.txt_id_hang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
@@ -333,7 +323,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label8.Location = new System.Drawing.Point(66, 109);
+            this.label8.Location = new System.Drawing.Point(71, 101);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(81, 19);
             this.label8.TabIndex = 81;
@@ -452,10 +442,19 @@
             this.btn_del_from_imp.UseVisualStyleBackColor = false;
             this.btn_del_from_imp.Click += new System.EventHandler(this.btn_del_from_imp_Click);
             // 
+            // numUpDown_count
+            // 
+            this.numUpDown_count.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numUpDown_count.Location = new System.Drawing.Point(209, 312);
+            this.numUpDown_count.Name = "numUpDown_count";
+            this.numUpDown_count.Size = new System.Drawing.Size(66, 34);
+            this.numUpDown_count.TabIndex = 94;
+            // 
             // Import_Control
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.Controls.Add(this.numUpDown_count);
             this.Controls.Add(this.btn_del_from_imp);
             this.Controls.Add(this.txt_Total);
             this.Controls.Add(this.label13);
@@ -467,7 +466,6 @@
             this.Controls.Add(this.btn_SearchID);
             this.Controls.Add(this.dtgv_import);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.txt_soluong);
             this.Controls.Add(this.txt_id_hang);
             this.Controls.Add(this.txt_tenhang);
             this.Controls.Add(this.txt_danhmuc);
@@ -482,6 +480,7 @@
             this.panel_CustomerInfo.ResumeLayout(false);
             this.panel_CustomerInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_import)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDown_count)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -504,7 +503,6 @@
         private System.Windows.Forms.Button btn_SearchID;
         private System.Windows.Forms.DataGridView dtgv_import;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox txt_soluong;
         private System.Windows.Forms.TextBox txt_id_hang;
         private System.Windows.Forms.TextBox txt_tenhang;
         private System.Windows.Forms.TextBox txt_danhmuc;
@@ -518,5 +516,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btn_del_from_imp;
+        private System.Windows.Forms.NumericUpDown numUpDown_count;
     }
 }

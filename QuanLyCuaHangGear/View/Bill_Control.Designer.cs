@@ -29,11 +29,10 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_confirm = new System.Windows.Forms.Button();
             this.dtgv_buy = new System.Windows.Forms.DataGridView();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.txt_soluong = new System.Windows.Forms.TextBox();
             this.txt_email = new System.Windows.Forms.TextBox();
             this.txt_name_customer = new System.Windows.Forms.TextBox();
             this.txt_id_hang = new System.Windows.Forms.TextBox();
@@ -58,8 +57,10 @@
             this.btn_add_to_bill = new System.Windows.Forms.Button();
             this.btn_SearchID = new System.Windows.Forms.Button();
             this.btn_del_from_bill = new System.Windows.Forms.Button();
+            this.numUpDown_count = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_buy)).BeginInit();
             this.panel_CustomerInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDown_count)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -70,21 +71,22 @@
             this.panel2.Size = new System.Drawing.Size(463, 1);
             this.panel2.TabIndex = 45;
             // 
-            // button6
+            // btn_cancel
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(684, 616);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(111, 44);
-            this.button6.TabIndex = 39;
-            this.button6.Text = "HỦY BỎ";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btn_cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.btn_cancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btn_cancel.FlatAppearance.BorderSize = 0;
+            this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancel.ForeColor = System.Drawing.Color.White;
+            this.btn_cancel.Location = new System.Drawing.Point(684, 616);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(111, 44);
+            this.btn_cancel.TabIndex = 39;
+            this.btn_cancel.Text = "HỦY BỎ";
+            this.btn_cancel.UseVisualStyleBackColor = false;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // btn_confirm
             // 
@@ -127,17 +129,6 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(273, 27);
             this.dateTimePicker1.TabIndex = 42;
             this.dateTimePicker1.TabStop = false;
-            // 
-            // txt_soluong
-            // 
-            this.txt_soluong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.txt_soluong.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_soluong.ForeColor = System.Drawing.Color.White;
-            this.txt_soluong.Location = new System.Drawing.Point(214, 313);
-            this.txt_soluong.Name = "txt_soluong";
-            this.txt_soluong.Size = new System.Drawing.Size(101, 30);
-            this.txt_soluong.TabIndex = 24;
-            this.txt_soluong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_email
             // 
@@ -190,7 +181,6 @@
             this.txt_phone.TabIndex = 19;
             this.txt_phone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_phone.Click += new System.EventHandler(this.txt_phone_Click);
-            
             // 
             // txt_tenhang
             // 
@@ -465,12 +455,21 @@
             this.btn_del_from_bill.UseVisualStyleBackColor = false;
             this.btn_del_from_bill.Click += new System.EventHandler(this.btn_del_from_bill_Click);
             // 
+            // numUpDown_count
+            // 
+            this.numUpDown_count.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numUpDown_count.Location = new System.Drawing.Point(209, 312);
+            this.numUpDown_count.Name = "numUpDown_count";
+            this.numUpDown_count.Size = new System.Drawing.Size(66, 34);
+            this.numUpDown_count.TabIndex = 49;
+            // 
             // Bill_Control
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.Controls.Add(this.numUpDown_count);
             this.Controls.Add(this.btn_del_from_bill);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.btn_confirm);
             this.Controls.Add(this.panel_CustomerInfo);
             this.Controls.Add(this.panel2);
@@ -479,7 +478,6 @@
             this.Controls.Add(this.dtgv_buy);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.txt_Total);
-            this.Controls.Add(this.txt_soluong);
             this.Controls.Add(this.txt_id_hang);
             this.Controls.Add(this.txt_tenhang);
             this.Controls.Add(this.txt_danhmuc);
@@ -496,6 +494,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_buy)).EndInit();
             this.panel_CustomerInfo.ResumeLayout(false);
             this.panel_CustomerInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDown_count)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -504,14 +503,13 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.Button btn_confirm;
         private System.Windows.Forms.Button btn_SearchPhone;
         private System.Windows.Forms.Button btn_Add_Customer;
         private System.Windows.Forms.Button btn_add_to_bill;
         private System.Windows.Forms.DataGridView dtgv_buy;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox txt_soluong;
         private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.TextBox txt_name_customer;
         private System.Windows.Forms.TextBox txt_id_hang;
@@ -533,5 +531,6 @@
         private System.Windows.Forms.TextBox txt_Total;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btn_del_from_bill;
+        private System.Windows.Forms.NumericUpDown numUpDown_count;
     }
 }
