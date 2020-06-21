@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyCuaHangGear.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,17 +14,20 @@ namespace QuanLyCuaHangGear.View
     public partial class Form_Staff : Form
     {
         // fields
+        public int Id_nv { get; set; }
 
         // constuctor
-        public Form_Staff()
+        public Form_Staff(int id_nv)
         {
+            this.Id_nv = id_nv;
             InitializeComponent();
             panel_Slide.Visible = false;
-            //welcome_Control1.BringToFront();
-                panel_Main.Controls.Add(Welcome_Control.Instance);
-                Welcome_Control.Instance.Dock = DockStyle.Fill;
-                Welcome_Control.Instance.BringToFront();
-            
+            panel_Main.Controls.Add(Welcome_Control.Instance);
+            Welcome_Control.Instance.Dock = DockStyle.Fill;
+            Welcome_Control.Instance.BringToFront();
+
+            label_Name.Text = BLL_Staff.Instance.Get_NhanVien_by_ID(this.Id_nv).Name;
+
         }
         // methods
 
@@ -69,13 +73,14 @@ namespace QuanLyCuaHangGear.View
         {
             Active_Effect((Button)sender);
             btn_Bill.Image = Properties.Resources.blue_bill;
-            pic_UpperLogo.Image = Properties.Resources.blue_bill;
-            // bill_Control1.BringToFront();
+            pic_UpperLogo.Image = Properties.Resources.blue_bill;          
             if (!panel_Main.Controls.Contains(Bill_Control.Instance))
             {
                 panel_Main.Controls.Add(Bill_Control.Instance);
                 Bill_Control.Instance.Dock = DockStyle.Fill;
                 Bill_Control.Instance.BringToFront();
+
+                Bill_Control.Instance.Id_NV = Convert.ToInt32(Id_nv);
             }
             else
                 Bill_Control.Instance.BringToFront();
@@ -92,6 +97,8 @@ namespace QuanLyCuaHangGear.View
                 panel_Main.Controls.Add(Import_Control.Instance);
                 Import_Control.Instance.Dock = DockStyle.Fill;
                 Import_Control.Instance.BringToFront();
+
+                Import_Control.Instance.Id_NV = Convert.ToInt32(Id_nv);
             }
             else
                 Import_Control.Instance.BringToFront();

@@ -25,26 +25,7 @@ namespace QuanLyCuaHangGear
 
         // methods
 
-        //public bool Check_Username(string username)
-        //{
-
-        //    if (username != "1" && username != "2")
-        //    {
-        //        label_Warning.Visible = true;
-        //        return false;
-        //    }
-        //    return true;
-        //}
-        //public bool Check_Password(string password)
-        //{
-        //    if (password != "1" && password != "2")
-        //    {
-        //        label_Warning.Visible = true;
-
-        //        return false;
-        //    }
-        //    return true;
-        //}
+        
         public void Reset_TextBoxes()
         {
             txt_Username.Text = "Username";
@@ -54,7 +35,7 @@ namespace QuanLyCuaHangGear
             label_Warning.Visible = false;
         }
 
-        // event 
+        // events
         private void txt_Username_Click(object sender, EventArgs e)
         {
             txt_Username.Clear();
@@ -71,7 +52,7 @@ namespace QuanLyCuaHangGear
         }
 
         private void label_Exit_Click(object sender, EventArgs e)
-        {
+        {           
             Application.Exit();
         }
 
@@ -86,6 +67,8 @@ namespace QuanLyCuaHangGear
         
         private void btn_SignUp_Click(object sender, EventArgs e)
         {
+            
+
             if (txt_Username.Text == "Username")
             {
                 txt_Username.Clear();
@@ -106,51 +89,46 @@ namespace QuanLyCuaHangGear
             //    return;
             //}
             string UserName = txt_Username.Text;
-            string PassWord = txt_Password.Text;           
-            Account ac = BLL_Account.Instance.Login(UserName, PassWord);      
-            if(ac!=null)
+            string PassWord = txt_Password.Text;
+            Account ac = BLL_Account.Instance.Get_Account(UserName, PassWord);
+            if (ac != null)
             {
-                if ( UserName != ac.UserName)
+
+                if (ac.PassWord != PassWord)
                 {
-                    pic_Username.Image = Properties.Resources.Red_Username;
                     pic_Password.Image = Properties.Resources.Red_Password;
                     label_Warning.Visible = true;
                     return;
                 }
                 else
                 {
-                    if (ac.PassWord != PassWord)
+                    if (ac.Type == 0)
                     {
-                        pic_Password.Image = Properties.Resources.Red_Password;
-                        label_Warning.Visible = true;
-                        return;
+                        Form_Admin f_admin = new Form_Admin(Convert.ToInt32(ac.idNhanVien));
+                        this.Hide();
+                        f_admin.ShowDialog();
+
+                        this.Show();
+                        Reset_TextBoxes();
                     }
                     else
                     {
-                        if (ac.Type == 0)
-                        {
-                            Form_Admin f_admin = new Form_Admin(Convert.ToInt32(ac.idNhanVien));
-                            this.Hide();
-                            f_admin.ShowDialog();
+                        Form_Staff f_staff = new Form_Staff(Convert.ToInt32(ac.idNhanVien));
+                        this.Hide();
+                        f_staff.ShowDialog();
 
-                            this.Show();
-                            Reset_TextBoxes();
-                        }
-                        else
-                        {
-                            Form_Staff f_staff = new Form_Staff();
-                            this.Hide();
-                            f_staff.ShowDialog();
-
-                            this.Show();
-                            Reset_TextBoxes();
-                        }
+                        this.Show();
+                        Reset_TextBoxes();
                     }
-                }    
+                }
             }
-            else 
-            { 
-                label_Warning.Visible = true; 
+
+            else
+            {
+                pic_Username.Image = Properties.Resources.Red_Username;
+                pic_Password.Image = Properties.Resources.Red_Password;
+                label_Warning.Visible = true;
+                return;
             }
         }
     }

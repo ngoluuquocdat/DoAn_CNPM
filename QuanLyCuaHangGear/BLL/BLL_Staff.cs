@@ -124,7 +124,15 @@ namespace QuanLyCuaHangGear.BLL
         public int Get_Lastest_ID()
         {
             QLCH_Model DB = new QLCH_Model();
-            return DB.NhanViens.OrderByDescending(p => p.id).First().id;
+            try
+            {
+                return DB.NhanViens.OrderByDescending(p => p.id).First().id;
+            }
+            catch (InvalidOperationException )
+            {
+                return 0;
+            }
+            
         }
         // các hàm tương tác với đối tượng Account
         public void Add_Account(string username, int id_nv, string displayname, string pass)

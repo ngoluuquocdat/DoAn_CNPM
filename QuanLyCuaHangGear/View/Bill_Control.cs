@@ -63,6 +63,7 @@ namespace QuanLyCuaHangGear
             HangHoa h = BLL_Product.Instance.Get_HangHoa_by_ID(id);
             txt_danhmuc.Text = BLL_Product.Instance.Get_DanhMuc_by_ID(h.idDanhMuc).Name;
             txt_tenhang.Text = h.Name;
+            numUpDown_count.Maximum = h.SoLuong;
         }
 
         private void btn_SearchPhone_Click(object sender, EventArgs e)
@@ -135,14 +136,27 @@ namespace QuanLyCuaHangGear
 
         private void btn_confirm_Click(object sender, EventArgs e)
         {
-            NhanVien nv = BLL_Staff.Instance.Get_NhanVien_by_ID(this.Id_NV);
+            string customer_name;
+            string phone;
+            string staff_name;
+            string cmnd;
             DateTime date = dateTimePicker1.Value;
-            string customer_name = txt_name_customer.Text;
-            string phone = txt_phone.Text;
-            string staff_name = nv.Name;
-            string cmnd = nv.CMND;
+            if (this.Id_NV == 0)
+            {
+                staff_name = "Ngô Lưu Quốc Đạt";
+                cmnd = "206282345";
+            }
+            else
+            {
+                NhanVien nv = BLL_Staff.Instance.Get_NhanVien_by_ID(this.Id_NV);               
+                staff_name = nv.Name;
+                cmnd = nv.CMND;
+            }
 
-            BLL_Bill.Instance.Add_Bill(date, customer_name, phone, staff_name,cmnd, 1);
+            customer_name = txt_name_customer.Text;
+            phone = txt_phone.Text;
+            
+            BLL_Bill.Instance.Add_Bill(date, customer_name, phone, staff_name,cmnd, 1, update_tongtien());
 
             int id_bill = BLL_Bill.Instance.Get_Lastest_Bill().id;
             
@@ -181,5 +195,7 @@ namespace QuanLyCuaHangGear
             dt = null;
             dtgv_buy.DataSource = dt;
         }
+
+        
     }
 }

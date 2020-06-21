@@ -27,7 +27,7 @@ namespace QuanLyCuaHangGear.BLL
         {
 
         }
-        public Account Login(string UserName, string PassWord)
+        public Account Get_Account(string UserName, string PassWord)
         {
             try 
             {

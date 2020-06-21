@@ -50,8 +50,9 @@ namespace QuanLyCuaHangGear.BLL
             QLCH_Model DB = new QLCH_Model();
             return DB.HoaDons.Where(p => p.Type == 1).OrderByDescending(p => p.id).First();
         }
+
         public void Add_Bill(DateTime date, string customer_name, string phone, string staff_name,
-                                      string cmnd, int type)
+                                      string cmnd, int type, int tongtien)
         {
             QLCH_Model DB = new QLCH_Model();
             DB.HoaDons.Add(new HoaDon
@@ -62,7 +63,7 @@ namespace QuanLyCuaHangGear.BLL
                 TenNhanVien = staff_name,
                 CMND = cmnd,
                 Type = type,
-                TongTien = 0
+                TongTien = tongtien
             });
             DB.SaveChanges();
         }
@@ -75,7 +76,7 @@ namespace QuanLyCuaHangGear.BLL
                 idHoaDon = id_bill,
                 TenHangHoa = product_name,
                 DanhMuc = category,
-                DonGia = price,
+                DonGia = price,               
                 SoLuong = count
             });
             DB.SaveChanges();

@@ -41,7 +41,6 @@
             this.btn_Product = new System.Windows.Forms.Button();
             this.btn_Staff = new System.Windows.Forms.Button();
             this.panel_Head = new System.Windows.Forms.Panel();
-            this.txt_id = new System.Windows.Forms.TextBox();
             this.label_Name = new System.Windows.Forms.Label();
             this.label_UserType = new System.Windows.Forms.Label();
             this.pic_UpperLogo = new System.Windows.Forms.PictureBox();
@@ -242,7 +241,6 @@
             // panel_Head
             // 
             this.panel_Head.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(30)))), ((int)(((byte)(43)))));
-            this.panel_Head.Controls.Add(this.txt_id);
             this.panel_Head.Controls.Add(this.label_Name);
             this.panel_Head.Controls.Add(this.label_UserType);
             this.panel_Head.Controls.Add(this.pic_UpperLogo);
@@ -252,13 +250,6 @@
             this.panel_Head.Name = "panel_Head";
             this.panel_Head.Size = new System.Drawing.Size(1250, 100);
             this.panel_Head.TabIndex = 1;
-            // 
-            // txt_id
-            // 
-            this.txt_id.Location = new System.Drawing.Point(509, 42);
-            this.txt_id.Name = "txt_id";
-            this.txt_id.Size = new System.Drawing.Size(238, 22);
-            this.txt_id.TabIndex = 6;
             // 
             // label_Name
             // 
@@ -356,6 +347,5 @@
         private System.Windows.Forms.Button btn_Import;
         private System.Windows.Forms.Button btn_Bill;
         private System.Windows.Forms.Panel panel_Main;
-        private System.Windows.Forms.TextBox txt_id;
     }
 }

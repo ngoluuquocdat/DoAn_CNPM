@@ -33,7 +33,7 @@ namespace QuanLyCuaHangGear.BLL
         public KhachHang Get_Customer(string sdt)
         {
             QLCH_Model DB = new QLCH_Model();
-            var li_method = DB.KhachHangs.Where(p => p.Phone == sdt && p.Type == 0).FirstOrDefault();
+            var li_method = DB.KhachHangs.Where(p => p.Phone == sdt && p.Type == 1).FirstOrDefault();
 
             return li_method;
         }
@@ -56,7 +56,7 @@ namespace QuanLyCuaHangGear.BLL
         public KhachHang Get_Provider(string name)
         {
             QLCH_Model DB = new QLCH_Model();
-            var li_method = DB.KhachHangs.Where(p => p.Name == name && p.Type == 1).FirstOrDefault();
+            var li_method = DB.KhachHangs.Where(p => p.Name == name && p.Type == 0).FirstOrDefault();
 
             return li_method;
         }

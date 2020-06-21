@@ -21,11 +21,8 @@ namespace QuanLyCuaHangGear
         public Form_Admin(int id_nv)
         {
             this.Id_nv = id_nv;
-            InitializeComponent();
-            txt_id.Text = id_nv.ToString();
-            Control.CheckForIllegalCrossThreadCalls = false;
+            InitializeComponent();        
             
-
             panel_Slide.Visible = false;
             panel_Main.Controls.Add(Welcome_Control.Instance);
             Welcome_Control.Instance.Dock = DockStyle.Fill;
