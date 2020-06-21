@@ -135,8 +135,18 @@ namespace QuanLyCuaHangGear
             DateTime date = dateTimePicker1.Value;
             string provider_name = txt_name_provi.Text;
             string phone = txt_phone_provi.Text;
-            string staff_name = nv.Name;
-            string cmnd = nv.CMND;
+            string staff_name = "";
+            string cmnd = "";
+            if (id_NV != 0) 
+            {
+                staff_name = nv.Name;
+                cmnd = nv.CMND;
+            }
+            else
+            {
+               // staff_name="Ngô Lưu Quốc Đạt"
+            }
+            
 
             BLL_Bill.Instance.Add_Bill(date, provider_name, phone, staff_name, cmnd, 1);
 

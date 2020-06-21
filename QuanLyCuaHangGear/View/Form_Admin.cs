@@ -16,12 +16,13 @@ namespace QuanLyCuaHangGear
         // fields
 
         // constuctor
-        
-        
-        public Form_Admin()
-        {
-            InitializeComponent();
 
+        public int Id_nv { get; set; }
+        public Form_Admin(int id_nv)
+        {
+            this.Id_nv = id_nv;
+            InitializeComponent();
+            txt_id.Text = id_nv.ToString();
             Control.CheckForIllegalCrossThreadCalls = false;
             
 
@@ -164,7 +165,7 @@ namespace QuanLyCuaHangGear
                 Bill_Control.Instance.Dock = DockStyle.Fill;
                 Bill_Control.Instance.BringToFront();
 
-                Bill_Control.Instance.Id_NV = Convert.ToInt32(txt_id.Text);
+                Bill_Control.Instance.Id_NV = Convert.ToInt32(Id_nv);
             }
             else
                 Bill_Control.Instance.BringToFront();
@@ -182,7 +183,7 @@ namespace QuanLyCuaHangGear
                 Import_Control.Instance.Dock = DockStyle.Fill;
                 Import_Control.Instance.BringToFront();
 
-                Import_Control.Instance.Id_NV = Convert.ToInt32(txt_id.Text);
+                Import_Control.Instance.Id_NV = Convert.ToInt32(Id_nv);
             }
             else
                 Import_Control.Instance.BringToFront();

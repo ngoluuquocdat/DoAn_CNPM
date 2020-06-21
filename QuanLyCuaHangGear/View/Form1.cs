@@ -1,4 +1,6 @@
-﻿using QuanLyCuaHangGear.View;
+﻿using QuanLyCuaHangGear.BLL;
+using QuanLyCuaHangGear.DTO;
+using QuanLyCuaHangGear.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,25 +25,26 @@ namespace QuanLyCuaHangGear
 
         // methods
 
-        public bool Check_Username(string username)
-        {
-            if (username != "1" && username != "2")
-            {
-                label_Warning.Visible = true;
-                return false;
-            }          
-            return true;
-        }
-        public bool Check_Password(string password)
-        {
-            if (password != "1" && password != "2")
-            {
-                label_Warning.Visible = true;
-                
-                return false;
-            }
-            return true;
-        }
+        //public bool Check_Username(string username)
+        //{
+
+        //    if (username != "1" && username != "2")
+        //    {
+        //        label_Warning.Visible = true;
+        //        return false;
+        //    }
+        //    return true;
+        //}
+        //public bool Check_Password(string password)
+        //{
+        //    if (password != "1" && password != "2")
+        //    {
+        //        label_Warning.Visible = true;
+
+        //        return false;
+        //    }
+        //    return true;
+        //}
         public void Reset_TextBoxes()
         {
             txt_Username.Text = "Username";
@@ -91,34 +94,63 @@ namespace QuanLyCuaHangGear
             {
                 txt_Password.Clear();
             }
-            if (!Check_Username(txt_Username.Text))
+            //if (!Check_Username(txt_Username.Text))
+            //{
+            //    pic_Username.Image = Properties.Resources.Red_Username;
+            //    pic_Password.Image = Properties.Resources.Red_Password;
+            //    return;
+            //}
+            //if (!Check_Password(txt_Password.Text))
+            //{
+            //    pic_Password.Image = Properties.Resources.Red_Password;
+            //    return;
+            //}
+            string UserName = txt_Username.Text;
+            string PassWord = txt_Password.Text;           
+            Account ac = BLL_Account.Instance.Login(UserName, PassWord);      
+            if(ac!=null)
             {
-                pic_Username.Image = Properties.Resources.Red_Username;
-                pic_Password.Image = Properties.Resources.Red_Password;
-                return;
-            }
-            if (!Check_Password(txt_Password.Text))
-            {
-                pic_Password.Image = Properties.Resources.Red_Password;
-                return;
-            }
-            if(txt_Username.Text == "1" && txt_Password.Text == "1")
-            {
-                Form_Admin f_admin = new Form_Admin();
-                this.Hide();
-                _ = f_admin.ShowDialog();
+                if ( UserName != ac.UserName)
+                {
+                    pic_Username.Image = Properties.Resources.Red_Username;
+                    pic_Password.Image = Properties.Resources.Red_Password;
+                    label_Warning.Visible = true;
+                    return;
+                }
+                else
+                {
+                    if (ac.PassWord != PassWord)
+                    {
+                        pic_Password.Image = Properties.Resources.Red_Password;
+                        label_Warning.Visible = true;
+                        return;
+                    }
+                    else
+                    {
+                        if (ac.Type == 0)
+                        {
+                            Form_Admin f_admin = new Form_Admin(Convert.ToInt32(ac.idNhanVien));
+                            this.Hide();
+                            f_admin.ShowDialog();
 
-                this.Show();
-                Reset_TextBoxes();                                    
-            }
-            if (txt_Username.Text == "2" && txt_Password.Text == "2")
-            {
-                Form_Staff f_staff = new Form_Staff();
-                this.Hide();
-                f_staff.ShowDialog();
+                            this.Show();
+                            Reset_TextBoxes();
+                        }
+                        else
+                        {
+                            Form_Staff f_staff = new Form_Staff();
+                            this.Hide();
+                            f_staff.ShowDialog();
 
-                this.Show();
-                Reset_TextBoxes();
+                            this.Show();
+                            Reset_TextBoxes();
+                        }
+                    }
+                }    
+            }
+            else 
+            { 
+                label_Warning.Visible = true; 
             }
         }
     }
