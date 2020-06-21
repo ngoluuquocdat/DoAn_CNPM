@@ -52,7 +52,6 @@
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.btn_Confirm = new System.Windows.Forms.Button();
             this.panel_Head = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -267,7 +266,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1276, 1);
+            this.panel1.Size = new System.Drawing.Size(632, 1);
             this.panel1.TabIndex = 147;
             // 
             // label2
@@ -347,14 +346,6 @@
             this.panel_Head.Size = new System.Drawing.Size(632, 94);
             this.panel_Head.TabIndex = 208;
             // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 28);
-            this.label3.TabIndex = 211;
-            // 
             // label11
             // 
             this.label11.Location = new System.Drawing.Point(0, 0);
@@ -413,7 +404,6 @@
             this.Controls.Add(this.panel11);
             this.Controls.Add(this.panel_Down);
             this.Controls.Add(this.panel_Head);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label4);
@@ -456,7 +446,6 @@
         private System.Windows.Forms.Button btn_Cancel;
         private System.Windows.Forms.Button btn_Confirm;
         private System.Windows.Forms.Panel panel_Head;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label4;
