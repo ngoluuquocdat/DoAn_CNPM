@@ -462,7 +462,6 @@
             this.numUpDown_count.Name = "numUpDown_count";
             this.numUpDown_count.Size = new System.Drawing.Size(66, 34);
             this.numUpDown_count.TabIndex = 49;
-          
             // 
             // Bill_Control
             // 

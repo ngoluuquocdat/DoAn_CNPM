@@ -90,16 +90,29 @@ namespace QuanLyCuaHangGear
         }
         private void btn_Add_Import_Click(object sender, EventArgs e)
         {
-            DataRow dr = dt.NewRow();
+            bool isExist = false;
             int id = Convert.ToInt32(txt_id_hang.Text);
             HangHoa h = BLL_Product.Instance.Get_HangHoa_by_ID(id);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                if (h.id == Convert.ToInt32(dt.Rows[i]["Mã hàng"].ToString()))
+                {
+                    int current_soluong = Convert.ToInt32(dt.Rows[i]["Số lượng"].ToString());
+                    dt.Rows[i]["Số lượng"] = current_soluong + numUpDown_count.Value;
+                    isExist = true;
+                }
+            }
 
-            dr["Mã hàng"] = id;
-            dr["Tên hàng"] = h.Name;
-            dr["Số lượng"] = numUpDown_count.Value;
-            dr["Đơn giá"] = h.DonGiaBan;
+            if (isExist == false)
+            {
+                DataRow dr = dt.NewRow();
+                dr["Mã hàng"] = id;
+                dr["Tên hàng"] = h.Name;
+                dr["Số lượng"] = numUpDown_count.Value;
+                dr["Đơn giá"] = h.DonGiaBan;
+                dt.Rows.Add(dr);
+            }
 
-            dt.Rows.Add(dr);
             dtgv_import.DataSource = dt;
 
 
