@@ -114,6 +114,7 @@
             this.dtgv_buy.ReadOnly = true;
             this.dtgv_buy.RowHeadersWidth = 51;
             this.dtgv_buy.RowTemplate.Height = 24;
+            this.dtgv_buy.RowTemplate.ReadOnly = true;
             this.dtgv_buy.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgv_buy.Size = new System.Drawing.Size(501, 192);
             this.dtgv_buy.TabIndex = 43;

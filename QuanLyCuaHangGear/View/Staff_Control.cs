@@ -32,7 +32,7 @@ namespace QuanLyCuaHangGear
             Control.CheckForIllegalCrossThreadCalls = false;
             Thread thread = new Thread(Load_dtgv);
             thread.Start();
-            //Load_dtgv();
+            Load_dtgv();
         }
         //methods
         public List<NhanVien_View> To_View(List<NhanVien> list)

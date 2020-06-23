@@ -341,6 +341,7 @@
             this.Staff_dtgv.ReadOnly = true;
             this.Staff_dtgv.RowHeadersWidth = 51;
             this.Staff_dtgv.RowTemplate.Height = 24;
+            this.Staff_dtgv.RowTemplate.ReadOnly = true;
             this.Staff_dtgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Staff_dtgv.Size = new System.Drawing.Size(553, 380);
             this.Staff_dtgv.TabIndex = 49;

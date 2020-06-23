@@ -28,56 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Report_dataGridView = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Report_dtgv = new System.Windows.Forms.DataGridView();
+            this.btn_details = new System.Windows.Forms.Button();
             this.btn_View = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_To = new System.Windows.Forms.DateTimePicker();
             this.label_To = new System.Windows.Forms.Label();
             this.dateTimePicker_From = new System.Windows.Forms.DateTimePicker();
             this.label_From = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.Report_dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Report_dtgv)).BeginInit();
             this.SuspendLayout();
             // 
-            // Report_dataGridView
+            // Report_dtgv
             // 
-            this.Report_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Report_dataGridView.Location = new System.Drawing.Point(62, 215);
-            this.Report_dataGridView.Name = "Report_dataGridView";
-            this.Report_dataGridView.RowHeadersWidth = 51;
-            this.Report_dataGridView.RowTemplate.Height = 24;
-            this.Report_dataGridView.Size = new System.Drawing.Size(1124, 420);
-            this.Report_dataGridView.TabIndex = 64;
+            this.Report_dtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Report_dtgv.Location = new System.Drawing.Point(62, 215);
+            this.Report_dtgv.Name = "Report_dtgv";
+            this.Report_dtgv.RowHeadersWidth = 51;
+            this.Report_dtgv.RowTemplate.Height = 24;
+            this.Report_dtgv.RowTemplate.ReadOnly = true;
+            this.Report_dtgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Report_dtgv.Size = new System.Drawing.Size(1124, 420);
+            this.Report_dtgv.TabIndex = 64;
             // 
-            // button1
+            // btn_details
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::QuanLyCuaHangGear.Properties.Resources.display;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(1004, 90);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(182, 57);
-            this.button1.TabIndex = 62;
-            this.button1.Text = "  XEM CHI TIẾT";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_details.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.btn_details.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.btn_details.FlatAppearance.BorderSize = 0;
+            this.btn_details.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_details.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_details.ForeColor = System.Drawing.Color.White;
+            this.btn_details.Image = global::QuanLyCuaHangGear.Properties.Resources.display;
+            this.btn_details.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_details.Location = new System.Drawing.Point(1004, 90);
+            this.btn_details.Name = "btn_details";
+            this.btn_details.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_details.Size = new System.Drawing.Size(182, 57);
+            this.btn_details.TabIndex = 62;
+            this.btn_details.Text = "  XEM CHI TIẾT";
+            this.btn_details.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_details.UseVisualStyleBackColor = false;
+            this.btn_details.Click += new System.EventHandler(this.btn_details_Click);
             // 
             // btn_View
             // 
             this.btn_View.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.btn_View.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btn_View.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.btn_View.FlatAppearance.BorderSize = 0;
             this.btn_View.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_View.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_View.ForeColor = System.Drawing.Color.White;
             this.btn_View.Image = global::QuanLyCuaHangGear.Properties.Resources.Search;
             this.btn_View.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_View.Location = new System.Drawing.Point(762, 90);
+            this.btn_View.Location = new System.Drawing.Point(733, 90);
             this.btn_View.Name = "btn_View";
             this.btn_View.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btn_View.Size = new System.Drawing.Size(182, 57);
@@ -85,15 +88,16 @@
             this.btn_View.Text = "   TRUY XUẤT";
             this.btn_View.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_View.UseVisualStyleBackColor = false;
+            this.btn_View.Click += new System.EventHandler(this.btn_View_Click);
             // 
-            // dateTimePicker1
+            // dateTimePicker_To
             // 
-            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(223, 131);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(402, 30);
-            this.dateTimePicker1.TabIndex = 60;
+            this.dateTimePicker_To.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dateTimePicker_To.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker_To.Location = new System.Drawing.Point(223, 131);
+            this.dateTimePicker_To.Name = "dateTimePicker_To";
+            this.dateTimePicker_To.Size = new System.Drawing.Size(402, 30);
+            this.dateTimePicker_To.TabIndex = 60;
             // 
             // label_To
             // 
@@ -130,16 +134,16 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.Controls.Add(this.Report_dataGridView);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Report_dtgv);
+            this.Controls.Add(this.btn_details);
             this.Controls.Add(this.btn_View);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateTimePicker_To);
             this.Controls.Add(this.label_To);
             this.Controls.Add(this.dateTimePicker_From);
             this.Controls.Add(this.label_From);
             this.Name = "Report_Control";
             this.Size = new System.Drawing.Size(1250, 700);
-            ((System.ComponentModel.ISupportInitialize)(this.Report_dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Report_dtgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,10 +151,10 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView Report_dataGridView;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView Report_dtgv;
+        private System.Windows.Forms.Button btn_details;
         private System.Windows.Forms.Button btn_View;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_To;
         private System.Windows.Forms.Label label_To;
         private System.Windows.Forms.DateTimePicker dateTimePicker_From;
         private System.Windows.Forms.Label label_From;

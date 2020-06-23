@@ -27,30 +27,12 @@ namespace QuanLyCuaHangGear.BLL
 
         }
 
-        // methods
-        //public HangHoa Get_Product_By_ID(int _id)
-        //{
-        //    QLCH_Model DB = new QLCH_Model();
-        //    var li_method = DB.HangHoas.Where(p => p.id == _id).FirstOrDefault();
-
-        //    return li_method;
-
-        //}
-        //public DanhMuc Get_Category_By_ID(int _id)
-        //{
-        //    QLCH_Model DB = new QLCH_Model();
-        //    var li_method = DB.DanhMucs.Where(p => p.id == _id).FirstOrDefault();
-
-        //    return li_method;
-        //}
-        
         
         public HoaDon Get_Lastest_Bill()
         {
             QLCH_Model DB = new QLCH_Model();
-            return DB.HoaDons.Where(p => p.Type == 1).OrderByDescending(p => p.id).First();
+            return DB.HoaDons.OrderByDescending(p => p.id).FirstOrDefault();
         }
-
         public void Add_Bill(DateTime date, string customer_name, string phone, string staff_name,
                                       string cmnd, int type, int tongtien)
         {
@@ -80,6 +62,21 @@ namespace QuanLyCuaHangGear.BLL
                 SoLuong = count
             });
             DB.SaveChanges();
+        }
+        // get bill and import
+        public List<HoaDon> Get_Bill_by_Date(DateTime d1, DateTime d2)
+        {
+            QLCH_Model DB = new QLCH_Model();
+            var li_method = DB.HoaDons.Where(p => d1 <= p.MakeDate && p.MakeDate <= d2);
+
+            return li_method.ToList();
+        }
+        public HoaDon Get_Bill_by_ID(int id)
+        {
+            QLCH_Model DB = new QLCH_Model();
+            var li_method = DB.HoaDons.Where(p => p.id == id).FirstOrDefault();
+
+            return li_method;
         }
         public List<HoaDonInfo> Get_Bill_Infoes(int id_bill)
         {

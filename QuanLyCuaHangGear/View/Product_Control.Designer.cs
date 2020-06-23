@@ -292,6 +292,7 @@
             this.Product_dataGridView.Name = "Product_dataGridView";
             this.Product_dataGridView.RowHeadersWidth = 51;
             this.Product_dataGridView.RowTemplate.Height = 24;
+            this.Product_dataGridView.RowTemplate.ReadOnly = true;
             this.Product_dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Product_dataGridView.Size = new System.Drawing.Size(629, 380);
             this.Product_dataGridView.TabIndex = 113;

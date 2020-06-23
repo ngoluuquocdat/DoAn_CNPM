@@ -229,6 +229,7 @@
             this.dtgv_import.Name = "dtgv_import";
             this.dtgv_import.RowHeadersWidth = 51;
             this.dtgv_import.RowTemplate.Height = 24;
+            this.dtgv_import.RowTemplate.ReadOnly = true;
             this.dtgv_import.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgv_import.Size = new System.Drawing.Size(542, 192);
             this.dtgv_import.TabIndex = 88;

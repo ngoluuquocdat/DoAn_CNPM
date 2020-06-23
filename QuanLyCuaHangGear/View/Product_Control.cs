@@ -31,18 +31,18 @@ namespace QuanLyCuaHangGear
             InitializeComponent();
 
             Control.CheckForIllegalCrossThreadCalls = false;
-            ThreadStart ts1 = new ThreadStart(Load_dtgv);
-            ThreadStart ts2 = new ThreadStart(SetCBB);
-            Thread thread1 = new Thread(ts1);
-            thread1.Start();
-            thread1 = new Thread(ts2);
-            thread1.Start();
-
+          //  ThreadStart ts1 = new ThreadStart(Load_dtgv);
+           // ThreadStart ts2 = new ThreadStart(SetCBB);
+          //  Thread thread1 = new Thread(ts1);
+           // thread1.Start();
+           // thread1 = new Thread(ts2);
+            //thread1.Start();
+            
             //thread1 = new Thread(SetCBB);
             //thread1.Start();
             //Thread thread2 = new Thread(SetCBB);
             //thread2.Start();
-            //Load_dtgv();
+            Load_dtgv();
 
         }
         public void SetCBB()

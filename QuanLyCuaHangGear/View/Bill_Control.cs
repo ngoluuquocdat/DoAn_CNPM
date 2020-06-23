@@ -152,7 +152,7 @@ namespace QuanLyCuaHangGear
             string phone;
             string staff_name;
             string cmnd;
-            DateTime date = dateTimePicker1.Value;
+            DateTime date = dateTimePicker1.Value.Date;
             if (this.Id_NV == 0)
             {
                 staff_name = "Ngô Lưu Quốc Đạt";

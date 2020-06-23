@@ -63,7 +63,7 @@ namespace QuanLyCuaHangGear
             HangHoa h = BLL_Product.Instance.Get_HangHoa_by_ID(id);
             txt_danhmuc.Text = BLL_Product.Instance.Get_DanhMuc_by_ID(h.idDanhMuc).Name;
             txt_tenhang.Text = h.Name;
-            numUpDown_count.Maximum = h.SoLuong;
+            //numUpDown_count.Maximum = h.SoLuong;
         }
         private void btn_SearchName_Click(object sender, EventArgs e)
         {
@@ -76,8 +76,8 @@ namespace QuanLyCuaHangGear
             }
             else
             {
-                txt_email.Text = provider.Name;
-                txt_phone_provi.Text = provider.Email;
+                txt_email.Text = provider.Email;
+                txt_phone_provi.Text = provider.Phone;
             }
         }
 
@@ -149,7 +149,8 @@ namespace QuanLyCuaHangGear
             string phone;
             string staff_name;
             string cmnd;
-            DateTime date = dateTimePicker1.Value;
+            
+            DateTime date = dateTimePicker1.Value.Date;
             if (this.Id_NV == 0)
             {
                 staff_name = "Ngô Lưu Quốc Đạt";
@@ -162,7 +163,7 @@ namespace QuanLyCuaHangGear
                 cmnd = nv.CMND;
             }
 
-            provider_name = txt_phone_provi.Text;
+            provider_name = txt_name_provi.Text;
             phone = txt_phone_provi.Text;
 
             BLL_Bill.Instance.Add_Bill(date, provider_name, phone, staff_name, cmnd, 0,update_tongtien());
