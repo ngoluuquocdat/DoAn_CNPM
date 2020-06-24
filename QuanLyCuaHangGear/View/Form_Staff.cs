@@ -112,7 +112,6 @@ namespace QuanLyCuaHangGear.View
             // account_Control1.BringToFront();
             Account_Control.Instance.Id_NV = Convert.ToInt32(Id_nv);
             Account_Control.Instance.SetView();
-            Account_Control.Instance.Reset();
            
             if (!panel_Main.Controls.Contains(Account_Control.Instance))
             {
@@ -128,12 +127,12 @@ namespace QuanLyCuaHangGear.View
 
         private void btn_Exit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
         }
 
         private void Form_Staff_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.DialogResult = DialogResult.OK;          
+            //this.DialogResult = DialogResult.OK;          
         }
 
         private void pic_StoreLogo_Click(object sender, EventArgs e)

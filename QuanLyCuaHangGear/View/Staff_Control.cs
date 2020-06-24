@@ -20,7 +20,7 @@ namespace QuanLyCuaHangGear
         {
             get
             {
-                if (_instance == null)
+                if (_instance == null || _instance.IsDisposed)
                     _instance = new Staff_Control();
                 return _instance;
             }
@@ -29,9 +29,9 @@ namespace QuanLyCuaHangGear
         public Staff_Control()
         {
             InitializeComponent();
-            Control.CheckForIllegalCrossThreadCalls = false;
-            Thread thread = new Thread(Load_dtgv);
-            thread.Start();
+            //Control.CheckForIllegalCrossThreadCalls = false;
+            //Thread thread = new Thread(Load_dtgv);
+            //thread.Start();
             Load_dtgv();
         }
         //methods

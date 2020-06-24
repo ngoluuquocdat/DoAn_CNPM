@@ -313,6 +313,16 @@ namespace QuanLyCuaHangGear.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Staff_account {
+            get {
+                object obj = ResourceManager.GetObject("Staff account", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Store_Logo {
             get {
                 object obj = ResourceManager.GetObject("Store Logo", resourceCulture);

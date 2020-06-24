@@ -21,7 +21,7 @@ namespace QuanLyCuaHangGear
         {
             get
             {
-                if (_instance == null)
+                if (_instance == null || _instance.IsDisposed)
                     _instance = new Bill_Control();
                 return _instance;
             }
@@ -124,18 +124,21 @@ namespace QuanLyCuaHangGear
 
         private void btn_del_from_bill_Click(object sender, EventArgs e)
         {
-            int index = dtgv_buy.SelectedRows[0].Index;
-            int soluong = Convert.ToInt32(dt.Rows[index]["Số lượng"]);
-            if (soluong > 1)
+            if(dtgv_buy.SelectedRows.Count ==1)
             {
-                dt.Rows[index]["Số lượng"] = --soluong;
+                int index = dtgv_buy.SelectedRows[0].Index;
+                int soluong = Convert.ToInt32(dt.Rows[index]["Số lượng"]);
+                if (soluong > 1)
+                {
+                    dt.Rows[index]["Số lượng"] = --soluong;
+                }
+                else
+                {
+                    dt.Rows.Remove(dt.Rows[index]);
+                }
+
+                txt_Total.Text = update_tongtien() + "";
             }
-            else
-            {
-                dt.Rows.Remove(dt.Rows[index]);
-            }
-            
-            txt_Total.Text = update_tongtien() + "";
         }
 
         private void txt_id_hang_Click(object sender, EventArgs e)

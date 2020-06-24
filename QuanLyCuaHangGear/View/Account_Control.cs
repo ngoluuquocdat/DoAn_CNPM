@@ -21,7 +21,7 @@ namespace QuanLyCuaHangGear
         {
             get
             {
-                if (_instance == null)
+                if (_instance == null || _instance.IsDisposed)
                     _instance = new Account_Control();
                 return _instance;
             }
@@ -37,6 +37,7 @@ namespace QuanLyCuaHangGear
             {
                 txt_DisplayName.Text = "Ngô Lưu Quốc Đạt";
                 txt_UserName.Text = "admin";
+                pic_User.Image = Properties.Resources.Manager;
             }
             else
             {
@@ -44,6 +45,7 @@ namespace QuanLyCuaHangGear
                 Account ac = BLL_Account.Instance.Get_Account_by_ID(this.Id_NV);
                 txt_DisplayName.Text = nv.Name;
                 txt_UserName.Text = ac.UserName;
+                pic_User.Image = Properties.Resources.Staff_account;
             }
         }
         public void Reset()

@@ -140,7 +140,7 @@
             // 
             // pic_User
             // 
-            this.pic_User.Image = global::QuanLyCuaHangGear.Properties.Resources.Manager;
+            this.pic_User.Image = global::QuanLyCuaHangGear.Properties.Resources.Staff_account;
             this.pic_User.Location = new System.Drawing.Point(456, 19);
             this.pic_User.Margin = new System.Windows.Forms.Padding(2);
             this.pic_User.Name = "pic_User";

@@ -21,7 +21,7 @@ namespace QuanLyCuaHangGear
         {
             get
             {
-                if (_instance == null)
+                if (_instance == null || _instance.IsDisposed)
                     _instance = new Product_Control();
                 return _instance;
             }
