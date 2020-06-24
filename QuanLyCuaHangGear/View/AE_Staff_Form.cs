@@ -29,8 +29,8 @@ namespace QuanLyCuaHangGear
             }
             else
             {
-                NhanVien nv = BLL_Staff.Instance.Get_NhanVien_ById(ID);
-                Account ac = BLL_Staff.Instance.Get_Account_ById(ID);
+                NhanVien nv = BLL_Staff.Instance.Get_NhanVien_by_ID(ID);
+                Account ac = BLL_Account.Instance.Get_Account_by_ID(ID);
                 txt_TenNV.Text = nv.Name;
                 if (nv.Gender == "Nam")
                 {
@@ -94,7 +94,7 @@ namespace QuanLyCuaHangGear
                 string pass = txt_password.Text;
                 string displayname = txt_displayName.Text;
                 int id_nv = BLL.BLL_Staff.Instance.Get_Lastest_ID();
-                BLL_Staff.Instance.Add_Account(username,id_nv, displayname, pass);
+                BLL_Account.Instance.Add_Account(username,id_nv, displayname, pass);
 
             }
             else

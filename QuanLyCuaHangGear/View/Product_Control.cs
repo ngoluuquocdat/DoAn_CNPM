@@ -29,7 +29,7 @@ namespace QuanLyCuaHangGear
         public Product_Control()
         {
             InitializeComponent();
-
+            SetCBB();
             Control.CheckForIllegalCrossThreadCalls = false;
           //  ThreadStart ts1 = new ThreadStart(Load_dtgv);
            // ThreadStart ts2 = new ThreadStart(SetCBB);
@@ -61,6 +61,7 @@ namespace QuanLyCuaHangGear
                 });
             }
             cbb_Category.SelectedIndex = 0;
+            cbb_Sort.SelectedIndex = 0;
         }       
         // methods
         // hàm này chép dữ liệu từ đối tượng HangHoa sang đối tượng HangHoa_view

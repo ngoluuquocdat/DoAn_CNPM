@@ -56,14 +56,6 @@ namespace QuanLyCuaHangGear.BLL
 
             return li_method;
         }
-
-        public Account Get_Account_by_ID(int id)
-        {
-            QLCH_Model DB = new QLCH_Model();
-            var li_method = DB.Accounts.Where(p => p.idNhanVien == id).Select(p => p).FirstOrDefault();
-            return li_method;
-        }
-
         public void Add_Staff(string name, string gender, DateTime dob, string cmnd, string quequan, string diachi, string email, string phone)
         {
             QLCH_Model DB = new QLCH_Model();
@@ -135,35 +127,7 @@ namespace QuanLyCuaHangGear.BLL
             
         }
         // các hàm tương tác với đối tượng Account
-        public void Add_Account(string username, int id_nv, string displayname, string pass)
-        {
-            QLCH_Model DB = new QLCH_Model();
-            Account acc = new Account
-            {
-                UserName = username,
-                DisplayName = displayname,
-                idNhanVien = id_nv,
-                Type = 1,
-                PassWord = pass
-            };
-
-            DB.Accounts.Add(acc);
-            DB.SaveChanges();
-        }
-        public void Delete_Account(int id)
-        {
-
-            QLCH_Model db = new QLCH_Model();           
-            id = Convert.ToInt32(db.Accounts.Where(p => p.idNhanVien == id).Select(p => p.idNhanVien).FirstOrDefault());
-            foreach (Account i in db.Accounts)
-            {
-                if (i.idNhanVien == id)
-                {
-                    db.Accounts.Remove(i);
-                }
-            }
-            db.SaveChanges();
-        }
+        
 
         // các hàm xử lý chuỗi
         public string Convert_to_UnSign(string s)
@@ -177,16 +141,6 @@ namespace QuanLyCuaHangGear.BLL
             s = Regex.Replace(s, @"\s", "");   //sau do thay the bang 1 khoang trong            
 
             return s;
-        }
-        public NhanVien Get_NhanVien_ById(int Id)   // lap
-        {
-            QLCH_Model db = new QLCH_Model();
-            return db.NhanViens.Where(p => p.id == Id).FirstOrDefault();
-        }
-        public Account Get_Account_ById(int Id) // lap
-        {
-            QLCH_Model db = new QLCH_Model();
-            return db.Accounts.Where(p => p.idNhanVien == Id).FirstOrDefault();
         }
         public string Name_to_Username(string name)
         {

@@ -36,7 +36,8 @@
             this.panel_Down = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.btn_Confirm = new System.Windows.Forms.Button();
             this.txt_id = new System.Windows.Forms.TextBox();
             this.label_id = new System.Windows.Forms.Label();
@@ -61,8 +62,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel_Head.SuspendLayout();
@@ -132,9 +131,7 @@
             this.panel_Down.Controls.Add(this.panel15);
             this.panel_Down.Controls.Add(this.panel13);
             this.panel_Down.Controls.Add(this.panel9);
-            this.panel_Down.Controls.Add(this.panel10);
             this.panel_Down.Controls.Add(this.btn_Confirm);
-            this.panel_Down.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel_Down.Location = new System.Drawing.Point(0, 726);
             this.panel_Down.Margin = new System.Windows.Forms.Padding(4);
             this.panel_Down.Name = "panel_Down";
@@ -162,14 +159,24 @@
             this.panel13.Size = new System.Drawing.Size(1, 82);
             this.panel13.TabIndex = 148;
             // 
-            // panel10
+            // panel8
             // 
-            this.panel10.BackColor = System.Drawing.Color.White;
-            this.panel10.Location = new System.Drawing.Point(0, 114);
-            this.panel10.Margin = new System.Windows.Forms.Padding(4);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(656, 1);
-            this.panel10.TabIndex = 147;
+            this.panel8.BackColor = System.Drawing.Color.White;
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(1, 82);
+            this.panel8.TabIndex = 149;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.White;
+            this.panel9.Location = new System.Drawing.Point(0, 81);
+            this.panel9.Margin = new System.Windows.Forms.Padding(4);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(678, 1);
+            this.panel9.TabIndex = 147;
             // 
             // btn_Confirm
             // 
@@ -180,7 +187,7 @@
             this.btn_Confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Confirm.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Confirm.ForeColor = System.Drawing.Color.White;
-            this.btn_Confirm.Location = new System.Drawing.Point(241, 16);
+            this.btn_Confirm.Location = new System.Drawing.Point(251, 16);
             this.btn_Confirm.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Confirm.Name = "btn_Confirm";
             this.btn_Confirm.Size = new System.Drawing.Size(177, 54);
@@ -469,25 +476,6 @@
             this.panel7.Size = new System.Drawing.Size(366, 1);
             this.panel7.TabIndex = 261;
             // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.White;
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1, 82);
-            this.panel8.TabIndex = 149;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.White;
-            this.panel9.Location = new System.Drawing.Point(0, 81);
-            this.panel9.Margin = new System.Windows.Forms.Padding(4);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(678, 1);
-            this.panel9.TabIndex = 147;
-            // 
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.White;
@@ -565,7 +553,6 @@
         private System.Windows.Forms.Panel panel_Down;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Button btn_Confirm;
         private System.Windows.Forms.TextBox txt_id;
         private System.Windows.Forms.Label label_id;

@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyCuaHangGear.BLL;
 using QuanLyCuaHangGear.DTO;
+using System.Data.Entity.ModelConfiguration.Configuration;
 
 namespace QuanLyCuaHangGear
 {
     public partial class Account_Control : UserControl
     {
         private static Account_Control _instance;
+        private int id_NV;
         public static Account_Control Instance
         {
             get
@@ -24,12 +26,45 @@ namespace QuanLyCuaHangGear
                 return _instance;
             }
         }
+        public int Id_NV { get => id_NV; set => id_NV = value; }
         public Account_Control()
         {
             InitializeComponent();
-
         }
-
+        public void SetView()
+        {
+            if (this.Id_NV == 0)
+            {
+                txt_DisplayName.Text = "Ngô Lưu Quốc Đạt";
+                txt_UserName.Text = "admin";
+            }
+            else
+            {
+                NhanVien nv = BLL_Staff.Instance.Get_NhanVien_by_ID(this.Id_NV);
+                Account ac = BLL_Account.Instance.Get_Account_by_ID(this.Id_NV);
+                txt_DisplayName.Text = nv.Name;
+                txt_UserName.Text = ac.UserName;
+            }
+        }
+        public void Reset()
+        {
+            txt_OldPass.Clear();
+            txt_NewPass.Clear();
+            txt_ConfirmPass.Clear();
+            label1.Visible = false;
+            label2.Visible = false;
+            label3.Visible = false;
+            txt_OldPass.Visible = false;
+            txt_NewPass.Visible = false;
+            txt_ConfirmPass.Visible = false;
+            btn_Confirm.Visible = false;
+            btn_Cancel.Visible = false;
+            btn_changePass.Visible = true;
+            label_WarningNew.Visible = false;
+            label_WarningCheck.Visible = false;
+            label_WarningCf.Visible = false;
+            label_WarningOld.Visible = false;
+        }
         private void btn_changePass_Click(object sender, EventArgs e)
         {
             txt_OldPass.Clear();
@@ -49,22 +84,7 @@ namespace QuanLyCuaHangGear
 
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
-            txt_OldPass.Clear();
-            txt_NewPass.Clear();
-            txt_ConfirmPass.Clear();
-            label1.Visible = false;
-            label2.Visible = false;
-            label3.Visible = false;
-            txt_OldPass.Visible = false;
-            txt_NewPass.Visible = false;
-            txt_ConfirmPass.Visible = false;
-            btn_Confirm.Visible = false;
-            btn_Cancel.Visible = false;
-            btn_changePass.Visible = true;
-            label_WarningNew.Visible = false;
-            label_WarningCheck.Visible = false;
-            label_WarningCf.Visible = false;
-            label_WarningOld.Visible = false;
+            Reset();
         }
 
         private void btn_Confirm_Click(object sender, EventArgs e)
@@ -72,7 +92,15 @@ namespace QuanLyCuaHangGear
             string oldpass = txt_OldPass.Text;
             string newpass = txt_NewPass.Text;
             string confirmpass = txt_ConfirmPass.Text;
-            Account ac = BLL_Account.Instance.CheckOldPass(oldpass);
+            Account ac = new Account();
+            if (this.Id_NV == 0)
+            {
+                 ac = BLL_Account.Instance.Get_Account_by_Username("admin");
+            }
+            else
+            {
+                 ac = BLL_Account.Instance.Get_Account_by_ID(this.Id_NV);
+            }
             if (ac != null)
             {
                 if (ac.PassWord == oldpass)
@@ -95,18 +123,17 @@ namespace QuanLyCuaHangGear
                             }
                             else
                             {
-                                MessageBox.Show("ok");
-                                label1.Visible = false;
-                                label2.Visible = false;
-                                label3.Visible = false;
-                                txt_OldPass.Visible = false;
-                                txt_NewPass.Visible = false;
-                                txt_ConfirmPass.Visible = false;
-                                btn_Confirm.Visible = false;
-                                btn_Cancel.Visible = false;
-                                btn_changePass.Visible = true;
-                                label_Success.Visible = true;
-                                BLL_Account.Instance.UpdatePass(Convert.ToInt32(ac.idNhanVien), newpass);
+                                    label1.Visible = false;
+                                    label2.Visible = false;
+                                    label3.Visible = false;
+                                    txt_OldPass.Visible = false;
+                                    txt_NewPass.Visible = false;
+                                    txt_ConfirmPass.Visible = false;
+                                    btn_Confirm.Visible = false;
+                                    btn_Cancel.Visible = false;
+                                    btn_changePass.Visible = true;
+                                    label_Success.Visible = true;
+                                    BLL_Account.Instance.UpdatePass(ac.UserName, newpass);
                             }
                         }
                     }

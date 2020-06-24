@@ -70,7 +70,7 @@ namespace QuanLyCuaHangGear
             txt_DiaChi.Text = nv.DiaChi;
             txt_SDT.Text = nv.Phone;
             txt_Email.Text = nv.Email;
-            txt_Username.Text = BLL_Staff.Instance.Get_Account_by_ID(id_nv).UserName;
+            txt_Username.Text = BLL_Account.Instance.Get_Account_by_ID(id_nv).UserName;
         }
 
         private void btn_Add_Click(object sender, EventArgs e)
@@ -110,7 +110,7 @@ namespace QuanLyCuaHangGear
             }
             foreach (int id_nv in list_id)
             {
-                BLL_Staff.Instance.Delete_Account(id_nv);
+                BLL_Account.Instance.Delete_Account(id_nv);
                 BLL_Staff.Instance.Delete_Staff(id_nv);
             }
 
@@ -148,7 +148,20 @@ namespace QuanLyCuaHangGear
 
         private void btn_Sort_ZA_Click(object sender, EventArgs e)
         {
+            List<int> current_id = new List<int>();
+            List<NhanVien> list_sort = new List<NhanVien>();
 
+            foreach (DataGridViewRow i in Staff_dtgv.Rows)
+            {
+                current_id.Add(Convert.ToInt32(i.Cells["ID"].Value.ToString()));
+            }
+            foreach (int id in current_id)
+            {
+                list_sort.Add(BLL_Staff.Instance.Get_NhanVien_by_ID(id));
+            }
+            BLL_Staff.Instance.CompCond += new BLL_Staff.Compare_Condition(BLL_Staff.Instance.Z_to_A);
+            BLL_Staff.Instance.Sort(list_sort);
+            Staff_dtgv.DataSource = To_View(list_sort);
         }
     }
 }

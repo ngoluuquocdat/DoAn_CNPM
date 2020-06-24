@@ -374,12 +374,12 @@
             // 
             this.cbb_danhMuc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.cbb_danhMuc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbb_danhMuc.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_danhMuc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_danhMuc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
             this.cbb_danhMuc.FormattingEnabled = true;
             this.cbb_danhMuc.Location = new System.Drawing.Point(245, 230);
             this.cbb_danhMuc.Name = "cbb_danhMuc";
-            this.cbb_danhMuc.Size = new System.Drawing.Size(333, 30);
+            this.cbb_danhMuc.Size = new System.Drawing.Size(333, 31);
             this.cbb_danhMuc.TabIndex = 232;
             // 
             // AE_Product_Form

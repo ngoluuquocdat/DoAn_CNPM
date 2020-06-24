@@ -93,6 +93,7 @@ namespace QuanLyCuaHangGear
             bool isExist = false;
             int id = Convert.ToInt32(txt_id_hang.Text);
             HangHoa h = BLL_Product.Instance.Get_HangHoa_by_ID(id);
+            //dt null
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 if (h.id == Convert.ToInt32(dt.Rows[i]["Mã hàng"].ToString()))
@@ -149,7 +150,6 @@ namespace QuanLyCuaHangGear
             string phone;
             string staff_name;
             string cmnd;
-            
             DateTime date = dateTimePicker1.Value.Date;
             if (this.Id_NV == 0)
             {
@@ -179,6 +179,19 @@ namespace QuanLyCuaHangGear
                 BLL_Bill.Instance.Add_Bill_Info(id_bill, h.Name, danhmuc, h.DonGiaBan, soluong);
                 BLL_Product.Instance.Update_SoLuong(id_hanghoa, soluong);
             }
+            txt_id_hang.Clear();
+            txt_danhmuc.Clear();
+            txt_tenhang.Clear();
+            numUpDown_count.Value = 0;
+
+            txt_name_provi.Clear();
+            txt_phone_provi.Clear();
+            txt_email.Clear();
+
+            txt_Total.Clear();
+            dt = null;
+            dtgv_import.DataSource = dt;
+            MessageBox.Show("Đã nhập hàng thành công!");
         }
 
         private void txt_name_provi_TextChanged(object sender, EventArgs e)

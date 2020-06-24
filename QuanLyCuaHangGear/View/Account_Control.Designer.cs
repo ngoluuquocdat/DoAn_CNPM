@@ -95,7 +95,6 @@
             this.txt_DisplayName.Size = new System.Drawing.Size(232, 27);
             this.txt_DisplayName.TabIndex = 0;
             this.txt_DisplayName.TabStop = false;
-            this.txt_DisplayName.Text = "Ngô Lưu Quốc Đạt";
             this.txt_DisplayName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_UserName
@@ -111,7 +110,6 @@
             this.txt_UserName.Size = new System.Drawing.Size(232, 27);
             this.txt_UserName.TabIndex = 164;
             this.txt_UserName.TabStop = false;
-            this.txt_UserName.Text = "nlqdat";
             this.txt_UserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label16

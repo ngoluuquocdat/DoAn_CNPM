@@ -123,9 +123,8 @@
             this.label_Name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.label_Name.Location = new System.Drawing.Point(1006, 39);
             this.label_Name.Name = "label_Name";
-            this.label_Name.Size = new System.Drawing.Size(177, 24);
+            this.label_Name.Size = new System.Drawing.Size(0, 24);
             this.label_Name.TabIndex = 5;
-            this.label_Name.Text = "Ngô Lưu Quốc Đạt";
             // 
             // panel_Head
             // 

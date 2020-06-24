@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyCuaHangGear.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -191,15 +192,18 @@ namespace QuanLyCuaHangGear
             Active_Effect((Button)sender);
             btn_Account.Image = Properties.Resources.blue_user;
             pic_UpperLogo.Image = Properties.Resources.blue_user;
-            
+            Account_Control.Instance.Id_NV = Convert.ToInt32(Id_nv);
+            Account_Control.Instance.SetView();
+            Account_Control.Instance.Reset();
             if (!panel_Main.Controls.Contains(Account_Control.Instance))
             {
                 panel_Main.Controls.Add(Account_Control.Instance);
                 Account_Control.Instance.Dock = DockStyle.Fill;
                 Account_Control.Instance.BringToFront();
             }
-            else
+            else {
                 Account_Control.Instance.BringToFront();
+            }
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)

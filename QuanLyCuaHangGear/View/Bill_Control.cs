@@ -181,7 +181,19 @@ namespace QuanLyCuaHangGear
                 BLL_Bill.Instance.Add_Bill_Info(id_bill, h.Name, danhmuc,h.DonGiaBan,soluong);
                 BLL_Product.Instance.Update_SoLuong(id_hanghoa, -soluong);
             }
+            txt_id_hang.Clear();
+            txt_danhmuc.Clear();
+            txt_tenhang.Clear();
+            numUpDown_count.Value = 0;
 
+            txt_name_customer.Clear();
+            txt_phone.Clear();
+            txt_email.Clear();
+
+            txt_Total.Clear();
+            dt = null;
+            dtgv_buy.DataSource = dt;
+            MessageBox.Show("Đã tạo hoá đơn thành công!");
         }
 
         private void txt_phone_Click(object sender, EventArgs e)
