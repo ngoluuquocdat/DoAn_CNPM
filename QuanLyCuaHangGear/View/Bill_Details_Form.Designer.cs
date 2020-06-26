@@ -187,7 +187,7 @@
             this.btn_Confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Confirm.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Confirm.ForeColor = System.Drawing.Color.White;
-            this.btn_Confirm.Location = new System.Drawing.Point(251, 16);
+            this.btn_Confirm.Location = new System.Drawing.Point(250, 16);
             this.btn_Confirm.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Confirm.Name = "btn_Confirm";
             this.btn_Confirm.Size = new System.Drawing.Size(177, 54);
@@ -205,6 +205,7 @@
             this.txt_id.Location = new System.Drawing.Point(259, 110);
             this.txt_id.Margin = new System.Windows.Forms.Padding(4);
             this.txt_id.Name = "txt_id";
+            this.txt_id.ReadOnly = true;
             this.txt_id.Size = new System.Drawing.Size(366, 27);
             this.txt_id.TabIndex = 233;
             this.txt_id.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -244,6 +245,7 @@
             this.txt_date.Location = new System.Drawing.Point(259, 162);
             this.txt_date.Margin = new System.Windows.Forms.Padding(4);
             this.txt_date.Name = "txt_date";
+            this.txt_date.ReadOnly = true;
             this.txt_date.Size = new System.Drawing.Size(366, 27);
             this.txt_date.TabIndex = 233;
             this.txt_date.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -257,6 +259,7 @@
             this.txt_ten_partner.Location = new System.Drawing.Point(259, 215);
             this.txt_ten_partner.Margin = new System.Windows.Forms.Padding(4);
             this.txt_ten_partner.Name = "txt_ten_partner";
+            this.txt_ten_partner.ReadOnly = true;
             this.txt_ten_partner.Size = new System.Drawing.Size(366, 27);
             this.txt_ten_partner.TabIndex = 243;
             this.txt_ten_partner.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -283,6 +286,7 @@
             this.txt_phone.Location = new System.Drawing.Point(259, 271);
             this.txt_phone.Margin = new System.Windows.Forms.Padding(4);
             this.txt_phone.Name = "txt_phone";
+            this.txt_phone.ReadOnly = true;
             this.txt_phone.Size = new System.Drawing.Size(366, 27);
             this.txt_phone.TabIndex = 245;
             this.txt_phone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -309,6 +313,7 @@
             this.txt_ten_nv.Location = new System.Drawing.Point(259, 328);
             this.txt_ten_nv.Margin = new System.Windows.Forms.Padding(4);
             this.txt_ten_nv.Name = "txt_ten_nv";
+            this.txt_ten_nv.ReadOnly = true;
             this.txt_ten_nv.Size = new System.Drawing.Size(366, 27);
             this.txt_ten_nv.TabIndex = 247;
             this.txt_ten_nv.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -335,6 +340,7 @@
             this.txt_cmnd.Location = new System.Drawing.Point(259, 385);
             this.txt_cmnd.Margin = new System.Windows.Forms.Padding(4);
             this.txt_cmnd.Name = "txt_cmnd";
+            this.txt_cmnd.ReadOnly = true;
             this.txt_cmnd.Size = new System.Drawing.Size(366, 27);
             this.txt_cmnd.TabIndex = 249;
             this.txt_cmnd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -381,13 +387,13 @@
             // bill_info_dtgv
             // 
             this.bill_info_dtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bill_info_dtgv.Location = new System.Drawing.Point(51, 497);
+            this.bill_info_dtgv.Location = new System.Drawing.Point(51, 483);
             this.bill_info_dtgv.Name = "bill_info_dtgv";
             this.bill_info_dtgv.ReadOnly = true;
             this.bill_info_dtgv.RowHeadersWidth = 51;
             this.bill_info_dtgv.RowTemplate.Height = 24;
             this.bill_info_dtgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.bill_info_dtgv.Size = new System.Drawing.Size(574, 150);
+            this.bill_info_dtgv.Size = new System.Drawing.Size(574, 164);
             this.bill_info_dtgv.TabIndex = 253;
             // 
             // label7
@@ -396,7 +402,7 @@
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label7.Location = new System.Drawing.Point(49, 471);
+            this.label7.Location = new System.Drawing.Point(49, 457);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(199, 23);
@@ -490,7 +496,7 @@
             // 
             this.panel14.BackColor = System.Drawing.Color.White;
             this.panel14.ForeColor = System.Drawing.Color.Black;
-            this.panel14.Location = new System.Drawing.Point(677, 94);
+            this.panel14.Location = new System.Drawing.Point(676, 94);
             this.panel14.Margin = new System.Windows.Forms.Padding(4);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(1, 632);

@@ -330,20 +330,21 @@
             this.Staff_dtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.Staff_dtgv.DefaultCellStyle = dataGridViewCellStyle1;
             this.Staff_dtgv.Location = new System.Drawing.Point(30, 189);
+            this.Staff_dtgv.MultiSelect = false;
             this.Staff_dtgv.Name = "Staff_dtgv";
             this.Staff_dtgv.ReadOnly = true;
             this.Staff_dtgv.RowHeadersWidth = 51;
             this.Staff_dtgv.RowTemplate.Height = 24;
             this.Staff_dtgv.RowTemplate.ReadOnly = true;
             this.Staff_dtgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Staff_dtgv.Size = new System.Drawing.Size(553, 380);
+            this.Staff_dtgv.Size = new System.Drawing.Size(629, 380);
             this.Staff_dtgv.TabIndex = 49;
             // 
             // panel2
@@ -568,6 +569,7 @@
             this.Controls.Add(this.Staff_dtgv);
             this.Name = "Staff_Control";
             this.Size = new System.Drawing.Size(1250, 700);
+            this.Click += new System.EventHandler(this.Staff_Control_Click);
             ((System.ComponentModel.ISupportInitialize)(this.Staff_dtgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

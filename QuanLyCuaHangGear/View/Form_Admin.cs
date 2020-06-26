@@ -36,11 +36,23 @@ namespace QuanLyCuaHangGear
         public void Reset_Button_Effect()
         {
             btn_Staff.ForeColor = Color.White;
+            btn_Staff.Font = new Font(btn_Staff.Font.FontFamily, 12);
+
             btn_Product.ForeColor = Color.White;
+            btn_Product.Font = new Font(btn_Product.Font.FontFamily, 12);
+
             btn_Report.ForeColor = Color.White;
+            btn_Report.Font = new Font(btn_Report.Font.FontFamily, 12);
+
             btn_Account.ForeColor = Color.White;
+            btn_Account.Font = new Font(btn_Account.Font.FontFamily, 12);
+
             btn_Bill.ForeColor = Color.White;
+            btn_Bill.Font = new Font(btn_Bill.Font.FontFamily, 12);
+
             btn_Import.ForeColor = Color.White;
+            btn_Import.Font = new Font(btn_Import.Font.FontFamily, 12);
+
 
             btn_Staff.BackColor = Color.FromArgb(40, 42, 65);
             btn_Product.BackColor = Color.FromArgb(40, 42, 65);
@@ -80,6 +92,7 @@ namespace QuanLyCuaHangGear
         public void Active_Effect(Button btn)
         {
             Reset_Button_Effect();
+            btn.Font = new Font(btn.Font.FontFamily, 14);
             btn.BackColor = Color.FromArgb(52, 54, 77);
             btn.ForeColor = Color.FromArgb(98, 225, 225);
             btn.TextImageRelation = TextImageRelation.TextBeforeImage;

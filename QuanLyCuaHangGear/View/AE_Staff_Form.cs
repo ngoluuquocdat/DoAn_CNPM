@@ -95,6 +95,7 @@ namespace QuanLyCuaHangGear
                 string displayname = txt_displayName.Text;
                 int id_nv = BLL.BLL_Staff.Instance.Get_Lastest_ID();
                 BLL_Account.Instance.Add_Account(username,id_nv, displayname, pass);
+                MessageBox.Show("Đã thêm nhân viên mới!");
 
             }
             else
@@ -117,6 +118,7 @@ namespace QuanLyCuaHangGear
                 string phone = txt_Phone.Text;
                 string pass = txt_password.Text;
                 BLL_Staff.Instance.Edit_Staff(ID, name, gender, dob, cmnd, quequan, diachi, email, phone, pass);
+                MessageBox.Show("Đã cập nhật thông tin!");
             }
 
             this.Close();

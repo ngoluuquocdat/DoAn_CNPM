@@ -90,31 +90,21 @@ namespace QuanLyCuaHangGear
                 int id = Convert.ToInt32(Staff_dtgv.SelectedRows[0].Cells["id"].Value);
                 AE_Staff_Form f = new AE_Staff_Form(id);
                 f.ShowDialog();
-                
-            }
-            Load_dtgv();
+                Load_dtgv();
+            }           
         }
 
         private void btn_Delete_Click(object sender, EventArgs e)
-        {           
-            DataGridViewSelectedRowCollection rows = Staff_dtgv.SelectedRows;
-            List<int> list_id = new List<int>();
-            if (rows.Count == 0)
+        {
+            DataGridViewSelectedRowCollection r = Staff_dtgv.SelectedRows;
+            if (r.Count == 1)
             {
-                MessageBox.Show("Chưa có hàng nào được chọn.");
-                return;
-            }
-            foreach (DataGridViewRow i in rows)
-            {
-                list_id.Add(Convert.ToInt32(i.Cells["ID"].Value.ToString()));
-            }
-            foreach (int id_nv in list_id)
-            {
+                int id_nv = Convert.ToInt32(Staff_dtgv.SelectedRows[0].Cells["id"].Value);
+
                 BLL_Account.Instance.Delete_Account(id_nv);
                 BLL_Staff.Instance.Delete_Staff(id_nv);
-            }
-
-            Load_dtgv();
+                Load_dtgv();
+            }                                 
         }
 
         private void txt_Search_Click(object sender, EventArgs e)
@@ -162,6 +152,11 @@ namespace QuanLyCuaHangGear
             BLL_Staff.Instance.CompCond += new BLL_Staff.Compare_Condition(BLL_Staff.Instance.Z_to_A);
             BLL_Staff.Instance.Sort(list_sort);
             Staff_dtgv.DataSource = To_View(list_sort);
+        }
+
+        private void Staff_Control_Click(object sender, EventArgs e)
+        {
+            txt_Search.Text = "Nhập tên nhân viên";
         }
     }
 }

@@ -84,7 +84,7 @@ namespace QuanLyCuaHangGear.View
                 int idPr = ((CBBItems)cbb_danhMuc.SelectedItem).Value;
                 BLL_Product.Instance.AddProduct(TenPr, GiaBan, GiaNhap, idPr);
                 this.Close();
-                MessageBox.Show("Add to success!");
+                MessageBox.Show("Đã thêm mặt hàng!");
             }
             else
             {
@@ -94,7 +94,7 @@ namespace QuanLyCuaHangGear.View
                 int idPr = ((CBBItems)cbb_danhMuc.SelectedItem).Value;
                 BLL_Product.Instance.EditProduct(ID,TenPr, GiaBan, GiaNhap, idPr);
                 this.Close();
-                MessageBox.Show("Edit to success!");
+                MessageBox.Show("Đã cập nhật thông tin!");
             }
         }
     }

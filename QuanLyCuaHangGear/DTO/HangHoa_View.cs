@@ -10,7 +10,8 @@ namespace QuanLyCuaHangGear.DTO
     {
         public int ID { get; set; }
         public string Ten { get; set; }
-        public string DanhMuc { get; set; }       
+        public string DanhMuc { get; set; } 
+        public int SoLuong { get; set; }
         public int DonGiaNhap { get; set; }
         public int DonGiaBan { get; set; }
     }

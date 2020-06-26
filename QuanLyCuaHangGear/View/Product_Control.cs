@@ -29,21 +29,45 @@ namespace QuanLyCuaHangGear
         public Product_Control()
         {
             InitializeComponent();
-            SetCBB();
-            Control.CheckForIllegalCrossThreadCalls = false;
-          //  ThreadStart ts1 = new ThreadStart(Load_dtgv);
-           // ThreadStart ts2 = new ThreadStart(SetCBB);
-          //  Thread thread1 = new Thread(ts1);
-           // thread1.Start();
-           // thread1 = new Thread(ts2);
-            //thread1.Start();
-            
-            //thread1 = new Thread(SetCBB);
-            //thread1.Start();
-            //Thread thread2 = new Thread(SetCBB);
-            //thread2.Start();
-            Load_dtgv();
 
+            /*
+            Control.CheckForIllegalCrossThreadCalls = false;
+            ThreadStart ts1 = new ThreadStart(Load_dtgv);
+            ThreadStart ts2 = new ThreadStart(SetCBB);
+            Thread thread1 = new Thread(ts1);
+            thread1.Start();
+            thread1 = new Thread(ts2);
+            thread1.Start();
+
+            thread1 = new Thread(SetCBB);
+            thread1.Start();
+            Thread thread2 = new Thread(SetCBB);
+            thread2.Start();
+            */
+            SetCBB();           
+            Load_dtgv();
+            Check_SoLuong();
+        }
+
+        // methods
+        // hàm này chép dữ liệu từ đối tượng HangHoa sang đối tượng HangHoa_view
+        public List<HangHoa_View> To_View(List<HangHoa> list)
+        {
+            List<HangHoa_View> list_view = new List<HangHoa_View>();
+            foreach (HangHoa h in list)
+            {
+                list_view.Add(new HangHoa_View
+                {
+                    ID = h.id,
+                    Ten = h.Name,
+                    DanhMuc = BLL_Product.Instance.Get_DanhMuc_by_ID(h.idDanhMuc).Name,
+                    SoLuong = h.SoLuong,
+                    DonGiaNhap=h.DonGiaNhap,
+                    DonGiaBan=h.DonGiaBan
+                }) ;
+            }
+
+            return list_view;
         }
         public void SetCBB()
         {
@@ -62,30 +86,22 @@ namespace QuanLyCuaHangGear
             }
             cbb_Category.SelectedIndex = 0;
             cbb_Sort.SelectedIndex = 0;
-        }       
-        // methods
-        // hàm này chép dữ liệu từ đối tượng HangHoa sang đối tượng HangHoa_view
-        public List<HangHoa_View> To_View(List<HangHoa> list)
-        {
-            List<HangHoa_View> list_view = new List<HangHoa_View>();
-            foreach (HangHoa h in list)
-            {
-                list_view.Add(new HangHoa_View
-                {
-                    ID = h.id,
-                    Ten = h.Name,
-                    DanhMuc = BLL_Product.Instance.Get_DanhMuc_by_ID(h.idDanhMuc).Name,
-                    DonGiaNhap=h.DonGiaNhap,
-                    DonGiaBan=h.DonGiaBan
-                }) ;
-            }
-
-            return list_view;
         }
         public void Load_dtgv()
         {
-            Product_dataGridView.DataSource = To_View(BLL_Product.Instance.Get_HangHoas());
-           // Product_dataGridView.DataSource = BLL_Product.Instance.Get_HangHoas();
+            Product_dtgv.DataSource = To_View(BLL_Product.Instance.Get_HangHoas());
+
+            // Product_dataGridView.DataSource = BLL_Product.Instance.Get_HangHoas();
+        }
+        public void Check_SoLuong()
+        {
+            foreach (DataGridViewRow row in Product_dtgv.Rows)
+            {
+                if (Convert.ToInt32(row.Cells["SoLuong"].Value) < 10)
+                { 
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(255, 128, 128);
+                }
+            }
         }
         //events
         private void btn_Add_Click(object sender, EventArgs e)
@@ -93,6 +109,7 @@ namespace QuanLyCuaHangGear
             AE_Product_Form ae_f = new AE_Product_Form(0);
             ae_f.ShowDialog();
             Load_dtgv();
+            Check_SoLuong();
         }
 
         private void txt_Search_Click(object sender, EventArgs e)
@@ -102,40 +119,34 @@ namespace QuanLyCuaHangGear
 
         private void btn_Edit_Click(object sender, EventArgs e)
         {
-            DataGridViewSelectedRowCollection r = Product_dataGridView.SelectedRows;
+            DataGridViewSelectedRowCollection r = Product_dtgv.SelectedRows;
             if (r.Count == 1)
             {
-                int id = Convert.ToInt32(Product_dataGridView.SelectedRows[0].Cells["id"].Value);
+                int id = Convert.ToInt32(Product_dtgv.SelectedRows[0].Cells["id"].Value);
                 AE_Product_Form f = new AE_Product_Form(id);
                 f.ShowDialog();
+                Load_dtgv();
+                Check_SoLuong();
             }
-            Load_dtgv();
+            
         }
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
-            DataGridViewSelectedRowCollection rows = Product_dataGridView.SelectedRows;
-            List<int> list_id = new List<int>();
-            if (rows.Count == 0)
+            DataGridViewSelectedRowCollection rows = Product_dtgv.SelectedRows;
+            if (rows.Count == 1)
             {
-                MessageBox.Show("Chưa có hàng nào được chọn.");
-                return;
-            }
-            foreach (DataGridViewRow i in rows)
-            {
-                list_id.Add(Convert.ToInt32(i.Cells["ID"].Value.ToString()));
-            }
-            foreach (int id_pr in list_id)
-            {
+                int id_pr = Convert.ToInt32(Product_dtgv.SelectedRows[0].Cells["id"].Value);
                 BLL_Product.Instance.Delete(id_pr);
-            }
 
-            Load_dtgv();
+                Load_dtgv();
+                Check_SoLuong();
+            }           
         }
 
         private void btn_View_Click(object sender, EventArgs e)
         {
-            int id_pr = Convert.ToInt32(Product_dataGridView.SelectedRows[0].Cells["id"].Value.ToString());
+            int id_pr = Convert.ToInt32(Product_dtgv.SelectedRows[0].Cells["id"].Value.ToString());
             HangHoa hh = BLL_Product.Instance.Get_HangHoa_by_ID(id_pr);
             int id_Dm = hh.idDanhMuc;
             DanhMuc dm = BLL_Product.Instance.Get_DanhMuc_by_ID(id_Dm);
@@ -152,8 +163,8 @@ namespace QuanLyCuaHangGear
         {
             string StringSearch = txt_Search.Text;
             int id_dm = ((CBBItems)cbb_Category.SelectedItem).Value;
-            Product_dataGridView.DataSource = To_View(BLL_Product.Instance.Search_by_DanhMuc(StringSearch, id_dm));
-
+            Product_dtgv.DataSource = To_View(BLL_Product.Instance.Search_by_DanhMuc(StringSearch, id_dm));
+            Check_SoLuong();
         }
 
         private void btn_priceUp_Click(object sender, EventArgs e)
@@ -162,7 +173,7 @@ namespace QuanLyCuaHangGear
             List<HangHoa> list_sort = new List<HangHoa>();
             
 
-            foreach (DataGridViewRow i in Product_dataGridView.Rows)
+            foreach (DataGridViewRow i in Product_dtgv.Rows)
             {
                 current_id.Add(Convert.ToInt32(i.Cells["ID"].Value.ToString()));
             }
@@ -181,7 +192,8 @@ namespace QuanLyCuaHangGear
                 BLL_Product.Instance.Sort_GiaBan(list_sort);
             }
             
-            Product_dataGridView.DataSource = To_View(list_sort);
+            Product_dtgv.DataSource = To_View(list_sort);
+            Check_SoLuong();
         }
 
         private void btn_priceDown_Click(object sender, EventArgs e)
@@ -189,7 +201,7 @@ namespace QuanLyCuaHangGear
             List<int> current_id = new List<int>();
             List<HangHoa> list_sort = new List<HangHoa>();
 
-            foreach (DataGridViewRow i in Product_dataGridView.Rows)
+            foreach (DataGridViewRow i in Product_dtgv.Rows)
             {
                 current_id.Add(Convert.ToInt32(i.Cells["ID"].Value.ToString()));
             }
@@ -209,7 +221,8 @@ namespace QuanLyCuaHangGear
                 BLL_Product.Instance.Sort_GiaBan(list_sort);
             }
 
-            Product_dataGridView.DataSource = To_View(list_sort);
+            Product_dtgv.DataSource = To_View(list_sort);
+            Check_SoLuong();
         }
 
         private void cbb_Category_SelectedIndexChanged(object sender, EventArgs e)
@@ -218,11 +231,19 @@ namespace QuanLyCuaHangGear
             if (id_dm == 0)
             {
                 Load_dtgv();
+                Check_SoLuong();
+
             }
             else
             {
-                Product_dataGridView.DataSource = To_View(BLL_Product.Instance.Get_HangHoa_by_IdDanhMuc(id_dm));
+                Product_dtgv.DataSource = To_View(BLL_Product.Instance.Get_HangHoa_by_IdDanhMuc(id_dm));
+                Check_SoLuong();
             }
+        }
+
+        private void Product_Control_Click(object sender, EventArgs e)
+        {
+            txt_Search.Text = "Nhập tên hàng";
         }
     }
 }

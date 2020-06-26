@@ -28,12 +28,12 @@ namespace QuanLyCuaHangGear.BLL
         {
 
         }
-        public Account Get_Account(string UserName, string PassWord)
+        public Account Get_Account(string UserName)
         {
             try
             {
                 QLCH_Model DB = new QLCH_Model();
-                var li_method = DB.Accounts.Where(p => (p.UserName == UserName ) && (p.PassWord == PassWord )).FirstOrDefault();
+                var li_method = DB.Accounts.Where(p => (p.UserName == UserName )).FirstOrDefault();
                 return li_method;
             }
             catch (Exception)

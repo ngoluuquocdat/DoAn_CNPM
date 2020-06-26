@@ -77,20 +77,10 @@ namespace QuanLyCuaHangGear
             {
                 txt_Password.Clear();
             }
-            //if (!Check_Username(txt_Username.Text))
-            //{
-            //    pic_Username.Image = Properties.Resources.Red_Username;
-            //    pic_Password.Image = Properties.Resources.Red_Password;
-            //    return;
-            //}
-            //if (!Check_Password(txt_Password.Text))
-            //{
-            //    pic_Password.Image = Properties.Resources.Red_Password;
-            //    return;
-            //}
+
             string UserName = txt_Username.Text;
             string PassWord = txt_Password.Text;
-            Account ac = BLL_Account.Instance.Get_Account(UserName, PassWord);
+            Account ac = BLL_Account.Instance.Get_Account(UserName);
             if (ac != null)
             {
 
@@ -98,7 +88,6 @@ namespace QuanLyCuaHangGear
                 {
                     pic_Password.Image = Properties.Resources.Red_Password;
                     label_Warning.Visible = true;
-                    return;
                 }
                 else
                 {
@@ -122,9 +111,9 @@ namespace QuanLyCuaHangGear
                     }
                 }
             }
-
             else
             {
+                MessageBox.Show("Sai ussername");
                 pic_Username.Image = Properties.Resources.Red_Username;
                 pic_Password.Image = Properties.Resources.Red_Password;
                 label_Warning.Visible = true;
