@@ -15,7 +15,7 @@ namespace QuanLyCuaHangGear
     public partial class Bill_Control : UserControl
     {
         
-        DataTable dt;
+        DataTable dt = new DataTable();
         int id_NV;
         
         private static Bill_Control _instance;
@@ -42,8 +42,7 @@ namespace QuanLyCuaHangGear
         }
         // methods
         public void Create_Datatable()
-        {
-            dt = new DataTable();
+        {            
             dt.Columns.Add("Mã hàng", typeof(String));
             dt.Columns.Add("Tên hàng", typeof(String));
             dt.Columns.Add("Số lượng", typeof(int));
@@ -180,6 +179,7 @@ namespace QuanLyCuaHangGear
                 {
                     if (h.id == Convert.ToInt32(dt.Rows[i]["Mã hàng"].ToString()))
                     {
+                        dtgv_buy.Rows[i].Selected = true;
                         int current_soluong = Convert.ToInt32(dt.Rows[i]["Số lượng"].ToString());
                         dt.Rows[i]["Số lượng"] = current_soluong + numUpDown_count.Value;
                         isExist = true;
@@ -194,6 +194,8 @@ namespace QuanLyCuaHangGear
                     dr["Số lượng"] = numUpDown_count.Value;
                     dr["Đơn giá"] = h.DonGiaBan;
                     dt.Rows.Add(dr);
+                    if(dtgv_buy.Rows.Count >0)
+                        dtgv_buy.Rows[dtgv_buy.Rows.Count-1].Selected = true;
                 }
 
                 dtgv_buy.DataSource = dt;
@@ -209,14 +211,14 @@ namespace QuanLyCuaHangGear
 
         private void btn_del_from_bill_Click(object sender, EventArgs e)
         {
-            if(dtgv_buy.SelectedRows.Count ==1)
+            if (dtgv_buy.SelectedRows.Count == 1)
             {
                 int index = dtgv_buy.SelectedRows[0].Index;
                 int soluong = Convert.ToInt32(dt.Rows[index]["Số lượng"]);
                 if (soluong > 1)
                 {
-                    dt.Rows[index]["Số lượng"] = --soluong;
-                }
+                    dt.Rows[index]["Số lượng"] = --soluong;                   
+                }           
                 else
                 {
                     dt.Rows.Remove(dt.Rows[index]);
@@ -320,7 +322,15 @@ namespace QuanLyCuaHangGear
             txt_id_hang.Clear();
             txt_danhmuc.Clear();
             txt_tenhang.Clear();
-            numUpDown_count.Value = 0;
+            if (numUpDown_count.Maximum == 0)
+            {
+                numUpDown_count.Minimum = 0;
+                label_soldout.Visible = true;
+            }
+            else
+            {
+                numUpDown_count.Minimum = 1;
+            }
 
             txt_name_customer.Clear();
             txt_phone.Clear();

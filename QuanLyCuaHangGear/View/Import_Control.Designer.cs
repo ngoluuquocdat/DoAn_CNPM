@@ -265,6 +265,7 @@
             // 
             // dtgv_import
             // 
+            this.dtgv_import.AllowUserToAddRows = false;
             this.dtgv_import.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_import.Location = new System.Drawing.Point(670, 362);
             this.dtgv_import.Name = "dtgv_import";
@@ -575,7 +576,7 @@
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.panel3);
             this.panel2.ForeColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(209, 212);
+            this.panel2.Location = new System.Drawing.Point(204, 212);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(326, 1);
             this.panel2.TabIndex = 222;

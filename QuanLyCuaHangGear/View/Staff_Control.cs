@@ -78,6 +78,8 @@ namespace QuanLyCuaHangGear
             AE_Staff_Form ae_f = new AE_Staff_Form(0);
             ae_f.ShowDialog();
             Load_dtgv();
+            if (Staff_dtgv.Rows.Count > 0)
+                Staff_dtgv.Rows[Staff_dtgv.Rows.Count - 1].Selected = true;
         }
 
        
@@ -87,10 +89,12 @@ namespace QuanLyCuaHangGear
             DataGridViewSelectedRowCollection r = Staff_dtgv.SelectedRows;
             if (r.Count == 1)
             {
+                int index = Staff_dtgv.SelectedRows[0].Index;
                 int id = Convert.ToInt32(Staff_dtgv.SelectedRows[0].Cells["id"].Value);
                 AE_Staff_Form f = new AE_Staff_Form(id);
                 f.ShowDialog();
                 Load_dtgv();
+                Staff_dtgv.Rows[index].Selected = true;
             }           
         }
 

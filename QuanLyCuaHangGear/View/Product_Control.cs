@@ -90,8 +90,7 @@ namespace QuanLyCuaHangGear
         public void Load_dtgv()
         {
             Product_dtgv.DataSource = To_View(BLL_Product.Instance.Get_HangHoas());
-
-            // Product_dataGridView.DataSource = BLL_Product.Instance.Get_HangHoas();
+            
         }
         public void Check_SoLuong()
         {
@@ -110,6 +109,8 @@ namespace QuanLyCuaHangGear
             ae_f.ShowDialog();
             Load_dtgv();
             Check_SoLuong();
+            if (Product_dtgv.Rows.Count > 0)
+                Product_dtgv.Rows[Product_dtgv.Rows.Count - 1].Selected = true;
         }
 
         private void txt_Search_Click(object sender, EventArgs e)
@@ -122,11 +123,13 @@ namespace QuanLyCuaHangGear
             DataGridViewSelectedRowCollection r = Product_dtgv.SelectedRows;
             if (r.Count == 1)
             {
+                int index = Product_dtgv.SelectedRows[0].Index;
                 int id = Convert.ToInt32(Product_dtgv.SelectedRows[0].Cells["id"].Value);
                 AE_Product_Form f = new AE_Product_Form(id);
                 f.ShowDialog();
                 Load_dtgv();
                 Check_SoLuong();
+                Product_dtgv.Rows[index].Selected = true;
             }
             
         }

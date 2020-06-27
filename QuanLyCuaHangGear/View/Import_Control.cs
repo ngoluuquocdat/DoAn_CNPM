@@ -14,7 +14,7 @@ namespace QuanLyCuaHangGear
 {
     public partial class Import_Control : UserControl
     {
-        DataTable dt;
+        DataTable dt = new DataTable();
         int id_NV;
         private static Import_Control _instance;
         public static Import_Control Instance
@@ -38,7 +38,6 @@ namespace QuanLyCuaHangGear
         // methods
         public void Create_Datatable()
         {
-            dt = new DataTable();
             dt.Columns.Add("Mã hàng", typeof(String));
             dt.Columns.Add("Tên hàng", typeof(String));
             dt.Columns.Add("Số lượng", typeof(int));
@@ -296,7 +295,7 @@ namespace QuanLyCuaHangGear
             txt_id_hang.Clear();
             txt_danhmuc.Clear();
             txt_tenhang.Clear();
-            numUpDown_count.Value = 0;
+            numUpDown_count.Value = 1;
 
             txt_name_provi.Clear();
             txt_phone_provi.Clear();
