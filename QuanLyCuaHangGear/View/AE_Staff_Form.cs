@@ -50,7 +50,35 @@ namespace QuanLyCuaHangGear
                 txt_displayName.Text = ac.DisplayName;
             }
         }
-
+        public bool Check_Staff_Info()
+        {
+            bool check = true;
+            if (txt_TenNV.Text == "")
+            {
+                check = false;
+            }
+            if (txt_CMND.Text == "")
+            {
+                check = false;
+            }
+            if (txt_DiaChi.Text == "")
+            {
+                check = false;
+            }
+            if (txt_QueNV.Text == "")
+            {
+                check = false;
+            }
+            if (txt_Email.Text == "")
+            {
+                check = false;
+            }
+            if (txt_Phone.Text == "")
+            {
+                check = false;
+            }
+            return check;
+        }
         //events
         private void txt_TenNV_TextChanged(object sender, EventArgs e)
         {
@@ -72,53 +100,59 @@ namespace QuanLyCuaHangGear
         {
             if (ID == 0)
             {
-                string gender = "";
-                if (radioBtn_Male.Checked)
+                if (Check_Staff_Info())
                 {
-                    gender = radioBtn_Male.Text;
-                }
-                else if (radioBtn_Female.Checked)
-                {
-                    gender = radioBtn_Female.Text;
-                }
-                DateTime dob = dateTimePicker_DOB.Value;
-                string name = txt_TenNV.Text;
-                string cmnd = txt_CMND.Text;
-                string quequan = txt_QueNV.Text;
-                string diachi = txt_DiaChi.Text;
-                string email = txt_Email.Text;
-                string phone = txt_Phone.Text;
-                BLL_Staff.Instance.Add_Staff(name, gender, dob, cmnd, quequan, diachi, email, phone);
+                    string gender = "";
+                    if (radioBtn_Male.Checked)
+                    {
+                        gender = radioBtn_Male.Text;
+                    }
+                    else if (radioBtn_Female.Checked)
+                    {
+                        gender = radioBtn_Female.Text;
+                    }
+                    DateTime dob = dateTimePicker_DOB.Value;
+                    string name = txt_TenNV.Text;
+                    string cmnd = txt_CMND.Text;
+                    string quequan = txt_QueNV.Text;
+                    string diachi = txt_DiaChi.Text;
+                    string email = txt_Email.Text;
+                    string phone = txt_Phone.Text;
+                    BLL_Staff.Instance.Add_Staff(name, gender, dob, cmnd, quequan, diachi, email, phone);
 
-                string username = txt_userName.Text;
-                string pass = txt_password.Text;
-                string displayname = txt_displayName.Text;
-                int id_nv = BLL.BLL_Staff.Instance.Get_Lastest_ID();
-                BLL_Account.Instance.Add_Account(username,id_nv, displayname, pass);
-                MessageBox.Show("Đã thêm nhân viên mới!");
+                    string username = txt_userName.Text;
+                    string pass = txt_password.Text;
+                    string displayname = txt_displayName.Text;
+                    int id_nv = BLL.BLL_Staff.Instance.Get_Lastest_ID();
+                    BLL_Account.Instance.Add_Account(username, id_nv, displayname, pass);
+                    MessageBox.Show("Đã thêm nhân viên mới!");
+                }
 
             }
             else
             {
-                string gender = "";
-                if (radioBtn_Male.Checked)
+                if (Check_Staff_Info())
                 {
-                    gender = radioBtn_Male.Text;
+                    string gender = "";
+                    if (radioBtn_Male.Checked)
+                    {
+                        gender = radioBtn_Male.Text;
+                    }
+                    else if (radioBtn_Female.Checked)
+                    {
+                        gender = radioBtn_Female.Text;
+                    }
+                    DateTime dob = Convert.ToDateTime(dateTimePicker_DOB.Value);
+                    string name = txt_TenNV.Text;
+                    string cmnd = txt_CMND.Text;
+                    string quequan = txt_QueNV.Text;
+                    string diachi = txt_DiaChi.Text;
+                    string email = txt_Email.Text;
+                    string phone = txt_Phone.Text;
+                    string pass = txt_password.Text;
+                    BLL_Staff.Instance.Edit_Staff(ID, name, gender, dob, cmnd, quequan, diachi, email, phone, pass);
+                    MessageBox.Show("Đã cập nhật thông tin!");
                 }
-                else if (radioBtn_Female.Checked)
-                {
-                    gender = radioBtn_Female.Text;
-                }
-                DateTime dob = Convert.ToDateTime(dateTimePicker_DOB.Value);
-                string name = txt_TenNV.Text;
-                string cmnd = txt_CMND.Text;
-                string quequan = txt_QueNV.Text;
-                string diachi = txt_DiaChi.Text;
-                string email = txt_Email.Text;
-                string phone = txt_Phone.Text;
-                string pass = txt_password.Text;
-                BLL_Staff.Instance.Edit_Staff(ID, name, gender, dob, cmnd, quequan, diachi, email, phone, pass);
-                MessageBox.Show("Đã cập nhật thông tin!");
             }
 
             this.Close();

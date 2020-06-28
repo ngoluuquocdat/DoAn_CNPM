@@ -259,7 +259,7 @@ namespace QuanLyCuaHangGear
 
                 BLL_Bill.Instance.Add_Bill(date, provider_name, phone, staff_name, cmnd, 0, update_tongtien());
 
-                int id_bill = BLL_Bill.Instance.Get_Lastest_Bill().id;
+                int id_bill = BLL_Bill.Instance.Get_Lastest_Import().id;
 
                 foreach (DataRow row in dt.Rows)
                 {

@@ -31,7 +31,7 @@ namespace QuanLyCuaHangGear.BLL
         public HoaDon Get_Lastest_Bill()
         {
             QLCH_Model DB = new QLCH_Model();
-            return DB.HoaDons.OrderByDescending(p => p.id).FirstOrDefault();
+            return DB.HoaDons.Where(p => p.Type == 1).OrderByDescending(p => p.id).FirstOrDefault();
         }
         public void Add_Bill(DateTime date, string customer_name, string phone, string staff_name,
                                       string cmnd, int type, int tongtien)
@@ -64,6 +64,11 @@ namespace QuanLyCuaHangGear.BLL
             DB.SaveChanges();
         }
         // get bill and import
+        public HoaDon Get_Lastest_Import()
+        {
+            QLCH_Model DB = new QLCH_Model();
+            return DB.HoaDons.Where(p => p.Type == 0).OrderByDescending(p => p.id).FirstOrDefault();
+        }
         public List<HoaDon> Get_Bill_by_Date(DateTime d1, DateTime d2)
         {
             QLCH_Model DB = new QLCH_Model();
