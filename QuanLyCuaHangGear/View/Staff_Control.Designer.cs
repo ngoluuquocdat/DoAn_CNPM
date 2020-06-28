@@ -94,7 +94,7 @@
             this.txt_Username.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_Username.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Username.ForeColor = System.Drawing.Color.White;
-            this.txt_Username.Location = new System.Drawing.Point(847, 595);
+            this.txt_Username.Location = new System.Drawing.Point(847, 602);
             this.txt_Username.Name = "txt_Username";
             this.txt_Username.ReadOnly = true;
             this.txt_Username.Size = new System.Drawing.Size(304, 27);
@@ -146,7 +146,7 @@
             this.txt_Email.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_Email.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Email.ForeColor = System.Drawing.Color.White;
-            this.txt_Email.Location = new System.Drawing.Point(847, 557);
+            this.txt_Email.Location = new System.Drawing.Point(847, 558);
             this.txt_Email.Name = "txt_Email";
             this.txt_Email.ReadOnly = true;
             this.txt_Email.Size = new System.Drawing.Size(304, 27);
@@ -159,7 +159,7 @@
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label15.Location = new System.Drawing.Point(671, 595);
+            this.label15.Location = new System.Drawing.Point(677, 604);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(146, 24);
             this.label15.TabIndex = 72;
@@ -195,7 +195,7 @@
             this.label21.BackColor = System.Drawing.Color.Transparent;
             this.label21.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label21.Location = new System.Drawing.Point(677, 557);
+            this.label21.Location = new System.Drawing.Point(677, 558);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(68, 24);
             this.label21.TabIndex = 70;
@@ -327,6 +327,7 @@
             // 
             // Staff_dtgv
             // 
+            this.Staff_dtgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.Staff_dtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;

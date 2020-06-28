@@ -101,8 +101,11 @@ namespace QuanLyCuaHangGear.BLL
             nv.DiaChi = diachi;
             nv.Email = email;
             nv.Phone = phone;
-            Account ac = db.Accounts.Where(p => p.idNhanVien == id).FirstOrDefault();
-            ac.PassWord = pass;
+            if(pass != "")
+            {
+                Account ac = db.Accounts.Where(p => p.idNhanVien == id).FirstOrDefault();
+                ac.PassWord = pass;
+            }
             db.SaveChanges();
         }
         public List<NhanVien> Search_by_Name(string name)

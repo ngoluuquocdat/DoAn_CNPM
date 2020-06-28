@@ -266,6 +266,7 @@
             // dtgv_import
             // 
             this.dtgv_import.AllowUserToAddRows = false;
+            this.dtgv_import.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dtgv_import.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_import.Location = new System.Drawing.Point(670, 362);
             this.dtgv_import.Name = "dtgv_import";

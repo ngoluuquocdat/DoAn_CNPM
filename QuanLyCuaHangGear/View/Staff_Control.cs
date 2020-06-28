@@ -45,6 +45,7 @@ namespace QuanLyCuaHangGear
                     ID = nv.id,
                     Name = nv.Name,
                     Gender = nv.Gender,
+                    DOB = nv.DOB.ToShortDateString(),
                     Phone = nv.Phone,
                     Email = nv.Email
                 });

@@ -115,7 +115,16 @@ namespace QuanLyCuaHangGear
             {
                 return;
             }
-            int id = Convert.ToInt32(txt_id_hang.Text);
+            int id;
+            try
+            {
+                id = Convert.ToInt32(txt_id_hang.Text);
+            }
+            catch(FormatException)
+            {
+                MessageBox.Show("Sai định dạng mã hàng");
+                return;
+            }
             HangHoa h = BLL_Product.Instance.Get_HangHoa_by_ID(id);
             if(h == null)
             {

@@ -41,6 +41,8 @@ namespace QuanLyCuaHangGear
                 hd_view.Date = hd.MakeDate;
                 hd_view.Partner = hd.TenKhachHang;
                 hd_view.Phone = hd.Phone;
+                hd_view.Staff = hd.TenNhanVien;
+                hd_view.CMND = hd.CMND;
                 if(hd.Type == 0)
                     hd_view.Type = "Phiếu nhập hàng";
                 else
