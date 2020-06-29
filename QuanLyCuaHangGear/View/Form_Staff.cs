@@ -137,6 +137,11 @@ namespace QuanLyCuaHangGear.View
 
         private void pic_StoreLogo_Click(object sender, EventArgs e)
         {
+            Reset_Button_Effect();
+            panel_Slide.Visible = false;
+            label_UpperLogo.Text = "";
+            pic_UpperLogo.Image = Properties.Resources.Store_Logo;
+
             Welcome_Control.Instance.BringToFront();
         }
     }

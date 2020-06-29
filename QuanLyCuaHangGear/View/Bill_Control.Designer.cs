@@ -65,6 +65,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label_soldout = new System.Windows.Forms.Label();
             this.panel_Down = new System.Windows.Forms.Panel();
+            this.btn_Export_Bill = new System.Windows.Forms.Button();
             this.label_id_null = new System.Windows.Forms.Label();
             this.label_category_null = new System.Windows.Forms.Label();
             this.label_tenhang_null = new System.Windows.Forms.Label();
@@ -475,7 +476,7 @@
             this.btn_add_to_bill.ForeColor = System.Drawing.Color.White;
             this.btn_add_to_bill.Image = global::QuanLyCuaHangGear.Properties.Resources.add;
             this.btn_add_to_bill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_add_to_bill.Location = new System.Drawing.Point(142, 414);
+            this.btn_add_to_bill.Location = new System.Drawing.Point(142, 383);
             this.btn_add_to_bill.Name = "btn_add_to_bill";
             this.btn_add_to_bill.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btn_add_to_bill.Size = new System.Drawing.Size(275, 53);
@@ -513,7 +514,7 @@
             this.btn_del_from_bill.ForeColor = System.Drawing.Color.White;
             this.btn_del_from_bill.Image = global::QuanLyCuaHangGear.Properties.Resources.Delete;
             this.btn_del_from_bill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_del_from_bill.Location = new System.Drawing.Point(142, 502);
+            this.btn_del_from_bill.Location = new System.Drawing.Point(142, 455);
             this.btn_del_from_bill.Name = "btn_del_from_bill";
             this.btn_del_from_bill.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btn_del_from_bill.Size = new System.Drawing.Size(275, 53);
@@ -571,6 +572,24 @@
             this.panel_Down.Name = "panel_Down";
             this.panel_Down.Size = new System.Drawing.Size(1250, 98);
             this.panel_Down.TabIndex = 209;
+            // 
+            // btn_Export_Bill
+            // 
+            this.btn_Export_Bill.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.btn_Export_Bill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Export_Bill.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Export_Bill.ForeColor = System.Drawing.Color.White;
+            this.btn_Export_Bill.Image = global::QuanLyCuaHangGear.Properties.Resources.print;
+            this.btn_Export_Bill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Export_Bill.Location = new System.Drawing.Point(142, 525);
+            this.btn_Export_Bill.Name = "btn_Export_Bill";
+            this.btn_Export_Bill.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_Export_Bill.Size = new System.Drawing.Size(183, 59);
+            this.btn_Export_Bill.TabIndex = 146;
+            this.btn_Export_Bill.Text = "          IN HÓA ĐƠN";
+            this.btn_Export_Bill.UseVisualStyleBackColor = true;
+            this.btn_Export_Bill.Visible = false;
+            this.btn_Export_Bill.Click += new System.EventHandler(this.btn_Export_Bill_Click);
             // 
             // label_id_null
             // 
@@ -662,6 +681,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.Controls.Add(this.btn_Export_Bill);
             this.Controls.Add(this.label_bill_info_null);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel18);
@@ -752,5 +772,6 @@
         private System.Windows.Forms.Label label_phone_null;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label_bill_info_null;
+        private System.Windows.Forms.Button btn_Export_Bill;
     }
 }

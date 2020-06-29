@@ -58,7 +58,11 @@ namespace QuanLyCuaHangGear
         {
             DateTime d1 = dateTimePicker_From.Value.Date;
             DateTime d2 = dateTimePicker_To.Value.Date;
-            MessageBox.Show(d1.ToString());
+            if(d2.Date < d1.Date)
+            {
+                MessageBox.Show("Lựa chọn ngày không hợp lệ.");
+                return;
+            }
             Report_dtgv.DataSource = To_View(BLL_Bill.Instance.Get_Bill_by_Date(d1,d2));
         }
 

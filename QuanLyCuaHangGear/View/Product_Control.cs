@@ -11,6 +11,11 @@ using QuanLyCuaHangGear.View;
 using QuanLyCuaHangGear.DTO;
 using QuanLyCuaHangGear.BLL;
 using System.Threading;
+using Excel = Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Interop.Excel;
+
+//using ExcelLibrary.CompoundDocumentFormat;
+//using ExcelLibrary.SpreadSheet;
 
 namespace QuanLyCuaHangGear
 {
@@ -100,8 +105,24 @@ namespace QuanLyCuaHangGear
                 }
             }
         }
-        //events
-        private void btn_Add_Click(object sender, EventArgs e)
+        //Hàm thu hồi bộ nhớ cho COM Excel
+    private static void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                obj = null;
+            }
+            finally
+            { GC.Collect(); }
+        }   
+    //events
+    private void btn_Add_Click(object sender, EventArgs e)
         {
             AE_Product_Form ae_f = new AE_Product_Form(0);
             ae_f.ShowDialog();
@@ -241,5 +262,141 @@ namespace QuanLyCuaHangGear
         {
             txt_Search.Text = "Nhập tên hàng";
         }
+
+        private void btn_Export_list_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string saveExcelFile = @"D:\DS_HangHoa.xlsx";
+
+                Excel.Application xlApp = new Excel.Application();
+               
+                if (xlApp == null)
+                {
+                    MessageBox.Show("Lỗi không thể sử dụng được thư viện EXCEL");
+                    return;
+                }
+                xlApp.Visible = false;
+
+                object misValue = System.Reflection.Missing.Value;
+
+                Workbook wb = xlApp.Workbooks.Add(misValue);
+
+                Worksheet ws = (Worksheet)wb.Worksheets[1];
+
+                if (ws == null)
+                {
+                    MessageBox.Show("Không thể tạo được WorkSheet");
+                    return;
+                }
+
+                string fontName = "Times New Roman";
+                int fontSizeTitle = 18;
+                int fontSizeColumnName = 14;
+                int fontSizeText = 12;
+
+                //Xuất dòng Tiêu đề 
+                Range row_Title = ws.get_Range("A1", "E1"); // từ ô A1 đến ô E1
+                row_Title.Merge();
+                row_Title.Font.Size = fontSizeTitle;
+                row_Title.Font.Name = fontName;
+                row_Title.Cells.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+                row_Title.Value2 = "THỐNG KÊ HÀNG HÓA";
+
+                //Tạo Ô Mã hàng 
+                Range row_ID = ws.get_Range("A2", "A2"); //Ô A2
+                row_ID.Font.Size = fontSizeColumnName;
+                row_ID.Font.Name = fontName;
+                row_ID.Cells.HorizontalAlignment = XlHAlign.xlHAlignRight;
+                row_ID.Value2 = "Mã hàng";
+                row_ID.ColumnWidth = 20;
+
+                //Tạo Ô Tên hàng :
+                Range row_TenHang = ws.get_Range("B2", "B2");//Ô B2
+                row_TenHang.Font.Size = fontSizeColumnName;
+                row_TenHang.Font.Name = fontName;
+                row_TenHang.Cells.HorizontalAlignment = XlHAlign.xlHAlignLeft;
+                row_TenHang.Value2 = "Tên hàng";
+                row_TenHang.ColumnWidth = 40;
+
+                //Tạo Ô Danh mục:
+                Range row_DanhMuc = ws.get_Range("C2", "C2");//Ô C2
+                row_DanhMuc.Font.Size = fontSizeColumnName;
+                row_DanhMuc.Font.Name = fontName;
+                row_DanhMuc.Cells.HorizontalAlignment = XlHAlign.xlHAlignLeft;
+                row_DanhMuc.ColumnWidth = 15;
+                row_DanhMuc.Value2 = "Danh mục";
+
+                //Tạo Ô Đơn Giá Nhập:
+                Range row_GiaNhap = ws.get_Range("D2", "D2");//Ô D2
+                row_GiaNhap.Font.Size = fontSizeColumnName;
+                row_GiaNhap.Font.Name = fontName;
+                row_GiaNhap.Cells.HorizontalAlignment = XlHAlign.xlHAlignRight;
+                row_GiaNhap.Value2 = "Đơn giá nhập";
+                row_GiaNhap.ColumnWidth = 20;
+
+                //Tạo Ô Đơn giá bán:
+                Range row_GiaBan = ws.get_Range("E2", "E2");//Ô E2
+                row_GiaBan.Font.Size = fontSizeColumnName;
+                row_GiaBan.Font.Name = fontName;
+                row_GiaBan.Cells.HorizontalAlignment = XlHAlign.xlHAlignRight;
+                row_GiaBan.Value2 = "Đơn giá bán";
+                row_GiaBan.ColumnWidth = 20;
+
+                ////Tô nền vàng các cột tiêu đề:
+                //Range row23_CotTieuDe = ws.get_Range("A2", "E3");
+                ////nền vàng
+                //row23_CotTieuDe.Interior.Color = ColorTranslator.ToOle(System.Drawing.Color.Yellow);
+                ////in đậm
+                row_Title.Font.Bold = true;
+                ////chữ đen
+                //row23_CotTieuDe.Font.Color = ColorTranslator.ToOle(System.Drawing.Color.Black);
+
+               
+                List<HangHoa_View> list = To_View(BLL_Product.Instance.Get_HangHoas());
+                for (int i = 0; i < list.Count; i++)
+                {
+                    Range rowData = ws.get_Range("A" + (i+3), "E" + (i+3));
+                    dynamic[] arr = {list[i].ID, list[i].Ten, list[i].DanhMuc, list[i].DonGiaNhap, list[i].DonGiaBan };
+                    rowData.Font.Size = fontSizeText;
+                    rowData.Font.Name = fontName;
+                    rowData.Value2 = arr;
+                }
+                //Kẻ khung toàn bộ
+                // BorderAround(ws.get_Range("A2", "E" + row));
+
+                //Lưu file excel xuống Ổ cứng
+                // wb.SaveAs(saveExcelFile);
+
+                if (!System.IO.File.Exists(saveExcelFile))
+                {
+                    wb.SaveAs(saveExcelFile);
+                }
+                else
+                {
+                    System.IO.File.Delete(saveExcelFile);
+                    wb.SaveAs(saveExcelFile);
+                }
+
+                //đóng file để hoàn tất quá trình lưu trữ
+                wb.Close(true, misValue, misValue);
+                //thoát và thu hồi bộ nhớ cho COM
+                xlApp.Quit();
+
+                releaseObject(ws);
+                releaseObject(wb);
+                releaseObject(xlApp);
+
+                //Mở File excel sau khi Xuất thành công
+                System.Diagnostics.Process.Start(saveExcelFile);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
     }
+    
 }

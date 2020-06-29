@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cbb_Category = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -37,6 +37,7 @@
             this.Product_dtgv = new System.Windows.Forms.DataGridView();
             this.cbb_Sort = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btn_Export_list = new System.Windows.Forms.Button();
             this.btn_priceDown = new System.Windows.Forms.Button();
             this.btn_priceUp = new System.Windows.Forms.Button();
             this.btn_Add = new System.Windows.Forms.Button();
@@ -107,14 +108,14 @@
             // 
             this.Product_dtgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Product_dtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Product_dtgv.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Product_dtgv.DefaultCellStyle = dataGridViewCellStyle2;
             this.Product_dtgv.Location = new System.Drawing.Point(99, 189);
             this.Product_dtgv.MultiSelect = false;
             this.Product_dtgv.Name = "Product_dtgv";
@@ -136,7 +137,7 @@
             this.cbb_Sort.Items.AddRange(new object[] {
             "Đơn giá nhập",
             "Đơn giá bán"});
-            this.cbb_Sort.Location = new System.Drawing.Point(494, 611);
+            this.cbb_Sort.Location = new System.Drawing.Point(342, 608);
             this.cbb_Sort.Name = "cbb_Sort";
             this.cbb_Sort.Size = new System.Drawing.Size(192, 31);
             this.cbb_Sort.TabIndex = 143;
@@ -146,11 +147,28 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label3.Location = new System.Drawing.Point(247, 614);
+            this.label3.Location = new System.Drawing.Point(95, 611);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(235, 24);
             this.label3.TabIndex = 144;
             this.label3.Text = "Sắp xếp hàng hóa theo:";
+            // 
+            // btn_Export_list
+            // 
+            this.btn_Export_list.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.btn_Export_list.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Export_list.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Export_list.ForeColor = System.Drawing.Color.White;
+            this.btn_Export_list.Image = global::QuanLyCuaHangGear.Properties.Resources.print;
+            this.btn_Export_list.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Export_list.Location = new System.Drawing.Point(938, 594);
+            this.btn_Export_list.Name = "btn_Export_list";
+            this.btn_Export_list.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_Export_list.Size = new System.Drawing.Size(212, 59);
+            this.btn_Export_list.TabIndex = 145;
+            this.btn_Export_list.Text = "       XUẤT DANH SÁCH";
+            this.btn_Export_list.UseVisualStyleBackColor = true;
+            this.btn_Export_list.Click += new System.EventHandler(this.btn_Export_list_Click);
             // 
             // btn_priceDown
             // 
@@ -161,7 +179,7 @@
             this.btn_priceDown.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_priceDown.ForeColor = System.Drawing.Color.White;
             this.btn_priceDown.Image = global::QuanLyCuaHangGear.Properties.Resources.Price_Down;
-            this.btn_priceDown.Location = new System.Drawing.Point(869, 599);
+            this.btn_priceDown.Location = new System.Drawing.Point(667, 596);
             this.btn_priceDown.Name = "btn_priceDown";
             this.btn_priceDown.Size = new System.Drawing.Size(86, 57);
             this.btn_priceDown.TabIndex = 141;
@@ -178,7 +196,7 @@
             this.btn_priceUp.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_priceUp.ForeColor = System.Drawing.Color.White;
             this.btn_priceUp.Image = global::QuanLyCuaHangGear.Properties.Resources.PriceUp;
-            this.btn_priceUp.Location = new System.Drawing.Point(736, 599);
+            this.btn_priceUp.Location = new System.Drawing.Point(561, 596);
             this.btn_priceUp.Name = "btn_priceUp";
             this.btn_priceUp.Size = new System.Drawing.Size(86, 57);
             this.btn_priceUp.TabIndex = 139;
@@ -290,6 +308,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.Controls.Add(this.btn_Export_list);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbb_Sort);
             this.Controls.Add(this.panel2);
@@ -332,5 +351,6 @@
         private System.Windows.Forms.DataGridView Product_dtgv;
         private System.Windows.Forms.ComboBox cbb_Sort;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btn_Export_list;
     }
 }

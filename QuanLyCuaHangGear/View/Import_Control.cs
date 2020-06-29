@@ -79,7 +79,7 @@ namespace QuanLyCuaHangGear
             }
             return check;
         }
-        public bool check_KhachHang_info()
+        public bool check_NhaCungCap_info()
         {
             bool check = true;
             if (txt_name_provi.Text == "")
@@ -235,7 +235,7 @@ namespace QuanLyCuaHangGear
 
         private void btn_confirm_Click(object sender, EventArgs e)
         {
-            if (check_HangHoa_info() && check_KhachHang_info())
+            if (check_HangHoa_info() && check_NhaCungCap_info() && check_tongtien())
             {
                 string provider_name;
                 string phone;
@@ -270,21 +270,20 @@ namespace QuanLyCuaHangGear
                     BLL_Bill.Instance.Add_Bill_Info(id_bill, h.Name, danhmuc, h.DonGiaBan, soluong);
                     BLL_Product.Instance.Update_SoLuong(id_hanghoa, soluong);
                 }
-                txt_id_hang.Clear();
-                txt_danhmuc.Clear();
-                txt_tenhang.Clear();
-                numUpDown_count.Value = 1;
+                //txt_id_hang.Clear();
+                //txt_danhmuc.Clear();
+                //txt_tenhang.Clear();
+                //numUpDown_count.Value = 1;
 
-                txt_name_provi.Clear();
-                txt_phone_provi.Clear();
-                txt_email.Clear();
+                //txt_name_provi.Clear();
+                //txt_phone_provi.Clear();
+                //txt_email.Clear();
 
-                txt_Total.Clear();
-                dt = null;
-                dtgv_import.DataSource = dt;
+                //txt_Total.Clear();
+                //dt = null;
+                //dtgv_import.DataSource = dt;
                 MessageBox.Show("Đã nhập hàng thành công!");
                 Product_Control.Instance.Load_dtgv();
-                Product_Control.Instance.Check_SoLuong();
             }
             else
             {
@@ -313,7 +312,6 @@ namespace QuanLyCuaHangGear
             txt_Total.Clear();
             dt = null;
             dtgv_import.DataSource = dt;
-
         }
     }
 }

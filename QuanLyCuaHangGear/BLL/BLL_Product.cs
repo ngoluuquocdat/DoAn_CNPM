@@ -11,7 +11,7 @@ namespace QuanLyCuaHangGear.BLL
     {
         // delegate for sorting
         public delegate bool Compare_Condition(int left, int right);
-        private Compare_Condition _CompCond;
+       // private Compare_Condition _CompCond;
         public Compare_Condition CompCond { get; set; }
 
         // single-ton

@@ -213,6 +213,16 @@ namespace QuanLyCuaHangGear.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PicsArt_06_29_11_22_49 {
+            get {
+                object obj = ResourceManager.GetObject("PicsArt_06-29-11.22.49", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Price_Down {
             get {
                 object obj = ResourceManager.GetObject("Price Down", resourceCulture);
@@ -226,6 +236,16 @@ namespace QuanLyCuaHangGear.Properties {
         internal static System.Drawing.Bitmap PriceUp {
             get {
                 object obj = ResourceManager.GetObject("PriceUp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap print {
+            get {
+                object obj = ResourceManager.GetObject("print", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
