@@ -46,7 +46,6 @@ namespace QuanLyCuaHangGear
             */
             SetCBB();           
             Load_dtgv();
-            Check_SoLuong();
         }
 
         // methods
@@ -66,7 +65,6 @@ namespace QuanLyCuaHangGear
                     DonGiaBan=h.DonGiaBan
                 }) ;
             }
-
             return list_view;
         }
         public void SetCBB()
@@ -108,7 +106,6 @@ namespace QuanLyCuaHangGear
             AE_Product_Form ae_f = new AE_Product_Form(0);
             ae_f.ShowDialog();
             Load_dtgv();
-            Check_SoLuong();
             if (Product_dtgv.Rows.Count > 0)
                 Product_dtgv.Rows[Product_dtgv.Rows.Count - 1].Selected = true;
         }
@@ -128,7 +125,6 @@ namespace QuanLyCuaHangGear
                 AE_Product_Form f = new AE_Product_Form(id);
                 f.ShowDialog();
                 Load_dtgv();
-                Check_SoLuong();
                 Product_dtgv.Rows[index].Selected = true;
             }
             
@@ -137,29 +133,32 @@ namespace QuanLyCuaHangGear
         private void btn_Delete_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection rows = Product_dtgv.SelectedRows;
+            
             if (rows.Count == 1)
             {
                 int id_pr = Convert.ToInt32(Product_dtgv.SelectedRows[0].Cells["id"].Value);
-                BLL_Product.Instance.Delete(id_pr);
-
-                Load_dtgv();
-                Check_SoLuong();
+                if (MessageBox.Show("          Bạn có muốn xóa hàng hóa có mã: "+id_pr, "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+                {
+                    BLL_Product.Instance.Delete(id_pr);
+                    Load_dtgv();
+                }             
             }           
         }
 
         private void btn_View_Click(object sender, EventArgs e)
         {
-            int id_pr = Convert.ToInt32(Product_dtgv.SelectedRows[0].Cells["id"].Value.ToString());
-            HangHoa hh = BLL_Product.Instance.Get_HangHoa_by_ID(id_pr);
-            int id_Dm = hh.idDanhMuc;
-            DanhMuc dm = BLL_Product.Instance.Get_DanhMuc_by_ID(id_Dm);
-            
-            txt_idHangHoa.Text = hh.id.ToString();
-            txt_tenHang.Text = hh.Name;
-            txt_danhMuc.Text = dm.Name.ToString();
-            txt_soLuong.Text = hh.SoLuong.ToString();
-            txt_donGiaNhap.Text = hh.DonGiaNhap.ToString();
-            txt_donGiaBan.Text = hh.DonGiaBan.ToString();
+            //int id_pr = Convert.ToInt32(Product_dtgv.SelectedRows[0].Cells["id"].Value.ToString());
+            //HangHoa hh = BLL_Product.Instance.Get_HangHoa_by_ID(id_pr);
+            //int id_Dm = hh.idDanhMuc;
+            //DanhMuc dm = BLL_Product.Instance.Get_DanhMuc_by_ID(id_Dm);
+
+            //txt_idHangHoa.Text = hh.id.ToString();
+            //txt_tenHang.Text = hh.Name;
+            //txt_danhMuc.Text = dm.Name.ToString();
+            //txt_soLuong.Text = hh.SoLuong.ToString();
+            //txt_donGiaNhap.Text = hh.DonGiaNhap.ToString();
+            //txt_donGiaBan.Text = hh.DonGiaBan.ToString();
+            Check_SoLuong();
         }
 
         private void btn_Search_Click(object sender, EventArgs e)
@@ -167,7 +166,6 @@ namespace QuanLyCuaHangGear
             string StringSearch = txt_Search.Text;
             int id_dm = ((CBBItems)cbb_Category.SelectedItem).Value;
             Product_dtgv.DataSource = To_View(BLL_Product.Instance.Search_by_DanhMuc(StringSearch, id_dm));
-            Check_SoLuong();
         }
 
         private void btn_priceUp_Click(object sender, EventArgs e)
@@ -196,7 +194,6 @@ namespace QuanLyCuaHangGear
             }
             
             Product_dtgv.DataSource = To_View(list_sort);
-            Check_SoLuong();
         }
 
         private void btn_priceDown_Click(object sender, EventArgs e)
@@ -225,7 +222,6 @@ namespace QuanLyCuaHangGear
             }
 
             Product_dtgv.DataSource = To_View(list_sort);
-            Check_SoLuong();
         }
 
         private void cbb_Category_SelectedIndexChanged(object sender, EventArgs e)
@@ -234,13 +230,10 @@ namespace QuanLyCuaHangGear
             if (id_dm == 0)
             {
                 Load_dtgv();
-                Check_SoLuong();
-
             }
             else
             {
                 Product_dtgv.DataSource = To_View(BLL_Product.Instance.Get_HangHoa_by_IdDanhMuc(id_dm));
-                Check_SoLuong();
             }
         }
 

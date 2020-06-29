@@ -143,7 +143,7 @@ namespace QuanLyCuaHangGear
             }
             else
             {
-                numUpDown_count.Minimum = 1;
+                numUpDown_count.Minimum = 1; 
             }
                 
         }

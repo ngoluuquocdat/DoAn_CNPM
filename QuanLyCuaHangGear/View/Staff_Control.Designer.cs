@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label24 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_Username = new System.Windows.Forms.TextBox();
@@ -82,7 +82,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label6.Location = new System.Drawing.Point(778, 132);
+            this.label6.Location = new System.Drawing.Point(762, 132);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(438, 33);
             this.label6.TabIndex = 76;
@@ -329,14 +329,14 @@
             // 
             this.Staff_dtgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.Staff_dtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Staff_dtgv.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Staff_dtgv.DefaultCellStyle = dataGridViewCellStyle4;
             this.Staff_dtgv.Location = new System.Drawing.Point(30, 189);
             this.Staff_dtgv.MultiSelect = false;
             this.Staff_dtgv.Name = "Staff_dtgv";
@@ -452,7 +452,7 @@
             this.btn_View.ForeColor = System.Drawing.Color.White;
             this.btn_View.Image = global::QuanLyCuaHangGear.Properties.Resources.display;
             this.btn_View.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_View.Location = new System.Drawing.Point(531, 19);
+            this.btn_View.Location = new System.Drawing.Point(516, 19);
             this.btn_View.Name = "btn_View";
             this.btn_View.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btn_View.Size = new System.Drawing.Size(128, 57);
@@ -472,7 +472,7 @@
             this.btn_Delete.ForeColor = System.Drawing.Color.White;
             this.btn_Delete.Image = global::QuanLyCuaHangGear.Properties.Resources.Delete;
             this.btn_Delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Delete.Location = new System.Drawing.Point(361, 19);
+            this.btn_Delete.Location = new System.Drawing.Point(354, 19);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btn_Delete.Size = new System.Drawing.Size(128, 57);

@@ -105,10 +105,13 @@ namespace QuanLyCuaHangGear
             if (r.Count == 1)
             {
                 int id_nv = Convert.ToInt32(Staff_dtgv.SelectedRows[0].Cells["id"].Value);
-
-                BLL_Account.Instance.Delete_Account(id_nv);
-                BLL_Staff.Instance.Delete_Staff(id_nv);
-                Load_dtgv();
+                if (MessageBox.Show("          Bạn có muốn xóa nhân viên có mã: " + id_nv, "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+                {
+                    BLL_Account.Instance.Delete_Account(id_nv);
+                    BLL_Staff.Instance.Delete_Staff(id_nv);
+                    Load_dtgv();
+                }
+               
             }                                 
         }
 
