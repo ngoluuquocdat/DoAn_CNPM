@@ -37,10 +37,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.txt_name_provi = new System.Windows.Forms.TextBox();
-            this.btn_Add_Provider = new System.Windows.Forms.Button();
             this.txt_email = new System.Windows.Forms.TextBox();
-            this.btn_SearchName = new System.Windows.Forms.Button();
             this.dtgv_import = new System.Windows.Forms.DataGridView();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.txt_id_hang = new System.Windows.Forms.TextBox();
@@ -69,6 +66,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label_soldout = new System.Windows.Forms.Label();
             this.label_bill_info_null = new System.Windows.Forms.Label();
+            this.cbb_provider = new System.Windows.Forms.ComboBox();
             this.panel_CustomerInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_import)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDown_count)).BeginInit();
@@ -114,16 +112,14 @@
             // panel_CustomerInfo
             // 
             this.panel_CustomerInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.panel_CustomerInfo.Controls.Add(this.cbb_provider);
             this.panel_CustomerInfo.Controls.Add(this.label_phone_null);
             this.panel_CustomerInfo.Controls.Add(this.label_ten_provi_null);
             this.panel_CustomerInfo.Controls.Add(this.txt_phone_provi);
             this.panel_CustomerInfo.Controls.Add(this.label9);
             this.panel_CustomerInfo.Controls.Add(this.label10);
             this.panel_CustomerInfo.Controls.Add(this.label11);
-            this.panel_CustomerInfo.Controls.Add(this.txt_name_provi);
-            this.panel_CustomerInfo.Controls.Add(this.btn_Add_Provider);
             this.panel_CustomerInfo.Controls.Add(this.txt_email);
-            this.panel_CustomerInfo.Controls.Add(this.btn_SearchName);
             this.panel_CustomerInfo.Location = new System.Drawing.Point(663, 15);
             this.panel_CustomerInfo.Name = "panel_CustomerInfo";
             this.panel_CustomerInfo.Size = new System.Drawing.Size(541, 304);
@@ -148,9 +144,9 @@
             this.label_ten_provi_null.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.label_ten_provi_null.Location = new System.Drawing.Point(196, 3);
             this.label_ten_provi_null.Name = "label_ten_provi_null";
-            this.label_ten_provi_null.Size = new System.Drawing.Size(260, 24);
+            this.label_ten_provi_null.Size = new System.Drawing.Size(226, 24);
             this.label_ten_provi_null.TabIndex = 223;
-            this.label_ten_provi_null.Text = "Hãy nhập tên nhà cung cấp.";
+            this.label_ten_provi_null.Text = "Hãy chọn nhà cung cấp.";
             this.label_ten_provi_null.Visible = false;
             // 
             // txt_phone_provi
@@ -198,41 +194,6 @@
             this.label11.TabIndex = 37;
             this.label11.Text = "Email:";
             // 
-            // txt_name_provi
-            // 
-            this.txt_name_provi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.txt_name_provi.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_name_provi.ForeColor = System.Drawing.Color.White;
-            this.txt_name_provi.Location = new System.Drawing.Point(182, 26);
-            this.txt_name_provi.Multiline = true;
-            this.txt_name_provi.Name = "txt_name_provi";
-            this.txt_name_provi.Size = new System.Drawing.Size(287, 33);
-            this.txt_name_provi.TabIndex = 16;
-            this.txt_name_provi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_name_provi.TextChanged += new System.EventHandler(this.txt_name_provi_TextChanged);
-            // 
-            // btn_Add_Provider
-            // 
-            this.btn_Add_Provider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.btn_Add_Provider.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Add_Provider.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.btn_Add_Provider.FlatAppearance.BorderSize = 0;
-            this.btn_Add_Provider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Add_Provider.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Add_Provider.ForeColor = System.Drawing.Color.White;
-            this.btn_Add_Provider.Image = global::QuanLyCuaHangGear.Properties.Resources.add;
-            this.btn_Add_Provider.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Add_Provider.Location = new System.Drawing.Point(152, 231);
-            this.btn_Add_Provider.Name = "btn_Add_Provider";
-            this.btn_Add_Provider.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btn_Add_Provider.Size = new System.Drawing.Size(271, 53);
-            this.btn_Add_Provider.TabIndex = 27;
-            this.btn_Add_Provider.Text = "   THÊM NHÀ CUNG CẤP";
-            this.btn_Add_Provider.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Add_Provider.UseVisualStyleBackColor = false;
-            this.btn_Add_Provider.Visible = false;
-            this.btn_Add_Provider.Click += new System.EventHandler(this.btn_Add_Provider_Click);
-            // 
             // txt_email
             // 
             this.txt_email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
@@ -245,23 +206,6 @@
             this.txt_email.Size = new System.Drawing.Size(281, 33);
             this.txt_email.TabIndex = 21;
             this.txt_email.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btn_SearchName
-            // 
-            this.btn_SearchName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.btn_SearchName.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_SearchName.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(65)))));
-            this.btn_SearchName.FlatAppearance.BorderSize = 0;
-            this.btn_SearchName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_SearchName.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_SearchName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btn_SearchName.Image = global::QuanLyCuaHangGear.Properties.Resources.Search;
-            this.btn_SearchName.Location = new System.Drawing.Point(471, 4);
-            this.btn_SearchName.Name = "btn_SearchName";
-            this.btn_SearchName.Size = new System.Drawing.Size(58, 47);
-            this.btn_SearchName.TabIndex = 23;
-            this.btn_SearchName.UseVisualStyleBackColor = false;
-            this.btn_SearchName.Click += new System.EventHandler(this.btn_SearchName_Click);
             // 
             // dtgv_import
             // 
@@ -615,6 +559,16 @@
             this.label_bill_info_null.Text = "Chưa thêm hàng vào phiếu nhập.";
             this.label_bill_info_null.Visible = false;
             // 
+            // cbb_provider
+            // 
+            this.cbb_provider.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_provider.FormattingEnabled = true;
+            this.cbb_provider.Location = new System.Drawing.Point(182, 28);
+            this.cbb_provider.Name = "cbb_provider";
+            this.cbb_provider.Size = new System.Drawing.Size(287, 31);
+            this.cbb_provider.TabIndex = 225;
+            this.cbb_provider.SelectedIndexChanged += new System.EventHandler(this.cbb_provider_SelectedIndexChanged);
+            // 
             // Import_Control
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -669,10 +623,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txt_name_provi;
-        private System.Windows.Forms.Button btn_Add_Provider;
         private System.Windows.Forms.TextBox txt_email;
-        private System.Windows.Forms.Button btn_SearchName;
         private System.Windows.Forms.Button btn_Add_Import;
         private System.Windows.Forms.Button btn_SearchID;
         private System.Windows.Forms.DataGridView dtgv_import;
@@ -703,5 +654,6 @@
         private System.Windows.Forms.Label label_phone_null;
         private System.Windows.Forms.Label label_soldout;
         private System.Windows.Forms.Label label_bill_info_null;
+        private System.Windows.Forms.ComboBox cbb_provider;
     }
 }

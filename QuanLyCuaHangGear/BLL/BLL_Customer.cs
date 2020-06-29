@@ -53,10 +53,17 @@ namespace QuanLyCuaHangGear.BLL
         }
 
         // nha cung cap
-        public KhachHang Get_Provider(string name)
+        public List<KhachHang> Get_Providers()
         {
             QLCH_Model DB = new QLCH_Model();
-            var li_method = DB.KhachHangs.Where(p => p.Name == name && p.Type == 0).FirstOrDefault();
+            var li_method = DB.KhachHangs.Where(p => p.Type == 0).ToList();
+
+            return li_method;
+        }
+        public KhachHang Get_Provider_by_id(int id)
+        {
+            QLCH_Model DB = new QLCH_Model();
+            var li_method = DB.KhachHangs.Where(p => p.Type == 0 && p.id == id).FirstOrDefault();
 
             return li_method;
         }

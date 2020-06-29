@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyCuaHangGear.DTO;
 using QuanLyCuaHangGear.BLL;
+using QuanLyCuaHangGear.View;
 
 namespace QuanLyCuaHangGear
 {
@@ -34,6 +35,8 @@ namespace QuanLyCuaHangGear
             InitializeComponent();
             dateTimePicker1.Value = DateTime.Now;
             Create_Datatable();
+            SetCBB();
+            txt_Total.Text = "0";
         }
         // methods
         public void Create_Datatable()
@@ -42,6 +45,22 @@ namespace QuanLyCuaHangGear
             dt.Columns.Add("Tên hàng", typeof(String));
             dt.Columns.Add("Số lượng", typeof(int));
             dt.Columns.Add("Đơn giá", typeof(int));
+        }
+        public void SetCBB()
+        {
+            if (cbb_provider.Items != null)
+            {
+                cbb_provider.Items.Clear();
+            }
+            foreach (KhachHang i in BLL_Customer.Instance.Get_Providers())
+            {
+                cbb_provider.Items.Add(new CBBItems
+                {
+                    Value = i.id,
+                    Text = i.Name
+                });
+            }
+           // cbb_provider.SelectedIndex = 0;
         }
         public int update_tongtien()
         {
@@ -81,19 +100,13 @@ namespace QuanLyCuaHangGear
         }
         public bool check_NhaCungCap_info()
         {
-            bool check = true;
-            if (txt_name_provi.Text == "")
+            if (cbb_provider.SelectedItem == null)
             {
                 label_ten_provi_null.Visible = true;
-                check = false;
-            }
-            if (txt_phone_provi.Text == "")
-            {
-                label_phone_null.Visible = true;
-                check = false;
+                return false;
             }
 
-            return check;
+            return true;
         }
         public bool check_tongtien()
         {
@@ -134,31 +147,7 @@ namespace QuanLyCuaHangGear
             numUpDown_count.Minimum = 1;
 
         }
-        private void btn_SearchName_Click(object sender, EventArgs e)
-        {
-            string name = txt_name_provi.Text;
-            KhachHang provider = BLL_Customer.Instance.Get_Provider(name);
-            if (provider == null)
-            {
-                MessageBox.Show("Khách hàng này chưa được lưu.");
-                btn_Add_Provider.Visible = true;
-            }
-            else
-            {
-                txt_email.Text = provider.Email;
-                txt_phone_provi.Text = provider.Phone;
-            }
-        }
-
-        private void btn_Add_Provider_Click(object sender, EventArgs e)
-        {
-            string name = txt_name_provi.Text;
-            string phone = txt_phone_provi.Text;
-            string email = txt_email.Text;
-            BLL_Customer.Instance.Add_Provider(name, phone, email);
-            MessageBox.Show("Đã thêm thông tin nhà cung cấp.");
-            btn_Add_Provider.Visible = false;
-        }
+     
         private void btn_Add_Import_Click(object sender, EventArgs e)
         {
             if (check_HangHoa_info())
@@ -254,7 +243,7 @@ namespace QuanLyCuaHangGear
                     cmnd = nv.CMND;
                 }
 
-                provider_name = txt_name_provi.Text;
+                provider_name = ((CBBItems)cbb_provider.SelectedItem).Text;
                 phone = txt_phone_provi.Text;
 
                 BLL_Bill.Instance.Add_Bill(date, provider_name, phone, staff_name, cmnd, 0, update_tongtien());
@@ -291,13 +280,6 @@ namespace QuanLyCuaHangGear
             }
         }
 
-        private void txt_name_provi_TextChanged(object sender, EventArgs e)
-        {
-            txt_phone_provi.Clear();
-            txt_email.Clear();
-            btn_Add_Provider.Visible = false;
-        }
-
         private void btn_cancel_Click(object sender, EventArgs e)
         {
             txt_id_hang.Clear();
@@ -305,13 +287,22 @@ namespace QuanLyCuaHangGear
             txt_tenhang.Clear();
             numUpDown_count.Value = 1;
 
-            txt_name_provi.Clear();
+            cbb_provider.SelectedItem = null;
             txt_phone_provi.Clear();
             txt_email.Clear();
 
             txt_Total.Clear();
-            dt = null;
+            dt.Rows.Clear();
             dtgv_import.DataSource = dt;
+        }
+
+        private void cbb_provider_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int id_provider = ((CBBItems)cbb_provider.SelectedItem).Value;
+            KhachHang provider = BLL_Customer.Instance.Get_Provider_by_id(id_provider);
+
+            txt_phone_provi.Text = provider.Phone;
+            txt_email.Text = provider.Email;
         }
     }
 }

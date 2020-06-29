@@ -666,7 +666,7 @@ namespace QuanLyCuaHangGear
             txt_email.Clear();
 
             txt_Total.Clear();
-            dt = null;
+            dt.Rows.Clear();
             dtgv_buy.DataSource = dt;
         }
 
