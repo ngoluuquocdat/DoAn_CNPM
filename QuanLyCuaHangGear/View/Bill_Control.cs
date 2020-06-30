@@ -125,7 +125,7 @@ namespace QuanLyCuaHangGear
             finally
             { GC.Collect(); }
         }
-        public void Xuat_Hoa_Don(int ma_hd, string ten_kh, string sdt, string email, string ten_nv, string cmnd,
+        public bool Xuat_Hoa_Don(int ma_hd, string ten_kh, string sdt, string email, string ten_nv, string cmnd,
                                   string ngaylap, int tongtien)
         {
             try
@@ -137,7 +137,7 @@ namespace QuanLyCuaHangGear
                 if (xlApp == null)
                 {
                     MessageBox.Show("Lỗi không thể sử dụng được thư viện EXCEL");
-                    return;
+                    return false;
                 }
                 xlApp.Visible = false;
 
@@ -150,7 +150,7 @@ namespace QuanLyCuaHangGear
                 if (ws == null)
                 {
                     MessageBox.Show("Không thể tạo được WorkSheet");
-                    return;
+                    return false;
                 }
 
                 string fontName = "Times New Roman";
@@ -165,7 +165,7 @@ namespace QuanLyCuaHangGear
                 row_StoreName.Font.Name = fontName;
                 row_StoreName.Cells.HorizontalAlignment = XlHAlign.xlHAlignLeft;
                 row_StoreName.Value2 = "Cửa hàng Quốc An";
-                row_StoreName.ColumnWidth = 20;
+               // row_StoreName.ColumnWidth = 20;
 
                 //Xuất dòng sđt cửa hàng 
                 Range row_StorePhone = ws.get_Range("A2", "B2"); //ô A2 và B2
@@ -174,7 +174,16 @@ namespace QuanLyCuaHangGear
                 row_StorePhone.Font.Name = fontName;
                 row_StorePhone.Cells.HorizontalAlignment = XlHAlign.xlHAlignLeft;
                 row_StorePhone.Value2 = "Điện thoại: 18008566";
-                row_StorePhone.ColumnWidth = 20;
+
+
+                //Xuất dòng địa chỉ cửa hàng
+                Range row_StoreAddress = ws.get_Range("A3", "B3"); //ô A3 và B3
+                row_StoreAddress.Merge();
+                row_StoreAddress.Font.Size = fontSizeColumnName;
+                row_StoreAddress.Font.Name = fontName;
+                row_StoreAddress.Cells.HorizontalAlignment = XlHAlign.xlHAlignLeft;
+                row_StoreAddress.Value2 = "7 Phan Văn Định, Đà Nẵng";
+
 
                 ////Tạo ô Điện thoại:
                 //Range row_DienThoai = ws.get_Range("B8", "B8");//Ô B8
@@ -185,7 +194,7 @@ namespace QuanLyCuaHangGear
                 //row_DienThoai.Value2 = "Điện thoại:";
 
                 //Xuất dòng title HÓA ĐƠN BÁN HÀNG :
-                Range row_Title = ws.get_Range("C3", "D3");// Ô C3 và D3
+                Range row_Title = ws.get_Range("C4", "D4");// Ô C4 và D4
                 row_Title.Merge();
                 row_Title.Font.Size = fontSizeTitle;
                 row_Title.Font.Name = fontName;
@@ -194,7 +203,7 @@ namespace QuanLyCuaHangGear
                 row_Title.Value2 = "HÓA ĐƠN BÁN HÀNG";
 
                 //Tạo ô Mã hóa đơn:
-                Range row_IDHoaDon = ws.get_Range("B5", "B5");//Ô B5
+                Range row_IDHoaDon = ws.get_Range("B6", "B6");//Ô B6
                 row_IDHoaDon.Font.Size = fontSizeColumnName;
                 row_IDHoaDon.Font.Name = fontName;
                 row_IDHoaDon.Cells.HorizontalAlignment = XlHAlign.xlHAlignLeft;
@@ -202,7 +211,7 @@ namespace QuanLyCuaHangGear
                 row_IDHoaDon.Value2 = "Mã hóa đơn:";
 
                 // Điền vào mã hóa đơn
-                Range row_ID_2 = ws.get_Range("C5", "C5");
+                Range row_ID_2 = ws.get_Range("C6", "C6");
                 row_ID_2.Font.Size = fontSizeText;
                 row_ID_2.Font.Name = fontName;
                 row_ID_2.Cells.HorizontalAlignment = XlHAlign.xlHAlignLeft;
@@ -210,7 +219,7 @@ namespace QuanLyCuaHangGear
                 row_ID_2.Value2 = ma_hd;
 
                 //Tạo ô Ngày lập:
-                Range row_NgayLap = ws.get_Range("B6", "B6");//Ô B6
+                Range row_NgayLap = ws.get_Range("B7", "B7");//Ô B7
                 row_NgayLap.Font.Size = fontSizeColumnName;
                 row_NgayLap.Font.Name = fontName;
                 row_NgayLap.Cells.HorizontalAlignment = XlHAlign.xlHAlignLeft;
@@ -218,7 +227,7 @@ namespace QuanLyCuaHangGear
                 row_NgayLap.Value2 = "Ngày lập:";
 
                 // Điền vào ngày lập
-                Range row_NgayLap2 = ws.get_Range("C6", "C6");//Ô C6
+                Range row_NgayLap2 = ws.get_Range("C7", "C7");//Ô C7
                 row_NgayLap2.Font.Size = fontSizeText;
                 row_NgayLap2.Font.Name = fontName;
                 row_NgayLap2.Cells.HorizontalAlignment = XlHAlign.xlHAlignLeft;
@@ -226,7 +235,7 @@ namespace QuanLyCuaHangGear
                 row_NgayLap2.Value2 = ngaylap;
 
                 //Tạo ô Khách hàng:
-                Range row_KhachHang = ws.get_Range("B7", "B7");//Ô B7
+                Range row_KhachHang = ws.get_Range("B8", "B8");//Ô B8
                 row_KhachHang.Font.Size = fontSizeColumnName;
                 row_KhachHang.Font.Name = fontName;
                 row_KhachHang.Cells.HorizontalAlignment = XlHAlign.xlHAlignLeft;
@@ -234,24 +243,28 @@ namespace QuanLyCuaHangGear
                 row_KhachHang.Value2 = "Khách hàng:";
 
                 //Điền vào Khách hàng:
-                Range row_KhachHang2 = ws.get_Range("C7", "C7");//Ô C7
+                Range row_KhachHang2 = ws.get_Range("C8", "C8");//Ô C8
                 row_KhachHang2.Font.Size = fontSizeColumnName;
                 row_KhachHang2.Font.Name = fontName;
                 row_KhachHang2.Cells.HorizontalAlignment = XlHAlign.xlHAlignLeft;
                 row_KhachHang2.ColumnWidth = 16;
                 row_KhachHang2.Value2 = ten_kh;
 
-                
+                //Tạo ô Điện thoại:
+                Range row_DienThoai = ws.get_Range("B9", "B9");//Ô B9
+                row_DienThoai.Font.Size = fontSizeColumnName;
+                row_DienThoai.Font.Name = fontName;
+                row_DienThoai.Cells.HorizontalAlignment = XlHAlign.xlHAlignLeft;
+                row_DienThoai.ColumnWidth = 16;
+                row_DienThoai.Value2 = "Điện thoại:";
 
-
-
-                ////Điền vào Điện thoại:
-                //Range row_DienThoai2 = ws.get_Range("C8", "C8");//Ô C8
-                //row_DienThoai2.Font.Size = fontSizeColumnName;
-                //row_DienThoai2.Font.Name = fontName;
-                //row_DienThoai2.Cells.HorizontalAlignment = XlHAlign.xlHAlignLeft;
-                //row_DienThoai2.ColumnWidth = 16;
-                //row_DienThoai2.Value2 = sdt;
+                //Điền vào Điện thoại:
+                Range row_DienThoai2 = ws.get_Range("C9", "C9");//Ô C9
+                row_DienThoai2.Font.Size = fontSizeColumnName;
+                row_DienThoai2.Font.Name = fontName;
+                row_DienThoai2.Cells.HorizontalAlignment = XlHAlign.xlHAlignLeft;
+                row_DienThoai2.ColumnWidth = 16;
+                row_DienThoai2.Value2 = "'"+sdt;
 
                 ////Tạo ô Email:
                 //Range row_Email = ws.get_Range("B9", "B9");//Ô B9
@@ -271,7 +284,7 @@ namespace QuanLyCuaHangGear
 
 
                 //Tạo Ô STT:
-                Range row_STT = ws.get_Range("A11", "A11");//Ô A11
+                Range row_STT = ws.get_Range("A12", "A12");//Ô A12
                 row_STT.Font.Size = fontSizeColumnName;
                 row_STT.Font.Name = fontName;
                 row_STT.Font.Bold = true;
@@ -280,7 +293,7 @@ namespace QuanLyCuaHangGear
                 row_STT.ColumnWidth = 13;
 
                 //Tạo Ô Tên hàng:
-                Range row_tenhang = ws.get_Range("B11", "C11");//Ô B11 và C11
+                Range row_tenhang = ws.get_Range("B12", "C12");//Ô B12 và C12
                 row_tenhang.Merge();
                 row_tenhang.Font.Size = fontSizeColumnName;
                 row_tenhang.Font.Name = fontName;
@@ -289,7 +302,7 @@ namespace QuanLyCuaHangGear
                 row_tenhang.Value2 = "Tên hàng";
 
                 //Tạo Ô Số lượng:
-                Range row_SoLuong = ws.get_Range("D11", "D11");//Ô D11
+                Range row_SoLuong = ws.get_Range("D12", "D12");//Ô D12
                 row_SoLuong.Font.Size = fontSizeColumnName;
                 row_SoLuong.Font.Name = fontName;
                 row_SoLuong.Font.Bold = true;
@@ -297,7 +310,7 @@ namespace QuanLyCuaHangGear
                 row_SoLuong.Value2 = "Số lượng";
 
                 //Tạo Ô Đơn giá:
-                Range row_DonGia = ws.get_Range("E11", "E11");//Ô E11
+                Range row_DonGia = ws.get_Range("E12", "E12");//Ô E12
                 row_DonGia.Font.Size = fontSizeColumnName;
                 row_DonGia.Font.Name = fontName;
                 row_DonGia.Font.Bold = true;
@@ -306,7 +319,7 @@ namespace QuanLyCuaHangGear
                 row_DonGia.ColumnWidth = 13;
 
                 //Tạo Ô Thành tiền:
-                Range row_ThanhTien = ws.get_Range("F11", "F11");//Ô F11
+                Range row_ThanhTien = ws.get_Range("F12", "F12");//Ô F12
                 row_ThanhTien.Font.Size = fontSizeColumnName;
                 row_ThanhTien.Font.Name = fontName;
                 row_ThanhTien.Font.Bold = true;
@@ -315,7 +328,7 @@ namespace QuanLyCuaHangGear
                 row_ThanhTien.ColumnWidth = 13;
 
                 // điền danh sách hàng hóa được mua:
-                int row = 12;
+                int row = 13;
                 int stt = 1;
                 List<HoaDonInfo> list = BLL_Bill.Instance.Get_Bill_Infoes(ma_hd);
                 foreach (HoaDonInfo i in list)
@@ -415,10 +428,16 @@ namespace QuanLyCuaHangGear
                 //Mở File excel sau khi Xuất thành công
                 System.Diagnostics.Process.Start(saveExcelFile);
             }                 
-            catch (Exception ex)
+            catch (System.IO.IOException)
+            {
+                MessageBox.Show("Một cửa sổ hóa đơn đang mở.\nHãy tắt đi và thử lại.");
+                return false;
+            }
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            return true;
         }
             
 
@@ -682,8 +701,14 @@ namespace QuanLyCuaHangGear
             string email = txt_email.Text;
             int tongtien = bill.TongTien;
             MessageBox.Show("Đang xuất hóa đơn");
-            Xuat_Hoa_Don(id_bill, ten_kh, phone, email, ten_nv, cmnd, date.ToShortDateString(),tongtien);
-            btn_Export_Bill.Visible = false;
+            if(Xuat_Hoa_Don(id_bill, ten_kh, phone, email, ten_nv, cmnd, date.ToShortDateString(), tongtien))
+            {
+                btn_Export_Bill.Visible = false;
+            }
+            else
+            {
+                // do nothing
+            }
         }
     }
 }

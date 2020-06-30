@@ -390,6 +390,10 @@ namespace QuanLyCuaHangGear
                 //Mở File excel sau khi Xuất thành công
                 System.Diagnostics.Process.Start(saveExcelFile);
             }
+            catch (System.IO.IOException)
+            {
+                MessageBox.Show("Một cửa sổ danh sách hàng hóa đang mở.\nHãy tắt đi và thử lại.");
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
