@@ -396,6 +396,7 @@
             this.txt_Total.ForeColor = System.Drawing.Color.White;
             this.txt_Total.Location = new System.Drawing.Point(866, 540);
             this.txt_Total.Name = "txt_Total";
+            this.txt_Total.ReadOnly = true;
             this.txt_Total.Size = new System.Drawing.Size(180, 33);
             this.txt_Total.TabIndex = 90;
             this.txt_Total.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
