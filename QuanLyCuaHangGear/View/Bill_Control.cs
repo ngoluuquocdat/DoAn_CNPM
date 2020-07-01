@@ -628,7 +628,7 @@ namespace QuanLyCuaHangGear
         private void btn_confirm_Click(object sender, EventArgs e)
         {    
             // thực hiện chức năng
-            if (check_HangHoa_info() && check_KhachHang_info() && check_tongtien())
+            if (check_KhachHang_info() && check_tongtien())
             {
                 string ten_kh;
                 string phone;
@@ -711,11 +711,21 @@ namespace QuanLyCuaHangGear
             txt_phone.Clear();
             txt_email.Clear();
 
-            txt_Total.Clear();
+            txt_Total.Text = "0";
             dt.Rows.Clear();
             dtgv_buy.DataSource = dt;
 
             btn_Export_Bill.Visible = false;
+
+            label_bill_info_null.Visible = false;
+            label_category_null.Visible = false;
+            label_email_invalid.Visible = false;
+            label_id_null.Visible = false;
+            label_phone_invalid.Visible = false;
+            label_phone_null.Visible = false;
+            label_soldout.Visible = false;
+            label_tenhang_null.Visible = false;
+            label_tenkhach_null.Visible = false;
         }
 
         private void btn_Export_Bill_Click(object sender, EventArgs e)

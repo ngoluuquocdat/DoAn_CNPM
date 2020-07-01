@@ -70,8 +70,7 @@ namespace QuanLyCuaHangGear
             txt_QueQuan.Text = nv.QueQuan;
             txt_DiaChi.Text = nv.DiaChi;
             txt_SDT.Text = nv.Phone;
-            txt_Email.Text = nv.Email;
-            txt_Username.Text = BLL_Account.Instance.Get_Account_by_ID(id_nv).UserName;
+            txt_Email.Text = nv.Email;         
         }
 
         private void btn_Add_Click(object sender, EventArgs e)
@@ -122,7 +121,7 @@ namespace QuanLyCuaHangGear
 
         private void btn_Search_Click(object sender, EventArgs e)
         {
-            string name = txt_Search.Text;
+            string name = txt_Search.Text;           
             Staff_dtgv.DataSource= To_View(BLL_Staff.Instance.Search_by_Name(name));
         }
 

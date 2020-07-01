@@ -58,15 +58,14 @@
             this.btn_del_from_imp = new System.Windows.Forms.Button();
             this.numUpDown_count = new System.Windows.Forms.NumericUpDown();
             this.panel_Down = new System.Windows.Forms.Panel();
-            this.label_id_null = new System.Windows.Forms.Label();
-            this.label_category_null = new System.Windows.Forms.Label();
-            this.label_tenhang_null = new System.Windows.Forms.Label();
             this.panel18 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label_soldout = new System.Windows.Forms.Label();
             this.label_bill_info_null = new System.Windows.Forms.Label();
+            this.label_id_null = new System.Windows.Forms.Label();
+            this.label_category_null = new System.Windows.Forms.Label();
+            this.label_tenhang_null = new System.Windows.Forms.Label();
             this.panel_CustomerInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_import)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDown_count)).BeginInit();
@@ -127,7 +126,9 @@
             // 
             // cbb_provider
             // 
+            this.cbb_provider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.cbb_provider.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_provider.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
             this.cbb_provider.FormattingEnabled = true;
             this.cbb_provider.Location = new System.Drawing.Point(182, 28);
             this.cbb_provider.Name = "cbb_provider";
@@ -167,6 +168,7 @@
             this.txt_phone_provi.Location = new System.Drawing.Point(182, 91);
             this.txt_phone_provi.Multiline = true;
             this.txt_phone_provi.Name = "txt_phone_provi";
+            this.txt_phone_provi.ReadOnly = true;
             this.txt_phone_provi.Size = new System.Drawing.Size(287, 33);
             this.txt_phone_provi.TabIndex = 19;
             this.txt_phone_provi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -213,6 +215,7 @@
             this.txt_email.Location = new System.Drawing.Point(182, 165);
             this.txt_email.Multiline = true;
             this.txt_email.Name = "txt_email";
+            this.txt_email.ReadOnly = true;
             this.txt_email.Size = new System.Drawing.Size(281, 33);
             this.txt_email.TabIndex = 21;
             this.txt_email.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -237,6 +240,7 @@
             this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
             this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.Yellow;
             this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Location = new System.Drawing.Point(204, 25);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -473,42 +477,6 @@
             this.panel_Down.Size = new System.Drawing.Size(1250, 98);
             this.panel_Down.TabIndex = 208;
             // 
-            // label_id_null
-            // 
-            this.label_id_null.AutoSize = true;
-            this.label_id_null.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_id_null.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.label_id_null.Location = new System.Drawing.Point(271, 71);
-            this.label_id_null.Name = "label_id_null";
-            this.label_id_null.Size = new System.Drawing.Size(195, 24);
-            this.label_id_null.TabIndex = 211;
-            this.label_id_null.Text = "Mã hàng đang trống.";
-            this.label_id_null.Visible = false;
-            // 
-            // label_category_null
-            // 
-            this.label_category_null.AutoSize = true;
-            this.label_category_null.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_category_null.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.label_category_null.Location = new System.Drawing.Point(265, 151);
-            this.label_category_null.Name = "label_category_null";
-            this.label_category_null.Size = new System.Drawing.Size(208, 24);
-            this.label_category_null.TabIndex = 212;
-            this.label_category_null.Text = "Danh mục đang trống.";
-            this.label_category_null.Visible = false;
-            // 
-            // label_tenhang_null
-            // 
-            this.label_tenhang_null.AutoSize = true;
-            this.label_tenhang_null.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_tenhang_null.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.label_tenhang_null.Location = new System.Drawing.Point(272, 234);
-            this.label_tenhang_null.Name = "label_tenhang_null";
-            this.label_tenhang_null.Size = new System.Drawing.Size(201, 24);
-            this.label_tenhang_null.TabIndex = 213;
-            this.label_tenhang_null.Text = "Tên hàng đang trống.";
-            this.label_tenhang_null.Visible = false;
-            // 
             // panel18
             // 
             this.panel18.BackColor = System.Drawing.Color.White;
@@ -547,18 +515,6 @@
             this.panel3.Size = new System.Drawing.Size(268, 1);
             this.panel3.TabIndex = 222;
             // 
-            // label_soldout
-            // 
-            this.label_soldout.AutoSize = true;
-            this.label_soldout.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_soldout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.label_soldout.Location = new System.Drawing.Point(290, 337);
-            this.label_soldout.Name = "label_soldout";
-            this.label_soldout.Size = new System.Drawing.Size(187, 24);
-            this.label_soldout.TabIndex = 223;
-            this.label_soldout.Text = "Số lượng đang là 0.";
-            this.label_soldout.Visible = false;
-            // 
             // label_bill_info_null
             // 
             this.label_bill_info_null.AutoSize = true;
@@ -571,12 +527,47 @@
             this.label_bill_info_null.Text = "Chưa thêm hàng vào phiếu nhập.";
             this.label_bill_info_null.Visible = false;
             // 
+            // label_id_null
+            // 
+            this.label_id_null.AutoSize = true;
+            this.label_id_null.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_id_null.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label_id_null.Location = new System.Drawing.Point(271, 71);
+            this.label_id_null.Name = "label_id_null";
+            this.label_id_null.Size = new System.Drawing.Size(195, 24);
+            this.label_id_null.TabIndex = 211;
+            this.label_id_null.Text = "Mã hàng đang trống.";
+            this.label_id_null.Visible = false;
+            // 
+            // label_category_null
+            // 
+            this.label_category_null.AutoSize = true;
+            this.label_category_null.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_category_null.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label_category_null.Location = new System.Drawing.Point(265, 151);
+            this.label_category_null.Name = "label_category_null";
+            this.label_category_null.Size = new System.Drawing.Size(208, 24);
+            this.label_category_null.TabIndex = 212;
+            this.label_category_null.Text = "Danh mục đang trống.";
+            this.label_category_null.Visible = false;
+            // 
+            // label_tenhang_null
+            // 
+            this.label_tenhang_null.AutoSize = true;
+            this.label_tenhang_null.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_tenhang_null.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label_tenhang_null.Location = new System.Drawing.Point(272, 234);
+            this.label_tenhang_null.Name = "label_tenhang_null";
+            this.label_tenhang_null.Size = new System.Drawing.Size(201, 24);
+            this.label_tenhang_null.TabIndex = 213;
+            this.label_tenhang_null.Text = "Tên hàng đang trống.";
+            this.label_tenhang_null.Visible = false;
+            // 
             // Import_Control
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.Controls.Add(this.label_bill_info_null);
-            this.Controls.Add(this.label_soldout);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel18);
             this.Controls.Add(this.label_tenhang_null);
@@ -645,17 +636,16 @@
         private System.Windows.Forms.Button btn_del_from_imp;
         private System.Windows.Forms.NumericUpDown numUpDown_count;
         private System.Windows.Forms.Panel panel_Down;
-        private System.Windows.Forms.Label label_id_null;
-        private System.Windows.Forms.Label label_category_null;
-        private System.Windows.Forms.Label label_tenhang_null;
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label_ten_provi_null;
         private System.Windows.Forms.Label label_phone_null;
-        private System.Windows.Forms.Label label_soldout;
         private System.Windows.Forms.Label label_bill_info_null;
         private System.Windows.Forms.ComboBox cbb_provider;
+        private System.Windows.Forms.Label label_id_null;
+        private System.Windows.Forms.Label label_category_null;
+        private System.Windows.Forms.Label label_tenhang_null;
     }
 }
