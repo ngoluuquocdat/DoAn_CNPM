@@ -55,36 +55,7 @@ namespace QuanLyCuaHangGear
                 txt_displayName.Text = ac.DisplayName;
             }
         }
-        public bool isEmail(string email)
-        {
-           // email = email ?? string.Empty;
-            string strPattern = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
-                  @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
-                  @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
-            Regex re = new Regex(strPattern);
-            if (re.IsMatch(email))
-                return true;
-            else
-                return false;
-        }
-        public bool isPhone(string phone)
-        {
-            string strPattern = @"^[0-9]{10,11}$";
-            Regex re = new Regex(strPattern);
-            if (re.IsMatch(phone))
-                return true;
-            else
-                return false;
-        }
-        public bool isCMND(string cmnd)
-        {
-            string strPattern = @"^[0-9]{9}$";
-            Regex re = new Regex(strPattern);
-            if (re.IsMatch(cmnd))
-                return true;
-            else
-                return false;
-        }
+       
         public bool Check_Staff_Info()
         {
             bool check = true;
@@ -102,7 +73,7 @@ namespace QuanLyCuaHangGear
             }
             else
             {
-                if (!isCMND(txt_CMND.Text))
+                if (!Validation.isCMND(txt_CMND.Text))
                 {
                     label_CMND_invalid.Visible = true;
                     check = false;
@@ -128,7 +99,7 @@ namespace QuanLyCuaHangGear
             }
             else
             {
-                if(!isEmail(txt_Email.Text))
+                if(!Validation.isEmail(txt_Email.Text))
                 {
                     label_email_invalid.Visible = true;
                     check = false;
@@ -142,7 +113,7 @@ namespace QuanLyCuaHangGear
             }
             else
             {
-                if (!isPhone(txt_Phone.Text))
+                if (!Validation.isPhone(txt_Phone.Text))
                 {
                     label_phone_invalid.Visible = true;
                     check = false;

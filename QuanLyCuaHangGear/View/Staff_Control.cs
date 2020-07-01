@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyCuaHangGear.BLL;
-using QuanLyCuaHangGear.DTO;
+using QuanLyCuaHangGear.DTO; 
 using System.Threading;
 
 namespace QuanLyCuaHangGear

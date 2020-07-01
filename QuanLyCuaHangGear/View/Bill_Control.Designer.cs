@@ -74,6 +74,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label_bill_info_null = new System.Windows.Forms.Label();
+            this.label_phone_invalid = new System.Windows.Forms.Label();
+            this.label_email_invalid = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_buy)).BeginInit();
             this.panel_CustomerInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDown_count)).BeginInit();
@@ -161,6 +163,7 @@
             this.txt_email.Location = new System.Drawing.Point(182, 165);
             this.txt_email.Multiline = true;
             this.txt_email.Name = "txt_email";
+            this.txt_email.ReadOnly = true;
             this.txt_email.Size = new System.Drawing.Size(282, 33);
             this.txt_email.TabIndex = 21;
             this.txt_email.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -174,6 +177,7 @@
             this.txt_name_customer.Location = new System.Drawing.Point(182, 91);
             this.txt_name_customer.Multiline = true;
             this.txt_name_customer.Name = "txt_name_customer";
+            this.txt_name_customer.ReadOnly = true;
             this.txt_name_customer.Size = new System.Drawing.Size(282, 33);
             this.txt_name_customer.TabIndex = 16;
             this.txt_name_customer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -334,6 +338,8 @@
             // panel_CustomerInfo
             // 
             this.panel_CustomerInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.panel_CustomerInfo.Controls.Add(this.label_email_invalid);
+            this.panel_CustomerInfo.Controls.Add(this.label_phone_invalid);
             this.panel_CustomerInfo.Controls.Add(this.label_tenkhach_null);
             this.panel_CustomerInfo.Controls.Add(this.label_phone_null);
             this.panel_CustomerInfo.Controls.Add(this.panel6);
@@ -677,6 +683,30 @@
             this.label_bill_info_null.Text = "Chưa thêm hàng vào hóa đơn.";
             this.label_bill_info_null.Visible = false;
             // 
+            // label_phone_invalid
+            // 
+            this.label_phone_invalid.AutoSize = true;
+            this.label_phone_invalid.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_phone_invalid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label_phone_invalid.Location = new System.Drawing.Point(192, 3);
+            this.label_phone_invalid.Name = "label_phone_invalid";
+            this.label_phone_invalid.Size = new System.Drawing.Size(255, 24);
+            this.label_phone_invalid.TabIndex = 224;
+            this.label_phone_invalid.Text = "Số điện thoại không hợp lệ.";
+            this.label_phone_invalid.Visible = false;
+            // 
+            // label_email_invalid
+            // 
+            this.label_email_invalid.AutoSize = true;
+            this.label_email_invalid.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_email_invalid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label_email_invalid.Location = new System.Drawing.Point(234, 144);
+            this.label_email_invalid.Name = "label_email_invalid";
+            this.label_email_invalid.Size = new System.Drawing.Size(184, 24);
+            this.label_email_invalid.TabIndex = 225;
+            this.label_email_invalid.Text = "Emai không hợp lệ.";
+            this.label_email_invalid.Visible = false;
+            // 
             // Bill_Control
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -773,5 +803,7 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label_bill_info_null;
         private System.Windows.Forms.Button btn_Export_Bill;
+        private System.Windows.Forms.Label label_phone_invalid;
+        private System.Windows.Forms.Label label_email_invalid;
     }
 }

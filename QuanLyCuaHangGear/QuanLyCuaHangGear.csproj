@@ -63,6 +63,7 @@
     <Compile Include="BLL\BLL_Customer.cs" />
     <Compile Include="BLL\BLL_Product.cs" />
     <Compile Include="BLL\BLL_Staff.cs" />
+    <Compile Include="BLL\Validation.cs" />
     <Compile Include="CreateDB.cs" />
     <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\DanhMuc.cs" />

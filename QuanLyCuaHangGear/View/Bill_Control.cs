@@ -485,17 +485,33 @@ namespace QuanLyCuaHangGear
         private void btn_SearchPhone_Click(object sender, EventArgs e)
         {
             string phone = txt_phone.Text;
-            KhachHang provider = BLL_Customer.Instance.Get_Customer(phone);
-            if (provider == null)
+            if(phone == "")
             {
-                MessageBox.Show("Khách hàng này chưa được lưu.");
-                btn_Add_Customer.Visible = true;
+                label_phone_null.Visible = true;
+                return;
+            }
+            if(BLL.Validation.isPhone(phone))
+            {
+                KhachHang provider = BLL_Customer.Instance.Get_Customer(phone);
+                if (provider == null)
+                {
+                    MessageBox.Show("Khách hàng này chưa được lưu.");
+                    txt_name_customer.ReadOnly = false;
+                    txt_email.ReadOnly = false;
+                    btn_Add_Customer.Visible = true;
+                }
+                else
+                {
+                    txt_name_customer.Text = provider.Name;
+                    txt_email.Text = provider.Email;
+                }
             }
             else
             {
-                txt_name_customer.Text = provider.Name;
-                txt_email.Text = provider.Email;
+                label_phone_invalid.Visible = true;
+                
             }
+            
         }
 
         private void btn_Add_Customer_Click(object sender, EventArgs e)
@@ -503,9 +519,30 @@ namespace QuanLyCuaHangGear
             string name = txt_name_customer.Text;
             string phone = txt_phone.Text;
             string email = txt_email.Text;
+            if(name == "")
+            {
+                label_tenkhach_null.Visible = true;
+                return;
+            }
+            if(!BLL.Validation.isPhone(phone))
+            {
+                label_phone_null.Visible = true;
+                return;
+            }
+            if(email != "")
+            {
+                if (!BLL.Validation.isEmail(email))
+                {
+                    label_email_invalid.Visible = true;
+                    return;
+                }
+            }
+            
             BLL_Customer.Instance.Add_Customer(name, phone, email);
             MessageBox.Show("Đã thêm thông tin khách hàng.");
-            btn_Add_Customer.Visible = false;
+            btn_Add_Customer.Visible = false;           
+            txt_name_customer.ReadOnly = true;
+            txt_email.ReadOnly = true;
         }
 
         
@@ -634,7 +671,6 @@ namespace QuanLyCuaHangGear
                 
                 Product_Control.Instance.Load_dtgv();
                 btn_Export_Bill.Visible = true;
-
             }
             else
             {
@@ -651,7 +687,10 @@ namespace QuanLyCuaHangGear
             txt_phone.Clear();
             txt_name_customer.Clear();
             txt_email.Clear();
+            label_phone_invalid.Visible = false;
             btn_Add_Customer.Visible = false;
+            txt_email.ReadOnly = true;
+            txt_name_customer.ReadOnly = true;
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)
@@ -675,6 +714,8 @@ namespace QuanLyCuaHangGear
             txt_Total.Clear();
             dt.Rows.Clear();
             dtgv_buy.DataSource = dt;
+
+            btn_Export_Bill.Visible = false;
         }
 
         private void btn_Export_Bill_Click(object sender, EventArgs e)

@@ -45,20 +45,7 @@ namespace QuanLyCuaHangGear.View
             }
             cbb_danhMuc.SelectedIndex = 0;
         }
-        public bool is_Price(string price)
-        {
-            string strRegex = @"^[0-9]{1,}$";
-            Regex re = new Regex(strRegex);
-            if (re.IsMatch(price))
-            {
-                if (Convert.ToInt32(price) <= 0)
-                    return false;
-                else
-                    return true;
-            }               
-            else
-                return false;
-        }
+        
         public bool Check_Product_Info()
         {
             bool check = true;
@@ -77,7 +64,7 @@ namespace QuanLyCuaHangGear.View
             }
             else
             {
-                if(!is_Price(txt_giaNhap.Text))
+                if(!Validation.is_Price(txt_giaNhap.Text))
                 {
                     label_dgNhap_invalid.Visible = true;
                     check = false;
@@ -91,13 +78,13 @@ namespace QuanLyCuaHangGear.View
             }
             else
             {
-                if (!is_Price(txt_giaBan.Text))
+                if (!Validation.is_Price(txt_giaBan.Text))
                 {
                     label_dgBan_invalid.Visible = true;
                     check = false;
                 }
             }
-            if (is_Price(txt_giaBan.Text) && is_Price(txt_giaNhap.Text))
+            if (Validation.is_Price(txt_giaBan.Text) && Validation.is_Price(txt_giaNhap.Text))
             {
                 if (Convert.ToInt32(txt_giaBan.Text) < Convert.ToInt32(txt_giaNhap.Text))
                 {
