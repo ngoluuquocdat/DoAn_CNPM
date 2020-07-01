@@ -359,5 +359,15 @@ namespace QuanLyCuaHangGear.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Z_to_A {
+            get {
+                object obj = ResourceManager.GetObject("Z to A", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

@@ -54,12 +54,12 @@ namespace QuanLyCuaHangGear
             btn_Import.Font = new Font(btn_Import.Font.FontFamily, 12);
 
 
-            btn_Staff.BackColor = Color.FromArgb(40, 42, 65);
-            btn_Product.BackColor = Color.FromArgb(40, 42, 65);
-            btn_Report.BackColor = Color.FromArgb(40, 42, 65);
-            btn_Account.BackColor = Color.FromArgb(40, 42, 65);
-            btn_Bill.BackColor = Color.FromArgb(40, 42, 65);
-            btn_Import.BackColor = Color.FromArgb(40, 42, 65);
+            btn_Staff.BackColor = Color.FromArgb(40, 42, 75);
+            btn_Product.BackColor = Color.FromArgb(40, 42, 75);
+            btn_Report.BackColor = Color.FromArgb(40, 42, 75);
+            btn_Account.BackColor = Color.FromArgb(40, 42, 75);
+            btn_Bill.BackColor = Color.FromArgb(40, 42, 75);
+            btn_Import.BackColor = Color.FromArgb(40, 42, 75);
 
             btn_Staff.TextImageRelation = TextImageRelation.ImageBeforeText;
             btn_Staff.ImageAlign = ContentAlignment.MiddleLeft;
@@ -93,7 +93,7 @@ namespace QuanLyCuaHangGear
         {
             Reset_Button_Effect();
             btn.Font = new Font(btn.Font.FontFamily, 14);
-            btn.BackColor = Color.FromArgb(52, 54, 77);
+            btn.BackColor = Color.FromArgb(52, 54, 87);
             btn.ForeColor = Color.FromArgb(98, 225, 225);
             btn.TextImageRelation = TextImageRelation.TextBeforeImage;
             btn.ImageAlign = ContentAlignment.MiddleRight;

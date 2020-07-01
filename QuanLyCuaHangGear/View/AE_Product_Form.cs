@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,7 +15,11 @@ namespace QuanLyCuaHangGear.View
 {
     public partial class AE_Product_Form : Form
     {
+        public delegate void MyDelegate();
+        public MyDelegate D { get; set; }
         public int ID { get; set; }
+        
+
         //Constructor
         public AE_Product_Form(int id)
         {
@@ -40,6 +45,71 @@ namespace QuanLyCuaHangGear.View
             }
             cbb_danhMuc.SelectedIndex = 0;
         }
+        public bool is_Price(string price)
+        {
+            string strRegex = @"^[0-9]{1,}$";
+            Regex re = new Regex(strRegex);
+            if (re.IsMatch(price))
+            {
+                if (Convert.ToInt32(price) <= 0)
+                    return false;
+                else
+                    return true;
+            }               
+            else
+                return false;
+        }
+        public bool Check_Product_Info()
+        {
+            bool check = true;
+            // check ten
+            if (txt_tenPr.Text == "")
+            {
+                label_name_null.Visible = true;
+                check = false;
+            }
+            // check don gia
+
+            if (txt_giaNhap.Text == "")
+            {
+                    label_dgNhap_null.Visible = true;
+                    check = false;
+            }
+            else
+            {
+                if(!is_Price(txt_giaNhap.Text))
+                {
+                    label_dgNhap_invalid.Visible = true;
+                    check = false;
+                }
+            }
+
+            if (txt_giaBan.Text == "")
+            {
+                label_dgBan_null.Visible = true;
+               check = false;
+            }
+            else
+            {
+                if (!is_Price(txt_giaBan.Text))
+                {
+                    label_dgBan_invalid.Visible = true;
+                    check = false;
+                }
+            }
+            if (is_Price(txt_giaBan.Text) && is_Price(txt_giaNhap.Text))
+            {
+                if (Convert.ToInt32(txt_giaBan.Text) < Convert.ToInt32(txt_giaNhap.Text))
+                {
+                    label_dgBan_invalid.Visible = true;
+                    check = false;
+                }
+            }
+
+            return check;
+        }
+
+
         public void SetView()
         {
             if (ID == 0)
@@ -53,7 +123,6 @@ namespace QuanLyCuaHangGear.View
                 txt_giaNhap.Text = hh.DonGiaNhap.ToString();
                 txt_giaBan.Text = hh.DonGiaBan.ToString();
                 int id_dm = hh.idDanhMuc;
-                //DanhMuc dm = BLL_Product.Instance.Get_DanhMuc_by_ID(id_Dm);
 
                 CBBItems temp = new CBBItems();
 
@@ -78,24 +147,60 @@ namespace QuanLyCuaHangGear.View
         {
             if (ID == 0)
             {
-                string TenPr = txt_tenPr.Text;
-                string GiaBan = txt_giaBan.Text;
-                string GiaNhap = txt_giaNhap.Text;
-                int idPr = ((CBBItems)cbb_danhMuc.SelectedItem).Value;
-                BLL_Product.Instance.AddProduct(TenPr, GiaBan, GiaNhap, idPr);
-                this.Close();
-                MessageBox.Show("Đã thêm mặt hàng!");
+                if (Check_Product_Info())
+                {
+                    string TenPr = txt_tenPr.Text;
+                    string GiaBan = txt_giaBan.Text;
+                    string GiaNhap = txt_giaNhap.Text;
+                    int idPr = ((CBBItems)cbb_danhMuc.SelectedItem).Value;
+                    BLL_Product.Instance.AddProduct(TenPr, GiaBan, GiaNhap, idPr);
+                    this.Close();
+                    MessageBox.Show("Đã thêm mặt hàng!");
+                    this.D();
+                    this.Close();
+                }
+                else
+                {
+
+                }
             }
             else
             {
-                string TenPr = txt_tenPr.Text;
-                string GiaBan = txt_giaBan.Text;
-                string GiaNhap = txt_giaNhap.Text;
-                int idPr = ((CBBItems)cbb_danhMuc.SelectedItem).Value;
-                BLL_Product.Instance.EditProduct(ID,TenPr, GiaBan, GiaNhap, idPr);
-                this.Close();
-                MessageBox.Show("Đã cập nhật thông tin!");
+                if (Check_Product_Info())
+                {
+                    string TenPr = txt_tenPr.Text;
+                    string GiaBan = txt_giaBan.Text;
+                    string GiaNhap = txt_giaNhap.Text;
+                    int idPr = ((CBBItems)cbb_danhMuc.SelectedItem).Value;
+                    BLL_Product.Instance.EditProduct(ID, TenPr, GiaBan, GiaNhap, idPr);
+                    
+                    MessageBox.Show("Đã cập nhật thông tin!");
+                    this.D();
+                    this.Close();
+                }
+                else
+                {
+                    
+                }
             }
+            
+        }
+
+        private void txt_tenPr_Click(object sender, EventArgs e)
+        {
+            label_name_null.Visible = false;
+        }
+
+        private void txt_giaNhap_Click(object sender, EventArgs e)
+        {
+            label_dgNhap_invalid.Visible = false;
+            label_dgNhap_null.Visible = false;
+        }
+
+        private void txt_giaBan_Click(object sender, EventArgs e)
+        {
+            label_dgBan_invalid.Visible = false;
+            label_dgBan_null.Visible = false;
         }
     }
 }

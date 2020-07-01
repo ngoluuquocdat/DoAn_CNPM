@@ -79,7 +79,7 @@ namespace QuanLyCuaHangGear
             }
 
             string UserName = txt_Username.Text;
-            string PassWord = txt_Password.Text;
+            string PassWord = BLL_Account.Instance.MaHoa(txt_Password.Text);
             Account ac = BLL_Account.Instance.Get_Account(UserName);
             if (ac != null)
             {

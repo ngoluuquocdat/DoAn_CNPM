@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -41,6 +42,17 @@ namespace QuanLyCuaHangGear.BLL
                 return null;
             }
 
+        }
+        public string MaHoa(string password)
+        {
+            byte[] temp = ASCIIEncoding.ASCII.GetBytes(password);
+            byte[] hashdata = new MD5CryptoServiceProvider().ComputeHash(temp);
+            string hashpass = "";
+            foreach(byte i in hashdata)
+            {
+                hashpass += i;
+            }
+            return hashpass;
         }
         public bool CheckNewPass(string pass)
         {

@@ -91,9 +91,9 @@ namespace QuanLyCuaHangGear
 
         private void btn_Confirm_Click(object sender, EventArgs e)
         {
-            string oldpass = txt_OldPass.Text;
-            string newpass = txt_NewPass.Text;
-            string confirmpass = txt_ConfirmPass.Text;
+            string oldpass = BLL_Account.Instance.MaHoa(txt_OldPass.Text);
+            string newpass = BLL_Account.Instance.MaHoa(txt_NewPass.Text);
+            string confirmpass = BLL_Account.Instance.MaHoa(txt_ConfirmPass.Text);
             Account ac = new Account();
             if (this.Id_NV == 0)
             {

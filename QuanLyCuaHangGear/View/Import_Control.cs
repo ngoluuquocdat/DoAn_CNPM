@@ -161,6 +161,7 @@ namespace QuanLyCuaHangGear
                 {
                     if (h.id == Convert.ToInt32(dt.Rows[i]["Mã hàng"].ToString()))
                     {
+                        dtgv_import.Rows[i].Selected = true;
                         int current_soluong = Convert.ToInt32(dt.Rows[i]["Số lượng"].ToString());
                         dt.Rows[i]["Số lượng"] = current_soluong + numUpDown_count.Value;
                         isExist = true;
@@ -175,6 +176,8 @@ namespace QuanLyCuaHangGear
                     dr["Số lượng"] = numUpDown_count.Value;
                     dr["Đơn giá"] = h.DonGiaBan;
                     dt.Rows.Add(dr);
+                    if (dtgv_import.Rows.Count > 0)
+                        dtgv_import.Rows[dtgv_import.Rows.Count - 1].Selected = true;
                 }
 
                 dtgv_import.DataSource = dt;

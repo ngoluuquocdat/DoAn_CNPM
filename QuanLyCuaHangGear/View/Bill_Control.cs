@@ -634,19 +634,7 @@ namespace QuanLyCuaHangGear
                 
                 Product_Control.Instance.Load_dtgv();
                 btn_Export_Bill.Visible = true;
-                //MessageBox.Show("In hoas ddon.");
-                //txt_id_hang.Clear();
-                //txt_danhmuc.Clear();
-                //txt_tenhang.Clear();
-                //numUpDown_count.Value = 1;
 
-                //txt_name_customer.Clear();
-                //txt_phone.Clear();
-                //txt_email.Clear();
-
-                //txt_Total.Clear();
-                //dt = null;
-                //dtgv_buy.DataSource = dt;
             }
             else
             {

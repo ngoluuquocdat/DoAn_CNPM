@@ -14,7 +14,7 @@ namespace QuanLyCuaHangGear.BLL
     class BLL_Staff
     {
         public delegate bool Compare_Condition(string left, string right);
-        private Compare_Condition _CompCond;
+        //private Compare_Condition _CompCond;
         public Compare_Condition CompCond { get; set; }
         private static BLL_Staff _Instance;
 

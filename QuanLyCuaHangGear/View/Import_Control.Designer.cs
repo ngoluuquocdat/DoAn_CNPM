@@ -31,6 +31,7 @@
             this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_confirm = new System.Windows.Forms.Button();
             this.panel_CustomerInfo = new System.Windows.Forms.Panel();
+            this.cbb_provider = new System.Windows.Forms.ComboBox();
             this.label_phone_null = new System.Windows.Forms.Label();
             this.label_ten_provi_null = new System.Windows.Forms.Label();
             this.txt_phone_provi = new System.Windows.Forms.TextBox();
@@ -66,7 +67,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label_soldout = new System.Windows.Forms.Label();
             this.label_bill_info_null = new System.Windows.Forms.Label();
-            this.cbb_provider = new System.Windows.Forms.ComboBox();
             this.panel_CustomerInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_import)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDown_count)).BeginInit();
@@ -124,6 +124,16 @@
             this.panel_CustomerInfo.Name = "panel_CustomerInfo";
             this.panel_CustomerInfo.Size = new System.Drawing.Size(541, 304);
             this.panel_CustomerInfo.TabIndex = 89;
+            // 
+            // cbb_provider
+            // 
+            this.cbb_provider.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_provider.FormattingEnabled = true;
+            this.cbb_provider.Location = new System.Drawing.Point(182, 28);
+            this.cbb_provider.Name = "cbb_provider";
+            this.cbb_provider.Size = new System.Drawing.Size(287, 31);
+            this.cbb_provider.TabIndex = 225;
+            this.cbb_provider.SelectedIndexChanged += new System.EventHandler(this.cbb_provider_SelectedIndexChanged);
             // 
             // label_phone_null
             // 
@@ -213,6 +223,7 @@
             this.dtgv_import.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dtgv_import.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_import.Location = new System.Drawing.Point(670, 362);
+            this.dtgv_import.MultiSelect = false;
             this.dtgv_import.Name = "dtgv_import";
             this.dtgv_import.RowHeadersWidth = 51;
             this.dtgv_import.RowTemplate.Height = 24;
@@ -558,16 +569,6 @@
             this.label_bill_info_null.TabIndex = 225;
             this.label_bill_info_null.Text = "Chưa thêm hàng vào phiếu nhập.";
             this.label_bill_info_null.Visible = false;
-            // 
-            // cbb_provider
-            // 
-            this.cbb_provider.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbb_provider.FormattingEnabled = true;
-            this.cbb_provider.Location = new System.Drawing.Point(182, 28);
-            this.cbb_provider.Name = "cbb_provider";
-            this.cbb_provider.Size = new System.Drawing.Size(287, 31);
-            this.cbb_provider.TabIndex = 225;
-            this.cbb_provider.SelectedIndexChanged += new System.EventHandler(this.cbb_provider_SelectedIndexChanged);
             // 
             // Import_Control
             // 

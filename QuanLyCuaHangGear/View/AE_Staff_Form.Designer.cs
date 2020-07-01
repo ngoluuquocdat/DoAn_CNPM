@@ -74,6 +74,18 @@
             this.panel17 = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
             this.btn_setPass = new System.Windows.Forms.Button();
+            this.label_name_null = new System.Windows.Forms.Label();
+            this.label_cmnd_null = new System.Windows.Forms.Label();
+            this.label_que_null = new System.Windows.Forms.Label();
+            this.label_diachi_null = new System.Windows.Forms.Label();
+            this.label_phone_null = new System.Windows.Forms.Label();
+            this.label_email_null = new System.Windows.Forms.Label();
+            this.label_phone_invalid = new System.Windows.Forms.Label();
+            this.label_email_invalid = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_done = new System.Windows.Forms.Button();
+            this.label_info_acc = new System.Windows.Forms.Label();
+            this.label_CMND_invalid = new System.Windows.Forms.Label();
             this.panel_Down.SuspendLayout();
             this.panel_Head.SuspendLayout();
             this.groupBox_Gender.SuspendLayout();
@@ -82,16 +94,19 @@
             // panel_Down
             // 
             this.panel_Down.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(65)))));
+            this.panel_Down.Controls.Add(this.btn_done);
             this.panel_Down.Controls.Add(this.panel15);
             this.panel_Down.Controls.Add(this.panel13);
+            this.panel_Down.Controls.Add(this.panel2);
             this.panel_Down.Controls.Add(this.panel10);
             this.panel_Down.Controls.Add(this.btn_Cancel);
             this.panel_Down.Controls.Add(this.btn_Confirm);
             this.panel_Down.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel_Down.Location = new System.Drawing.Point(1, 460);
+            this.panel_Down.Location = new System.Drawing.Point(1, 571);
             this.panel_Down.Name = "panel_Down";
-            this.panel_Down.Size = new System.Drawing.Size(955, 94);
+            this.panel_Down.Size = new System.Drawing.Size(955, 90);
             this.panel_Down.TabIndex = 223;
+            this.panel_Down.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Down_Paint);
             // 
             // panel15
             // 
@@ -99,7 +114,7 @@
             this.panel15.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel15.Location = new System.Drawing.Point(954, 0);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(1, 94);
+            this.panel15.Size = new System.Drawing.Size(1, 90);
             this.panel15.TabIndex = 149;
             // 
             // panel13
@@ -108,13 +123,13 @@
             this.panel13.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel13.Location = new System.Drawing.Point(0, 0);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(1, 94);
+            this.panel13.Size = new System.Drawing.Size(1, 90);
             this.panel13.TabIndex = 148;
             // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.White;
-            this.panel10.Location = new System.Drawing.Point(0, 93);
+            this.panel10.Location = new System.Drawing.Point(-1, 93);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(957, 1);
             this.panel10.TabIndex = 147;
@@ -218,7 +233,7 @@
             this.txt_displayName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_displayName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_displayName.ForeColor = System.Drawing.Color.White;
-            this.txt_displayName.Location = new System.Drawing.Point(668, 297);
+            this.txt_displayName.Location = new System.Drawing.Point(669, 356);
             this.txt_displayName.Name = "txt_displayName";
             this.txt_displayName.ReadOnly = true;
             this.txt_displayName.Size = new System.Drawing.Size(250, 23);
@@ -231,7 +246,7 @@
             this.txt_userName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_userName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_userName.ForeColor = System.Drawing.Color.White;
-            this.txt_userName.Location = new System.Drawing.Point(668, 251);
+            this.txt_userName.Location = new System.Drawing.Point(669, 295);
             this.txt_userName.Name = "txt_userName";
             this.txt_userName.ReadOnly = true;
             this.txt_userName.Size = new System.Drawing.Size(250, 23);
@@ -244,18 +259,19 @@
             this.txt_QueNV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_QueNV.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_QueNV.ForeColor = System.Drawing.Color.White;
-            this.txt_QueNV.Location = new System.Drawing.Point(204, 249);
+            this.txt_QueNV.Location = new System.Drawing.Point(204, 289);
             this.txt_QueNV.Name = "txt_QueNV";
             this.txt_QueNV.Size = new System.Drawing.Size(250, 23);
             this.txt_QueNV.TabIndex = 193;
             this.txt_QueNV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_QueNV.Click += new System.EventHandler(this.txt_QueNV_Click);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label9.Location = new System.Drawing.Point(515, 349);
+            this.label9.Location = new System.Drawing.Point(516, 417);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(104, 24);
             this.label9.TabIndex = 204;
@@ -266,7 +282,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label7.Location = new System.Drawing.Point(514, 251);
+            this.label7.Location = new System.Drawing.Point(515, 295);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(146, 24);
             this.label7.TabIndex = 203;
@@ -278,7 +294,7 @@
             this.panel14.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel14.Location = new System.Drawing.Point(956, 0);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(1, 554);
+            this.panel14.Size = new System.Drawing.Size(1, 661);
             this.panel14.TabIndex = 226;
             // 
             // panel11
@@ -287,7 +303,7 @@
             this.panel11.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel11.Location = new System.Drawing.Point(0, 0);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(1, 554);
+            this.panel11.Size = new System.Drawing.Size(1, 661);
             this.panel11.TabIndex = 225;
             // 
             // txt_Phone
@@ -296,11 +312,12 @@
             this.txt_Phone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_Phone.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Phone.ForeColor = System.Drawing.Color.White;
-            this.txt_Phone.Location = new System.Drawing.Point(204, 343);
+            this.txt_Phone.Location = new System.Drawing.Point(204, 418);
             this.txt_Phone.Name = "txt_Phone";
             this.txt_Phone.Size = new System.Drawing.Size(250, 23);
             this.txt_Phone.TabIndex = 195;
             this.txt_Phone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_Phone.Click += new System.EventHandler(this.txt_Phone_Click);
             // 
             // txt_DiaChi
             // 
@@ -308,11 +325,12 @@
             this.txt_DiaChi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_DiaChi.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_DiaChi.ForeColor = System.Drawing.Color.White;
-            this.txt_DiaChi.Location = new System.Drawing.Point(204, 292);
+            this.txt_DiaChi.Location = new System.Drawing.Point(204, 350);
             this.txt_DiaChi.Name = "txt_DiaChi";
             this.txt_DiaChi.Size = new System.Drawing.Size(250, 23);
             this.txt_DiaChi.TabIndex = 194;
             this.txt_DiaChi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_DiaChi.Click += new System.EventHandler(this.txt_DiaChi_Click);
             // 
             // txt_TenNV
             // 
@@ -325,6 +343,7 @@
             this.txt_TenNV.Size = new System.Drawing.Size(250, 23);
             this.txt_TenNV.TabIndex = 189;
             this.txt_TenNV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_TenNV.Click += new System.EventHandler(this.txt_TenNV_Click);
             this.txt_TenNV.TextChanged += new System.EventHandler(this.txt_TenNV_TextChanged);
             // 
             // radioBtn_Female
@@ -362,11 +381,12 @@
             this.txt_CMND.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_CMND.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_CMND.ForeColor = System.Drawing.Color.White;
-            this.txt_CMND.Location = new System.Drawing.Point(204, 200);
+            this.txt_CMND.Location = new System.Drawing.Point(204, 226);
             this.txt_CMND.Name = "txt_CMND";
             this.txt_CMND.Size = new System.Drawing.Size(250, 23);
             this.txt_CMND.TabIndex = 192;
             this.txt_CMND.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_CMND.Click += new System.EventHandler(this.txt_CMND_Click);
             // 
             // txt_Email
             // 
@@ -374,18 +394,19 @@
             this.txt_Email.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_Email.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Email.ForeColor = System.Drawing.Color.White;
-            this.txt_Email.Location = new System.Drawing.Point(204, 390);
+            this.txt_Email.Location = new System.Drawing.Point(206, 480);
             this.txt_Email.Name = "txt_Email";
             this.txt_Email.Size = new System.Drawing.Size(250, 23);
             this.txt_Email.TabIndex = 196;
             this.txt_Email.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_Email.Click += new System.EventHandler(this.txt_Email_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label8.Location = new System.Drawing.Point(514, 299);
+            this.label8.Location = new System.Drawing.Point(515, 358);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(129, 24);
             this.label8.TabIndex = 202;
@@ -396,7 +417,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label12.Location = new System.Drawing.Point(35, 208);
+            this.label12.Location = new System.Drawing.Point(35, 234);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(76, 24);
             this.label12.TabIndex = 208;
@@ -407,7 +428,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label1.Location = new System.Drawing.Point(35, 397);
+            this.label1.Location = new System.Drawing.Point(37, 487);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 24);
             this.label1.TabIndex = 207;
@@ -418,7 +439,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label11.Location = new System.Drawing.Point(35, 350);
+            this.label11.Location = new System.Drawing.Point(35, 425);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(147, 24);
             this.label11.TabIndex = 206;
@@ -429,7 +450,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label10.Location = new System.Drawing.Point(35, 303);
+            this.label10.Location = new System.Drawing.Point(35, 361);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(81, 24);
             this.label10.TabIndex = 210;
@@ -440,7 +461,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label6.Location = new System.Drawing.Point(35, 255);
+            this.label6.Location = new System.Drawing.Point(35, 295);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(109, 24);
             this.label6.TabIndex = 209;
@@ -451,7 +472,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label5.Location = new System.Drawing.Point(35, 160);
+            this.label5.Location = new System.Drawing.Point(35, 172);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(111, 24);
             this.label5.TabIndex = 212;
@@ -471,7 +492,7 @@
             // dateTimePicker_DOB
             // 
             this.dateTimePicker_DOB.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker_DOB.Location = new System.Drawing.Point(204, 162);
+            this.dateTimePicker_DOB.Location = new System.Drawing.Point(204, 174);
             this.dateTimePicker_DOB.Name = "dateTimePicker_DOB";
             this.dateTimePicker_DOB.Size = new System.Drawing.Size(250, 27);
             this.dateTimePicker_DOB.TabIndex = 190;
@@ -495,7 +516,7 @@
             // 
             this.panel8.BackColor = System.Drawing.Color.White;
             this.panel8.ForeColor = System.Drawing.Color.Black;
-            this.panel8.Location = new System.Drawing.Point(668, 373);
+            this.panel8.Location = new System.Drawing.Point(669, 441);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(250, 1);
             this.panel8.TabIndex = 213;
@@ -504,7 +525,7 @@
             // 
             this.panel7.BackColor = System.Drawing.Color.White;
             this.panel7.ForeColor = System.Drawing.Color.Black;
-            this.panel7.Location = new System.Drawing.Point(668, 326);
+            this.panel7.Location = new System.Drawing.Point(669, 385);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(250, 1);
             this.panel7.TabIndex = 219;
@@ -513,7 +534,7 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.ForeColor = System.Drawing.Color.Black;
-            this.panel6.Location = new System.Drawing.Point(668, 280);
+            this.panel6.Location = new System.Drawing.Point(669, 324);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(250, 1);
             this.panel6.TabIndex = 215;
@@ -522,7 +543,7 @@
             // 
             this.panel9.BackColor = System.Drawing.Color.White;
             this.panel9.ForeColor = System.Drawing.Color.Black;
-            this.panel9.Location = new System.Drawing.Point(204, 372);
+            this.panel9.Location = new System.Drawing.Point(204, 447);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(250, 1);
             this.panel9.TabIndex = 222;
@@ -531,7 +552,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.ForeColor = System.Drawing.Color.Black;
-            this.panel4.Location = new System.Drawing.Point(204, 321);
+            this.panel4.Location = new System.Drawing.Point(204, 379);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(250, 1);
             this.panel4.TabIndex = 218;
@@ -540,7 +561,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.ForeColor = System.Drawing.Color.Black;
-            this.panel5.Location = new System.Drawing.Point(204, 278);
+            this.panel5.Location = new System.Drawing.Point(204, 318);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(250, 1);
             this.panel5.TabIndex = 217;
@@ -551,9 +572,8 @@
             this.txt_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_password.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_password.ForeColor = System.Drawing.Color.White;
-            this.txt_password.Location = new System.Drawing.Point(668, 342);
+            this.txt_password.Location = new System.Drawing.Point(669, 410);
             this.txt_password.Name = "txt_password";
-            this.txt_password.ReadOnly = true;
             this.txt_password.Size = new System.Drawing.Size(250, 23);
             this.txt_password.TabIndex = 199;
             this.txt_password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -562,7 +582,7 @@
             // 
             this.panel17.BackColor = System.Drawing.Color.White;
             this.panel17.ForeColor = System.Drawing.Color.Black;
-            this.panel17.Location = new System.Drawing.Point(204, 419);
+            this.panel17.Location = new System.Drawing.Point(206, 509);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(250, 1);
             this.panel17.TabIndex = 221;
@@ -571,7 +591,7 @@
             // 
             this.panel18.BackColor = System.Drawing.Color.White;
             this.panel18.ForeColor = System.Drawing.Color.Black;
-            this.panel18.Location = new System.Drawing.Point(204, 229);
+            this.panel18.Location = new System.Drawing.Point(204, 255);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(250, 1);
             this.panel18.TabIndex = 220;
@@ -587,7 +607,7 @@
             this.btn_setPass.ForeColor = System.Drawing.Color.White;
             this.btn_setPass.Image = global::QuanLyCuaHangGear.Properties.Resources.reset;
             this.btn_setPass.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_setPass.Location = new System.Drawing.Point(668, 397);
+            this.btn_setPass.Location = new System.Drawing.Point(669, 470);
             this.btn_setPass.Name = "btn_setPass";
             this.btn_setPass.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btn_setPass.Size = new System.Drawing.Size(201, 44);
@@ -596,11 +616,167 @@
             this.btn_setPass.UseVisualStyleBackColor = false;
             this.btn_setPass.Click += new System.EventHandler(this.btn_setPass_Click);
             // 
+            // label_name_null
+            // 
+            this.label_name_null.AutoSize = true;
+            this.label_name_null.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_name_null.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label_name_null.Location = new System.Drawing.Point(211, 80);
+            this.label_name_null.Name = "label_name_null";
+            this.label_name_null.Size = new System.Drawing.Size(244, 24);
+            this.label_name_null.TabIndex = 227;
+            this.label_name_null.Text = "Tên nhân viên đang trống.";
+            this.label_name_null.Visible = false;
+            // 
+            // label_cmnd_null
+            // 
+            this.label_cmnd_null.AutoSize = true;
+            this.label_cmnd_null.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_cmnd_null.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label_cmnd_null.Location = new System.Drawing.Point(239, 204);
+            this.label_cmnd_null.Name = "label_cmnd_null";
+            this.label_cmnd_null.Size = new System.Drawing.Size(176, 24);
+            this.label_cmnd_null.TabIndex = 228;
+            this.label_cmnd_null.Text = "CMND đang trống.";
+            this.label_cmnd_null.Visible = false;
+            // 
+            // label_que_null
+            // 
+            this.label_que_null.AutoSize = true;
+            this.label_que_null.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_que_null.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label_que_null.Location = new System.Drawing.Point(223, 266);
+            this.label_que_null.Name = "label_que_null";
+            this.label_que_null.Size = new System.Drawing.Size(205, 24);
+            this.label_que_null.TabIndex = 229;
+            this.label_que_null.Text = "Quê quán đang trống.";
+            this.label_que_null.Visible = false;
+            // 
+            // label_diachi_null
+            // 
+            this.label_diachi_null.AutoSize = true;
+            this.label_diachi_null.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_diachi_null.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label_diachi_null.Location = new System.Drawing.Point(241, 327);
+            this.label_diachi_null.Name = "label_diachi_null";
+            this.label_diachi_null.Size = new System.Drawing.Size(179, 24);
+            this.label_diachi_null.TabIndex = 230;
+            this.label_diachi_null.Text = "Địa chỉ đang trống.";
+            this.label_diachi_null.Visible = false;
+            // 
+            // label_phone_null
+            // 
+            this.label_phone_null.AutoSize = true;
+            this.label_phone_null.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_phone_null.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label_phone_null.Location = new System.Drawing.Point(214, 397);
+            this.label_phone_null.Name = "label_phone_null";
+            this.label_phone_null.Size = new System.Drawing.Size(234, 24);
+            this.label_phone_null.TabIndex = 231;
+            this.label_phone_null.Text = "Số điện thoại đang trống.";
+            this.label_phone_null.Visible = false;
+            // 
+            // label_email_null
+            // 
+            this.label_email_null.AutoSize = true;
+            this.label_email_null.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_email_null.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label_email_null.Location = new System.Drawing.Point(245, 458);
+            this.label_email_null.Name = "label_email_null";
+            this.label_email_null.Size = new System.Drawing.Size(168, 24);
+            this.label_email_null.TabIndex = 232;
+            this.label_email_null.Text = "Email đang trống.";
+            this.label_email_null.Visible = false;
+            // 
+            // label_phone_invalid
+            // 
+            this.label_phone_invalid.AutoSize = true;
+            this.label_phone_invalid.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_phone_invalid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label_phone_invalid.Location = new System.Drawing.Point(204, 397);
+            this.label_phone_invalid.Name = "label_phone_invalid";
+            this.label_phone_invalid.Size = new System.Drawing.Size(255, 24);
+            this.label_phone_invalid.TabIndex = 233;
+            this.label_phone_invalid.Text = "Số điện thoại không hợp lệ.";
+            this.label_phone_invalid.Visible = false;
+            // 
+            // label_email_invalid
+            // 
+            this.label_email_invalid.AutoSize = true;
+            this.label_email_invalid.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_email_invalid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label_email_invalid.Location = new System.Drawing.Point(239, 458);
+            this.label_email_invalid.Name = "label_email_invalid";
+            this.label_email_invalid.Size = new System.Drawing.Size(189, 24);
+            this.label_email_invalid.TabIndex = 234;
+            this.label_email_invalid.Text = "Email không hợp lệ.";
+            this.label_email_invalid.Visible = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Location = new System.Drawing.Point(0, 89);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(957, 1);
+            this.panel2.TabIndex = 147;
+            // 
+            // btn_done
+            // 
+            this.btn_done.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(65)))));
+            this.btn_done.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_done.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(65)))));
+            this.btn_done.FlatAppearance.BorderSize = 0;
+            this.btn_done.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_done.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_done.ForeColor = System.Drawing.Color.White;
+            this.btn_done.Location = new System.Drawing.Point(413, 26);
+            this.btn_done.Name = "btn_done";
+            this.btn_done.Size = new System.Drawing.Size(133, 44);
+            this.btn_done.TabIndex = 150;
+            this.btn_done.Text = "XONG";
+            this.btn_done.UseVisualStyleBackColor = false;
+            this.btn_done.Visible = false;
+            this.btn_done.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label_info_acc
+            // 
+            this.label_info_acc.AutoSize = true;
+            this.label_info_acc.Font = new System.Drawing.Font("Arial", 13.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_info_acc.ForeColor = System.Drawing.Color.Lime;
+            this.label_info_acc.Location = new System.Drawing.Point(552, 226);
+            this.label_info_acc.Name = "label_info_acc";
+            this.label_info_acc.Size = new System.Drawing.Size(440, 28);
+            this.label_info_acc.TabIndex = 236;
+            this.label_info_acc.Text = "Xem thông tin tài khoản nhân viên ở dưới.";
+            this.label_info_acc.Visible = false;
+            // 
+            // label_CMND_invalid
+            // 
+            this.label_CMND_invalid.AutoSize = true;
+            this.label_CMND_invalid.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_CMND_invalid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label_CMND_invalid.Location = new System.Drawing.Point(230, 205);
+            this.label_CMND_invalid.Name = "label_CMND_invalid";
+            this.label_CMND_invalid.Size = new System.Drawing.Size(197, 24);
+            this.label_CMND_invalid.TabIndex = 237;
+            this.label_CMND_invalid.Text = "CMND không hợp lệ.";
+            this.label_CMND_invalid.Visible = false;
+            // 
             // AE_Staff_Form
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.ClientSize = new System.Drawing.Size(957, 554);
+            this.ClientSize = new System.Drawing.Size(957, 661);
+            this.Controls.Add(this.label_CMND_invalid);
+            this.Controls.Add(this.label_info_acc);
+            this.Controls.Add(this.label_email_invalid);
+            this.Controls.Add(this.label_phone_invalid);
+            this.Controls.Add(this.label_email_null);
+            this.Controls.Add(this.label_phone_null);
+            this.Controls.Add(this.label_diachi_null);
+            this.Controls.Add(this.label_que_null);
+            this.Controls.Add(this.label_cmnd_null);
+            this.Controls.Add(this.label_name_null);
             this.Controls.Add(this.panel_Down);
             this.Controls.Add(this.panel_Head);
             this.Controls.Add(this.panel3);
@@ -640,6 +816,8 @@
             this.Name = "AE_Staff_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AE_Staff_Form";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AE_Staff_Form_FormClosing);
+            this.Load += new System.EventHandler(this.AE_Staff_Form_Load);
             this.panel_Down.ResumeLayout(false);
             this.panel_Head.ResumeLayout(false);
             this.panel_Head.PerformLayout();
@@ -698,5 +876,17 @@
         private System.Windows.Forms.TextBox txt_password;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Label label_name_null;
+        private System.Windows.Forms.Label label_cmnd_null;
+        private System.Windows.Forms.Label label_que_null;
+        private System.Windows.Forms.Label label_diachi_null;
+        private System.Windows.Forms.Label label_phone_null;
+        private System.Windows.Forms.Label label_email_null;
+        private System.Windows.Forms.Label label_phone_invalid;
+        private System.Windows.Forms.Label label_email_invalid;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btn_done;
+        private System.Windows.Forms.Label label_info_acc;
+        private System.Windows.Forms.Label label_CMND_invalid;
     }
 }

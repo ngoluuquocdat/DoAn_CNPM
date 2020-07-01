@@ -56,6 +56,11 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cbb_danhMuc = new System.Windows.Forms.ComboBox();
+            this.label_name_null = new System.Windows.Forms.Label();
+            this.label_dgNhap_null = new System.Windows.Forms.Label();
+            this.label_dgBan_null = new System.Windows.Forms.Label();
+            this.label_dgNhap_invalid = new System.Windows.Forms.Label();
+            this.label_dgBan_invalid = new System.Windows.Forms.Label();
             this.panel_Down.SuspendLayout();
             this.panel_Head.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +69,7 @@
             // 
             this.panel9.BackColor = System.Drawing.Color.White;
             this.panel9.ForeColor = System.Drawing.Color.Black;
-            this.panel9.Location = new System.Drawing.Point(245, 438);
+            this.panel9.Location = new System.Drawing.Point(245, 455);
             this.panel9.Margin = new System.Windows.Forms.Padding(4);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(333, 1);
@@ -84,7 +89,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.ForeColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(245, 271);
+            this.panel2.Location = new System.Drawing.Point(246, 274);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(333, 1);
@@ -112,6 +117,7 @@
             this.txt_tenPr.Size = new System.Drawing.Size(333, 23);
             this.txt_tenPr.TabIndex = 1;
             this.txt_tenPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_tenPr.Click += new System.EventHandler(this.txt_tenPr_Click);
             // 
             // txt_giaBan
             // 
@@ -119,12 +125,13 @@
             this.txt_giaBan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_giaBan.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_giaBan.ForeColor = System.Drawing.Color.White;
-            this.txt_giaBan.Location = new System.Drawing.Point(245, 402);
+            this.txt_giaBan.Location = new System.Drawing.Point(245, 419);
             this.txt_giaBan.Margin = new System.Windows.Forms.Padding(4);
             this.txt_giaBan.Name = "txt_giaBan";
             this.txt_giaBan.Size = new System.Drawing.Size(333, 23);
             this.txt_giaBan.TabIndex = 4;
             this.txt_giaBan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_giaBan.Click += new System.EventHandler(this.txt_giaBan_Click);
             // 
             // txt_giaNhap
             // 
@@ -138,6 +145,7 @@
             this.txt_giaNhap.Size = new System.Drawing.Size(333, 23);
             this.txt_giaNhap.TabIndex = 3;
             this.txt_giaNhap.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_giaNhap.Click += new System.EventHandler(this.txt_giaNhap_Click);
             // 
             // label1
             // 
@@ -145,7 +153,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label1.Location = new System.Drawing.Point(41, 406);
+            this.label1.Location = new System.Drawing.Point(41, 423);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(132, 24);
@@ -171,7 +179,7 @@
             this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
-            this.label9.Location = new System.Drawing.Point(41, 235);
+            this.label9.Location = new System.Drawing.Point(42, 238);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(110, 24);
@@ -198,7 +206,7 @@
             this.panel14.Location = new System.Drawing.Point(631, 94);
             this.panel14.Margin = new System.Windows.Forms.Padding(4);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(1, 413);
+            this.panel14.Size = new System.Drawing.Size(1, 438);
             this.panel14.TabIndex = 210;
             // 
             // panel15
@@ -208,7 +216,7 @@
             this.panel15.Location = new System.Drawing.Point(631, 0);
             this.panel15.Margin = new System.Windows.Forms.Padding(4);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(1, 117);
+            this.panel15.Size = new System.Drawing.Size(1, 94);
             this.panel15.TabIndex = 149;
             // 
             // panel13
@@ -218,7 +226,7 @@
             this.panel13.Location = new System.Drawing.Point(0, 0);
             this.panel13.Margin = new System.Windows.Forms.Padding(4);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(1, 117);
+            this.panel13.Size = new System.Drawing.Size(1, 94);
             this.panel13.TabIndex = 148;
             // 
             // panel10
@@ -237,7 +245,7 @@
             this.panel11.Location = new System.Drawing.Point(0, 94);
             this.panel11.Margin = new System.Windows.Forms.Padding(4);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(1, 413);
+            this.panel11.Size = new System.Drawing.Size(1, 438);
             this.panel11.TabIndex = 209;
             // 
             // panel16
@@ -290,10 +298,10 @@
             this.panel_Down.Controls.Add(this.btn_Cancel);
             this.panel_Down.Controls.Add(this.btn_Confirm);
             this.panel_Down.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel_Down.Location = new System.Drawing.Point(0, 507);
+            this.panel_Down.Location = new System.Drawing.Point(0, 532);
             this.panel_Down.Margin = new System.Windows.Forms.Padding(4);
             this.panel_Down.Name = "panel_Down";
-            this.panel_Down.Size = new System.Drawing.Size(632, 117);
+            this.panel_Down.Size = new System.Drawing.Size(632, 94);
             this.panel_Down.TabIndex = 207;
             // 
             // btn_Cancel
@@ -305,7 +313,7 @@
             this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Cancel.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cancel.ForeColor = System.Drawing.Color.White;
-            this.btn_Cancel.Location = new System.Drawing.Point(347, 31);
+            this.btn_Cancel.Location = new System.Drawing.Point(344, 21);
             this.btn_Cancel.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(177, 54);
@@ -323,7 +331,7 @@
             this.btn_Confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Confirm.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Confirm.ForeColor = System.Drawing.Color.White;
-            this.btn_Confirm.Location = new System.Drawing.Point(117, 31);
+            this.btn_Confirm.Location = new System.Drawing.Point(117, 21);
             this.btn_Confirm.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Confirm.Name = "btn_Confirm";
             this.btn_Confirm.Size = new System.Drawing.Size(177, 54);
@@ -377,17 +385,82 @@
             this.cbb_danhMuc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_danhMuc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(214)))), ((int)(((byte)(247)))));
             this.cbb_danhMuc.FormattingEnabled = true;
-            this.cbb_danhMuc.Location = new System.Drawing.Point(245, 230);
+            this.cbb_danhMuc.Location = new System.Drawing.Point(246, 233);
             this.cbb_danhMuc.Name = "cbb_danhMuc";
             this.cbb_danhMuc.Size = new System.Drawing.Size(333, 31);
             this.cbb_danhMuc.TabIndex = 232;
+            // 
+            // label_name_null
+            // 
+            this.label_name_null.AutoSize = true;
+            this.label_name_null.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_name_null.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label_name_null.Location = new System.Drawing.Point(295, 123);
+            this.label_name_null.Name = "label_name_null";
+            this.label_name_null.Size = new System.Drawing.Size(240, 24);
+            this.label_name_null.TabIndex = 233;
+            this.label_name_null.Text = "Tên hàng hóa đang trống.";
+            this.label_name_null.Visible = false;
+            // 
+            // label_dgNhap_null
+            // 
+            this.label_dgNhap_null.AutoSize = true;
+            this.label_dgNhap_null.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_dgNhap_null.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label_dgNhap_null.Location = new System.Drawing.Point(295, 291);
+            this.label_dgNhap_null.Name = "label_dgNhap_null";
+            this.label_dgNhap_null.Size = new System.Drawing.Size(237, 24);
+            this.label_dgNhap_null.TabIndex = 234;
+            this.label_dgNhap_null.Text = "Đơn giá nhập đang trống.";
+            this.label_dgNhap_null.Visible = false;
+            // 
+            // label_dgBan_null
+            // 
+            this.label_dgBan_null.AutoSize = true;
+            this.label_dgBan_null.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_dgBan_null.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label_dgBan_null.Location = new System.Drawing.Point(296, 391);
+            this.label_dgBan_null.Name = "label_dgBan_null";
+            this.label_dgBan_null.Size = new System.Drawing.Size(226, 24);
+            this.label_dgBan_null.TabIndex = 235;
+            this.label_dgBan_null.Text = "Đơn giá bán đang trống.";
+            this.label_dgBan_null.Visible = false;
+            // 
+            // label_dgNhap_invalid
+            // 
+            this.label_dgNhap_invalid.AutoSize = true;
+            this.label_dgNhap_invalid.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_dgNhap_invalid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label_dgNhap_invalid.Location = new System.Drawing.Point(277, 291);
+            this.label_dgNhap_invalid.Name = "label_dgNhap_invalid";
+            this.label_dgNhap_invalid.Size = new System.Drawing.Size(258, 24);
+            this.label_dgNhap_invalid.TabIndex = 236;
+            this.label_dgNhap_invalid.Text = "Đơn giá nhập không hợp lệ.";
+            this.label_dgNhap_invalid.Visible = false;
+            // 
+            // label_dgBan_invalid
+            // 
+            this.label_dgBan_invalid.AutoSize = true;
+            this.label_dgBan_invalid.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_dgBan_invalid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label_dgBan_invalid.Location = new System.Drawing.Point(295, 391);
+            this.label_dgBan_invalid.Name = "label_dgBan_invalid";
+            this.label_dgBan_invalid.Size = new System.Drawing.Size(247, 24);
+            this.label_dgBan_invalid.TabIndex = 237;
+            this.label_dgBan_invalid.Text = "Đơn giá bán không hợp lệ.";
+            this.label_dgBan_invalid.Visible = false;
             // 
             // AE_Product_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.ClientSize = new System.Drawing.Size(632, 624);
+            this.ClientSize = new System.Drawing.Size(632, 626);
+            this.Controls.Add(this.label_dgBan_invalid);
+            this.Controls.Add(this.label_dgNhap_invalid);
+            this.Controls.Add(this.label_dgBan_null);
+            this.Controls.Add(this.label_dgNhap_null);
+            this.Controls.Add(this.label_name_null);
             this.Controls.Add(this.cbb_danhMuc);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel4);
@@ -450,5 +523,10 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbb_danhMuc;
+        private System.Windows.Forms.Label label_name_null;
+        private System.Windows.Forms.Label label_dgNhap_null;
+        private System.Windows.Forms.Label label_dgBan_null;
+        private System.Windows.Forms.Label label_dgNhap_invalid;
+        private System.Windows.Forms.Label label_dgBan_invalid;
     }
 }

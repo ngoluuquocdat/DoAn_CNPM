@@ -55,7 +55,7 @@
             // 
             // panel_Logo
             // 
-            this.panel_Logo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(65)))));
+            this.panel_Logo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(75)))));
             this.panel_Logo.Controls.Add(this.label_StoreName);
             this.panel_Logo.Controls.Add(this.pic_StoreLogo);
             this.panel_Logo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -88,7 +88,7 @@
             // 
             // panel_Left
             // 
-            this.panel_Left.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(65)))));
+            this.panel_Left.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(75)))));
             this.panel_Left.Controls.Add(this.panel_Slide);
             this.panel_Left.Controls.Add(this.panel_Logo);
             this.panel_Left.Controls.Add(this.btn_Exit);

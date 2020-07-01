@@ -14,8 +14,6 @@ using System.Threading;
 using Excel = Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Interop.Excel;
 
-//using ExcelLibrary.CompoundDocumentFormat;
-//using ExcelLibrary.SpreadSheet;
 
 namespace QuanLyCuaHangGear
 {
@@ -99,7 +97,7 @@ namespace QuanLyCuaHangGear
         {
             foreach (DataGridViewRow row in Product_dtgv.Rows)
             {
-                if (Convert.ToInt32(row.Cells["SoLuong"].Value) < 10)
+                if (Convert.ToInt32(row.Cells["SoLuong"].Value) <= 5)
                 { 
                     row.DefaultCellStyle.BackColor = Color.FromArgb(255, 128, 128);
                 }
@@ -125,8 +123,8 @@ namespace QuanLyCuaHangGear
     private void btn_Add_Click(object sender, EventArgs e)
         {
             AE_Product_Form ae_f = new AE_Product_Form(0);
+            ae_f.D += new AE_Product_Form.MyDelegate(Load_dtgv);
             ae_f.ShowDialog();
-            Load_dtgv();
             if (Product_dtgv.Rows.Count > 0)
                 Product_dtgv.Rows[Product_dtgv.Rows.Count - 1].Selected = true;
         }
@@ -143,9 +141,9 @@ namespace QuanLyCuaHangGear
             {
                 int index = Product_dtgv.SelectedRows[0].Index;
                 int id = Convert.ToInt32(Product_dtgv.SelectedRows[0].Cells["id"].Value);
-                AE_Product_Form f = new AE_Product_Form(id);
-                f.ShowDialog();
-                Load_dtgv();
+                AE_Product_Form ae_f = new AE_Product_Form(id);
+                ae_f.D += new AE_Product_Form.MyDelegate(Load_dtgv);
+                ae_f.ShowDialog();
                 Product_dtgv.Rows[index].Selected = true;
             }
             
@@ -166,21 +164,7 @@ namespace QuanLyCuaHangGear
             }           
         }
 
-        private void btn_View_Click(object sender, EventArgs e)
-        {
-            //int id_pr = Convert.ToInt32(Product_dtgv.SelectedRows[0].Cells["id"].Value.ToString());
-            //HangHoa hh = BLL_Product.Instance.Get_HangHoa_by_ID(id_pr);
-            //int id_Dm = hh.idDanhMuc;
-            //DanhMuc dm = BLL_Product.Instance.Get_DanhMuc_by_ID(id_Dm);
-
-            //txt_idHangHoa.Text = hh.id.ToString();
-            //txt_tenHang.Text = hh.Name;
-            //txt_danhMuc.Text = dm.Name.ToString();
-            //txt_soLuong.Text = hh.SoLuong.ToString();
-            //txt_donGiaNhap.Text = hh.DonGiaNhap.ToString();
-            //txt_donGiaBan.Text = hh.DonGiaBan.ToString();
-            Check_SoLuong();
-        }
+        
 
         private void btn_Search_Click(object sender, EventArgs e)
         {
@@ -400,7 +384,10 @@ namespace QuanLyCuaHangGear
             }
         }
 
-
+        private void btn_Check_Amount_Click(object sender, EventArgs e)
+        {
+            Check_SoLuong();
+        }
     }
     
 }
