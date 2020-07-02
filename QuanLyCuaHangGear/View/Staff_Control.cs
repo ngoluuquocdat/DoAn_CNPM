@@ -121,7 +121,11 @@ namespace QuanLyCuaHangGear
 
         private void btn_Search_Click(object sender, EventArgs e)
         {
-            string name = txt_Search.Text;           
+            string name = txt_Search.Text;  
+            if(name == "Nhập tên nhân viên")
+            {
+                name = "";
+            }
             Staff_dtgv.DataSource= To_View(BLL_Staff.Instance.Search_by_Name(name));
         }
 

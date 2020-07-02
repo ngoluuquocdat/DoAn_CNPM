@@ -388,13 +388,13 @@
             // 
             this.bill_info_dtgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.bill_info_dtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bill_info_dtgv.Location = new System.Drawing.Point(51, 483);
+            this.bill_info_dtgv.Location = new System.Drawing.Point(64, 484);
             this.bill_info_dtgv.Name = "bill_info_dtgv";
             this.bill_info_dtgv.ReadOnly = true;
             this.bill_info_dtgv.RowHeadersWidth = 51;
             this.bill_info_dtgv.RowTemplate.Height = 24;
             this.bill_info_dtgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.bill_info_dtgv.Size = new System.Drawing.Size(574, 164);
+            this.bill_info_dtgv.Size = new System.Drawing.Size(550, 164);
             this.bill_info_dtgv.TabIndex = 253;
             // 
             // label7

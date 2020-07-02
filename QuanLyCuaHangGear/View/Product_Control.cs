@@ -170,6 +170,10 @@ namespace QuanLyCuaHangGear
         {
             string StringSearch = txt_Search.Text;
             int id_dm = ((CBBItems)cbb_Category.SelectedItem).Value;
+            if(StringSearch == "Nhập tên hàng")
+            {
+                StringSearch = "";
+            }
             Product_dtgv.DataSource = To_View(BLL_Product.Instance.Search_by_DanhMuc(StringSearch, id_dm));
         }
 
@@ -231,6 +235,7 @@ namespace QuanLyCuaHangGear
 
         private void cbb_Category_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             int id_dm = ((CBBItems)cbb_Category.SelectedItem).Value;
             if (id_dm == 0)
             {

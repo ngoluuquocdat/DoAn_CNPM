@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.panel_Down = new System.Windows.Forms.Panel();
+            this.btn_done = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.btn_Confirm = new System.Windows.Forms.Button();
@@ -82,8 +84,6 @@
             this.label_email_null = new System.Windows.Forms.Label();
             this.label_phone_invalid = new System.Windows.Forms.Label();
             this.label_email_invalid = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_done = new System.Windows.Forms.Button();
             this.label_info_acc = new System.Windows.Forms.Label();
             this.label_CMND_invalid = new System.Windows.Forms.Label();
             this.panel_Down.SuspendLayout();
@@ -108,6 +108,24 @@
             this.panel_Down.TabIndex = 223;
             this.panel_Down.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Down_Paint);
             // 
+            // btn_done
+            // 
+            this.btn_done.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(65)))));
+            this.btn_done.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_done.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(65)))));
+            this.btn_done.FlatAppearance.BorderSize = 0;
+            this.btn_done.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_done.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_done.ForeColor = System.Drawing.Color.White;
+            this.btn_done.Location = new System.Drawing.Point(413, 26);
+            this.btn_done.Name = "btn_done";
+            this.btn_done.Size = new System.Drawing.Size(133, 44);
+            this.btn_done.TabIndex = 150;
+            this.btn_done.Text = "XONG";
+            this.btn_done.UseVisualStyleBackColor = false;
+            this.btn_done.Visible = false;
+            this.btn_done.Click += new System.EventHandler(this.button1_Click);
+            // 
             // panel15
             // 
             this.panel15.BackColor = System.Drawing.Color.White;
@@ -125,6 +143,14 @@
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(1, 90);
             this.panel13.TabIndex = 148;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Location = new System.Drawing.Point(0, 89);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(957, 1);
+            this.panel2.TabIndex = 147;
             // 
             // panel10
             // 
@@ -574,6 +600,7 @@
             this.txt_password.ForeColor = System.Drawing.Color.White;
             this.txt_password.Location = new System.Drawing.Point(669, 410);
             this.txt_password.Name = "txt_password";
+            this.txt_password.ReadOnly = true;
             this.txt_password.Size = new System.Drawing.Size(250, 23);
             this.txt_password.TabIndex = 199;
             this.txt_password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -712,32 +739,6 @@
             this.label_email_invalid.Text = "Email không hợp lệ.";
             this.label_email_invalid.Visible = false;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(0, 89);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(957, 1);
-            this.panel2.TabIndex = 147;
-            // 
-            // btn_done
-            // 
-            this.btn_done.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(65)))));
-            this.btn_done.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_done.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(65)))));
-            this.btn_done.FlatAppearance.BorderSize = 0;
-            this.btn_done.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_done.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_done.ForeColor = System.Drawing.Color.White;
-            this.btn_done.Location = new System.Drawing.Point(413, 26);
-            this.btn_done.Name = "btn_done";
-            this.btn_done.Size = new System.Drawing.Size(133, 44);
-            this.btn_done.TabIndex = 150;
-            this.btn_done.Text = "XONG";
-            this.btn_done.UseVisualStyleBackColor = false;
-            this.btn_done.Visible = false;
-            this.btn_done.Click += new System.EventHandler(this.button1_Click);
-            // 
             // label_info_acc
             // 
             this.label_info_acc.AutoSize = true;
@@ -745,7 +746,7 @@
             this.label_info_acc.ForeColor = System.Drawing.Color.Lime;
             this.label_info_acc.Location = new System.Drawing.Point(552, 226);
             this.label_info_acc.Name = "label_info_acc";
-            this.label_info_acc.Size = new System.Drawing.Size(440, 28);
+            this.label_info_acc.Size = new System.Drawing.Size(416, 26);
             this.label_info_acc.TabIndex = 236;
             this.label_info_acc.Text = "Xem thông tin tài khoản nhân viên ở dưới.";
             this.label_info_acc.Visible = false;
